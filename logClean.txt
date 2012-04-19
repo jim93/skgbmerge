@@ -1,0 +1,21 @@
+  CLEAN   /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelC
+  CLEAN   arch/arm/kernel
+  CLEAN   drivers/char
+  CLEAN   kernel
+  CLEAN   lib
+  CLEAN   usr
+  CLEAN   .tmp_versions
+  HOSTCC  scripts/basic/fixdep
+  HOSTCC  scripts/basic/docproc
+  HOSTCC  scripts/basic/hash
+  HOSTCC  scripts/kconfig/conf.o
+scripts/kconfig/conf.c: In function ‘conf_askvalue’:
+scripts/kconfig/conf.c:105: warning: ignoring return value of ‘fgets’, declared with attribute warn_unused_result
+scripts/kconfig/conf.c: In function ‘conf_choice’:
+scripts/kconfig/conf.c:307: warning: ignoring return value of ‘fgets’, declared with attribute warn_unused_result
+  HOSTCC  scripts/kconfig/kxgettext.o
+  HOSTCC  scripts/kconfig/zconf.tab.o
+  HOSTLD  scripts/kconfig/conf
+#
+# configuration written to .config
+#
