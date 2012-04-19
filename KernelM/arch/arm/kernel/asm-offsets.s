@@ -13,8 +13,8 @@
 @	compiled by GNU C version 4.3.2, GMP version 4.3.1, MPFR version 2.4.1-p5.
 @ GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
 @ options passed:  -nostdinc
-@ -I/home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include -Iinclude
-@ -Iarch/arm/mach-s5pv210/include -Iarch/arm/plat-s5p/include
+@ -I/home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include
+@ -Iinclude -Iarch/arm/mach-s5pv210/include -Iarch/arm/plat-s5p/include
 @ -Iarch/arm/plat-samsung/include -iprefix
 @ /opt/toolchain/bin/../lib/gcc/arm-none-eabi/4.4.1/ -isysroot
 @ /opt/toolchain/bin/../arm-none-eabi -D__USES_INITFINI__ -Dlinux
@@ -467,17 +467,17 @@ main:
 	.4byte	0x0
 	.4byte	0x0
 	.file 2 "include/asm-generic/int-ll64.h"
-	.file 3 "/home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/types.h"
-	.file 4 "/home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/posix_types.h"
+	.file 3 "/home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/types.h"
+	.file 4 "/home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/posix_types.h"
 	.file 5 "include/linux/types.h"
 	.file 6 "include/linux/capability.h"
 	.file 7 "include/linux/thread_info.h"
 	.file 8 "include/linux/time.h"
-	.file 9 "/home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/fpstate.h"
-	.file 10 "/home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/thread_info.h"
-	.file 11 "/home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/system.h"
+	.file 9 "/home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/fpstate.h"
+	.file 10 "/home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/thread_info.h"
+	.file 11 "/home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/system.h"
 	.file 12 "include/linux/sched.h"
-	.file 13 "/home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/processor.h"
+	.file 13 "/home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/processor.h"
 	.file 14 "include/linux/list.h"
 	.file 15 "include/linux/spinlock_types_up.h"
 	.file 16 "include/linux/spinlock_types.h"
@@ -491,15 +491,15 @@ main:
 	.file 24 "include/linux/wait.h"
 	.file 25 "include/linux/kernel.h"
 	.file 26 "include/linux/completion.h"
-	.file 27 "/home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/page.h"
+	.file 27 "/home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/page.h"
 	.file 28 "include/linux/mm_types.h"
-	.file 29 "/home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/mmu.h"
+	.file 29 "/home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/mmu.h"
 	.file 30 "include/linux/fs.h"
 	.file 31 "include/linux/mm.h"
 	.file 32 "include/asm-generic/cputime.h"
 	.file 33 "include/linux/rcupdate.h"
 	.file 34 "include/linux/sem.h"
-	.file 35 "/home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/signal.h"
+	.file 35 "/home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/signal.h"
 	.file 36 "include/asm-generic/signal-defs.h"
 	.file 37 "include/asm-generic/siginfo.h"
 	.file 38 "include/linux/signal.h"
@@ -543,9 +543,9 @@ main:
 	.file 76 "include/linux/elf.h"
 	.file 77 "include/linux/moduleparam.h"
 	.file 78 "include/linux/tracepoint.h"
-	.file 79 "/home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/module.h"
+	.file 79 "/home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/module.h"
 	.file 80 "include/linux/dma-mapping.h"
-	.file 81 "/home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/hwcap.h"
+	.file 81 "/home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/hwcap.h"
 	.file 82 "include/linux/timex.h"
 	.file 83 "include/linux/debug_locks.h"
 	.file 84 "include/trace/events/module.h"
@@ -18615,6 +18615,8 @@ main:
 	.ascii	"qs_btimelimit\000"
 .LASF674:
 	.ascii	"waiter\000"
+.LASF1531:
+	.ascii	"/home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM\000"
 .LASF1502:
 	.ascii	"DMA_BIDIRECTIONAL\000"
 .LASF1391:
@@ -19493,8 +19495,6 @@ main:
 	.ascii	"mm_struct_struct_mmap\000"
 .LASF1293:
 	.ascii	"fu_rcuhead\000"
-.LASF1531:
-	.ascii	"/home/j2/AndroidDev/SidekickGB/KernelM\000"
 .LASF1398:
 	.ascii	"task_struct_struct_thread_group\000"
 .LASF764:

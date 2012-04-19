@@ -1,4 +1,4 @@
-cmd_lib/proportions.o := /opt/toolchain/bin/arm-none-eabi-gcc -Wp,-MD,lib/.proportions.o.d  -nostdinc -isystem /opt/toolchain/bin/../lib/gcc/arm-none-eabi/4.4.1/include -Dlinux -I/home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include -Iinclude  -include include/generated/autoconf.h -D__KERNEL__ -mlittle-endian -Iarch/arm/mach-s5pv210/include -Iarch/arm/plat-s5p/include -Iarch/arm/plat-samsung/include -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -marm -fno-omit-frame-pointer -mapcs -mno-sched-prolog -mabi=aapcs-linux -mno-thumb-interwork -funwind-tables -D__LINUX_ARM_ARCH__=7 -march=armv7-a -msoft-float -Uarm -Wframe-larger-than=1024 -fno-stack-protector -fno-omit-frame-pointer -fno-optimize-sibling-calls -g -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack   -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(proportions)"  -D"KBUILD_MODNAME=KBUILD_STR(proportions)"  -c -o lib/proportions.o lib/proportions.c
+cmd_lib/proportions.o := /opt/toolchain/bin/arm-none-eabi-gcc -Wp,-MD,lib/.proportions.o.d  -nostdinc -isystem /opt/toolchain/bin/../lib/gcc/arm-none-eabi/4.4.1/include -Dlinux -I/home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include -Iinclude  -include include/generated/autoconf.h -D__KERNEL__ -mlittle-endian -Iarch/arm/mach-s5pv210/include -Iarch/arm/plat-s5p/include -Iarch/arm/plat-samsung/include -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -marm -fno-omit-frame-pointer -mapcs -mno-sched-prolog -mabi=aapcs-linux -mno-thumb-interwork -funwind-tables -D__LINUX_ARM_ARCH__=7 -march=armv7-a -msoft-float -Uarm -Wframe-larger-than=1024 -fno-stack-protector -fno-omit-frame-pointer -fno-optimize-sibling-calls -g -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack   -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(proportions)"  -D"KBUILD_MODNAME=KBUILD_STR(proportions)"  -c -o lib/proportions.o lib/proportions.c
 
 deps_lib/proportions.o := \
   lib/proportions.c \
@@ -23,9 +23,9 @@ deps_lib/proportions.o := \
     $(wildcard include/config/lbdaf.h) \
     $(wildcard include/config/phys/addr/t/64bit.h) \
     $(wildcard include/config/64bit.h) \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/types.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/types.h \
   include/asm-generic/int-ll64.h \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/bitsperlong.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/bitsperlong.h \
   include/asm-generic/bitsperlong.h \
   include/linux/posix_types.h \
   include/linux/stddef.h \
@@ -38,13 +38,13 @@ deps_lib/proportions.o := \
     $(wildcard include/config/arch/supports/optimized/inlining.h) \
     $(wildcard include/config/optimize/inlining.h) \
   include/linux/compiler-gcc4.h \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/posix_types.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/posix_types.h \
   include/linux/bitops.h \
     $(wildcard include/config/generic/find/first/bit.h) \
     $(wildcard include/config/generic/find/last/bit.h) \
     $(wildcard include/config/generic/find/next/bit.h) \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/bitops.h \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/system.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/bitops.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/system.h \
     $(wildcard include/config/cpu/xsc3.h) \
     $(wildcard include/config/cpu/fa526.h) \
     $(wildcard include/config/arch/has/barriers.h) \
@@ -53,17 +53,17 @@ deps_lib/proportions.o := \
     $(wildcard include/config/cpu/sa110.h) \
     $(wildcard include/config/cpu/32v6k.h) \
   include/linux/linkage.h \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/linkage.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/linkage.h \
   include/linux/irqflags.h \
     $(wildcard include/config/trace/irqflags.h) \
     $(wildcard include/config/irqsoff/tracer.h) \
     $(wildcard include/config/trace/irqflags/support.h) \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/irqflags.h \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/ptrace.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/irqflags.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/ptrace.h \
     $(wildcard include/config/cpu/endian/be8.h) \
     $(wildcard include/config/arm/thumb.h) \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/hwcap.h \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/outercache.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/hwcap.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/outercache.h \
     $(wildcard include/config/outer/cache/sync.h) \
     $(wildcard include/config/outer/cache.h) \
   include/asm-generic/cmpxchg-local.h \
@@ -74,12 +74,12 @@ deps_lib/proportions.o := \
   include/asm-generic/bitops/arch_hweight.h \
   include/asm-generic/bitops/const_hweight.h \
   include/asm-generic/bitops/lock.h \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/thread_info.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/thread_info.h \
     $(wildcard include/config/arm/thumbee.h) \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/fpstate.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/fpstate.h \
     $(wildcard include/config/vfpv3.h) \
     $(wildcard include/config/iwmmxt.h) \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/domain.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/domain.h \
     $(wildcard include/config/io/36.h) \
     $(wildcard include/config/mmu.h) \
   include/linux/list.h \
@@ -87,8 +87,8 @@ deps_lib/proportions.o := \
   include/linux/poison.h \
     $(wildcard include/config/illegal/pointer/value.h) \
   include/linux/prefetch.h \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/processor.h \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/cache.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/processor.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/cache.h \
     $(wildcard include/config/arm/l1/cache/shift.h) \
     $(wildcard include/config/aeabi.h) \
   include/linux/kernel.h \
@@ -106,18 +106,18 @@ deps_lib/proportions.o := \
     $(wildcard include/config/arch/has/ilog2/u32.h) \
     $(wildcard include/config/arch/has/ilog2/u64.h) \
   include/linux/dynamic_debug.h \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/byteorder.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/byteorder.h \
   include/linux/byteorder/little_endian.h \
   include/linux/swab.h \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/swab.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/swab.h \
   include/linux/byteorder/generic.h \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/bug.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/bug.h \
     $(wildcard include/config/bug.h) \
     $(wildcard include/config/debug/bugverbose.h) \
   include/asm-generic/bug.h \
     $(wildcard include/config/generic/bug.h) \
     $(wildcard include/config/generic/bug/relative/pointers.h) \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/div64.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/div64.h \
   include/linux/stringify.h \
   include/linux/bottom_half.h \
   include/linux/spinlock_types.h \
@@ -160,13 +160,13 @@ deps_lib/proportions.o := \
     $(wildcard include/config/inline/write/unlock/irq.h) \
     $(wildcard include/config/inline/read/unlock/irqrestore.h) \
     $(wildcard include/config/inline/write/unlock/irqrestore.h) \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/atomic.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/atomic.h \
     $(wildcard include/config/generic/atomic64.h) \
   include/asm-generic/atomic-long.h \
   include/linux/smp.h \
     $(wildcard include/config/use/generic/smp/helpers.h) \
   include/linux/errno.h \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/errno.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/errno.h \
   include/asm-generic/errno.h \
   include/asm-generic/errno-base.h \
   include/linux/cpumask.h \
@@ -179,7 +179,7 @@ deps_lib/proportions.o := \
   include/linux/bitmap.h \
   include/linux/string.h \
     $(wildcard include/config/binary/printf.h) \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/string.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/string.h \
   include/linux/percpu.h \
     $(wildcard include/config/modules.h) \
     $(wildcard include/config/need/per/cpu/embed/first/chunk.h) \
@@ -188,7 +188,7 @@ deps_lib/proportions.o := \
   include/linux/pfn.h \
   include/linux/init.h \
     $(wildcard include/config/hotplug.h) \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/percpu.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/percpu.h \
   include/asm-generic/percpu.h \
   include/linux/percpu-defs.h \
     $(wildcard include/config/debug/force/weak/per/cpu.h) \
@@ -205,7 +205,7 @@ deps_lib/proportions.o := \
   include/linux/seqlock.h \
   include/linux/completion.h \
   include/linux/wait.h \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/current.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/current.h \
   include/linux/rcutree.h \
     $(wildcard include/config/no/hz.h) \
 

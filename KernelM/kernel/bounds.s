@@ -13,8 +13,8 @@
 @	compiled by GNU C version 4.3.2, GMP version 4.3.1, MPFR version 2.4.1-p5.
 @ GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
 @ options passed:  -nostdinc
-@ -I/home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include -Iinclude
-@ -Iarch/arm/mach-s5pv210/include -Iarch/arm/plat-s5p/include
+@ -I/home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include
+@ -Iinclude -Iarch/arm/mach-s5pv210/include -Iarch/arm/plat-s5p/include
 @ -Iarch/arm/plat-samsung/include -iprefix
 @ /opt/toolchain/bin/../lib/gcc/arm-none-eabi/4.4.1/ -isysroot
 @ /opt/toolchain/bin/../arm-none-eabi -D__USES_INITFINI__ -Dlinux
@@ -514,8 +514,6 @@ foo:
 	.ascii	"ZONE_NORMAL\000"
 .LASF20:
 	.ascii	"PG_arch_1\000"
-.LASF49:
-	.ascii	"/home/j2/AndroidDev/SidekickGB/KernelM\000"
 .LASF19:
 	.ascii	"PG_owner_priv_1\000"
 .LASF1:
@@ -576,6 +574,8 @@ foo:
 	.ascii	"PG_writeback\000"
 .LASF47:
 	.ascii	"GNU C 4.4.1\000"
+.LASF49:
+	.ascii	"/home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM\000"
 .LASF38:
 	.ascii	"PG_savepinned\000"
 	.ident	"GCC: (Sourcery G++ Lite 2009q3-68) 4.4.1"

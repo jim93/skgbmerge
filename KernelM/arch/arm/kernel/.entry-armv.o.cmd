@@ -1,4 +1,4 @@
-cmd_arch/arm/kernel/entry-armv.o := /opt/toolchain/bin/arm-none-eabi-gcc -Wp,-MD,arch/arm/kernel/.entry-armv.o.d  -nostdinc -isystem /opt/toolchain/bin/../lib/gcc/arm-none-eabi/4.4.1/include -Dlinux -I/home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include -Iinclude  -include include/generated/autoconf.h -D__KERNEL__ -mlittle-endian -Iarch/arm/mach-s5pv210/include -Iarch/arm/plat-s5p/include -Iarch/arm/plat-samsung/include -D__ASSEMBLY__ -mabi=aapcs-linux -mno-thumb-interwork -funwind-tables  -D__LINUX_ARM_ARCH__=7 -march=armv7-a  -include asm/unified.h -msoft-float -gdwarf-2       -c -o arch/arm/kernel/entry-armv.o arch/arm/kernel/entry-armv.S
+cmd_arch/arm/kernel/entry-armv.o := /opt/toolchain/bin/arm-none-eabi-gcc -Wp,-MD,arch/arm/kernel/.entry-armv.o.d  -nostdinc -isystem /opt/toolchain/bin/../lib/gcc/arm-none-eabi/4.4.1/include -Dlinux -I/home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include -Iinclude  -include include/generated/autoconf.h -D__KERNEL__ -mlittle-endian -Iarch/arm/mach-s5pv210/include -Iarch/arm/plat-s5p/include -Iarch/arm/plat-samsung/include -D__ASSEMBLY__ -mabi=aapcs-linux -mno-thumb-interwork -funwind-tables  -D__LINUX_ARM_ARCH__=7 -march=armv7-a  -include asm/unified.h -msoft-float -gdwarf-2       -c -o arch/arm/kernel/entry-armv.o arch/arm/kernel/entry-armv.S
 
 deps_arch/arm/kernel/entry-armv.o := \
   arch/arm/kernel/entry-armv.S \
@@ -21,9 +21,9 @@ deps_arch/arm/kernel/entry-armv.o := \
     $(wildcard include/config/has/tls/reg.h) \
     $(wildcard include/config/tls/reg/emul.h) \
     $(wildcard include/config/arm/thumb.h) \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/unified.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/unified.h \
     $(wildcard include/config/arm/asm/unified.h) \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/memory.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/memory.h \
     $(wildcard include/config/page/offset.h) \
     $(wildcard include/config/highmem.h) \
     $(wildcard include/config/dram/size.h) \
@@ -38,12 +38,12 @@ deps_arch/arm/kernel/entry-armv.o := \
   include/linux/const.h \
   arch/arm/mach-s5pv210/include/mach/memory.h \
     $(wildcard include/config/mach/smdkv210.h) \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/sizes.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/sizes.h \
   include/asm-generic/memory_model.h \
     $(wildcard include/config/flatmem.h) \
     $(wildcard include/config/sparsemem/vmemmap.h) \
     $(wildcard include/config/sparsemem.h) \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/glue.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/glue.h \
     $(wildcard include/config/cpu/abrt/lv4t.h) \
     $(wildcard include/config/cpu/abrt/ev4.h) \
     $(wildcard include/config/cpu/abrt/ev4t.h) \
@@ -54,19 +54,19 @@ deps_arch/arm/kernel/entry-armv.o := \
     $(wildcard include/config/cpu/pabrt/legacy.h) \
     $(wildcard include/config/cpu/pabrt/v6.h) \
     $(wildcard include/config/cpu/pabrt/v7.h) \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/vfpmacros.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/vfpmacros.h \
     $(wildcard include/config/vfpv3.h) \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/vfp.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/vfp.h \
   arch/arm/mach-s5pv210/include/mach/entry-macro.S \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/hardware/vic.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/hardware/vic.h \
   arch/arm/mach-s5pv210/include/mach/map.h \
   arch/arm/plat-samsung/include/plat/map-base.h \
   arch/arm/plat-s5p/include/plat/map-s5p.h \
   arch/arm/plat-s5p/include/plat/irqs.h \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/thread_notify.h \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/unwind.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/thread_notify.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/unwind.h \
     $(wildcard include/config/arm/unwind.h) \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/unistd.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/unistd.h \
     $(wildcard include/config/oabi/compat.h) \
   arch/arm/kernel/entry-header.S \
     $(wildcard include/config/frame/pointer.h) \
@@ -77,19 +77,19 @@ deps_arch/arm/kernel/entry-armv.o := \
     $(wildcard include/config/modules.h) \
     $(wildcard include/config/hotplug.h) \
   include/linux/linkage.h \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/linkage.h \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/assembler.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/linkage.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/assembler.h \
     $(wildcard include/config/cpu/feroceon.h) \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/ptrace.h \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/hwcap.h \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/asm-offsets.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/ptrace.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/hwcap.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/asm-offsets.h \
   include/generated/asm-offsets.h \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/errno.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/errno.h \
   include/asm-generic/errno.h \
   include/asm-generic/errno-base.h \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/thread_info.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/thread_info.h \
     $(wildcard include/config/arm/thumbee.h) \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/fpstate.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/fpstate.h \
 
 arch/arm/kernel/entry-armv.o: $(deps_arch/arm/kernel/entry-armv.o)
 

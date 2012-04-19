@@ -1,4 +1,4 @@
-cmd_drivers/base/module.o := /opt/toolchain/bin/arm-none-eabi-gcc -Wp,-MD,drivers/base/.module.o.d  -nostdinc -isystem /opt/toolchain/bin/../lib/gcc/arm-none-eabi/4.4.1/include -Dlinux -I/home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include -Iinclude  -include include/generated/autoconf.h -D__KERNEL__ -mlittle-endian -Iarch/arm/mach-s5pv210/include -Iarch/arm/plat-s5p/include -Iarch/arm/plat-samsung/include -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -marm -fno-omit-frame-pointer -mapcs -mno-sched-prolog -mabi=aapcs-linux -mno-thumb-interwork -funwind-tables -D__LINUX_ARM_ARCH__=7 -march=armv7-a -msoft-float -Uarm -Wframe-larger-than=1024 -fno-stack-protector -fno-omit-frame-pointer -fno-optimize-sibling-calls -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack   -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(module)"  -D"KBUILD_MODNAME=KBUILD_STR(module)"  -c -o drivers/base/module.o drivers/base/module.c
+cmd_drivers/base/module.o := /opt/toolchain/bin/arm-none-eabi-gcc -Wp,-MD,drivers/base/.module.o.d  -nostdinc -isystem /opt/toolchain/bin/../lib/gcc/arm-none-eabi/4.4.1/include -Dlinux -I/home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include -Iinclude  -include include/generated/autoconf.h -D__KERNEL__ -mlittle-endian -Iarch/arm/mach-s5pv210/include -Iarch/arm/plat-s5p/include -Iarch/arm/plat-samsung/include -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -marm -fno-omit-frame-pointer -mapcs -mno-sched-prolog -mabi=aapcs-linux -mno-thumb-interwork -funwind-tables -D__LINUX_ARM_ARCH__=7 -march=armv7-a -msoft-float -Uarm -Wframe-larger-than=1024 -fno-stack-protector -fno-omit-frame-pointer -fno-optimize-sibling-calls -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack   -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(module)"  -D"KBUILD_MODNAME=KBUILD_STR(module)"  -c -o drivers/base/module.o drivers/base/module.c
 
 deps_drivers/base/module.o := \
   drivers/base/module.c \
@@ -23,13 +23,13 @@ deps_drivers/base/module.o := \
     $(wildcard include/config/lbdaf.h) \
     $(wildcard include/config/phys/addr/t/64bit.h) \
     $(wildcard include/config/64bit.h) \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/types.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/types.h \
   include/asm-generic/int-ll64.h \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/bitsperlong.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/bitsperlong.h \
   include/asm-generic/bitsperlong.h \
   include/linux/posix_types.h \
   include/linux/stddef.h \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/posix_types.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/posix_types.h \
   include/linux/kobject.h \
     $(wildcard include/config/hotplug.h) \
   include/linux/list.h \
@@ -37,17 +37,17 @@ deps_drivers/base/module.o := \
   include/linux/poison.h \
     $(wildcard include/config/illegal/pointer/value.h) \
   include/linux/prefetch.h \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/processor.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/processor.h \
     $(wildcard include/config/mmu.h) \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/ptrace.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/ptrace.h \
     $(wildcard include/config/cpu/endian/be8.h) \
     $(wildcard include/config/arm/thumb.h) \
     $(wildcard include/config/smp.h) \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/hwcap.h \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/cache.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/hwcap.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/cache.h \
     $(wildcard include/config/arm/l1/cache/shift.h) \
     $(wildcard include/config/aeabi.h) \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/system.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/system.h \
     $(wildcard include/config/cpu/xsc3.h) \
     $(wildcard include/config/cpu/fa526.h) \
     $(wildcard include/config/arch/has/barriers.h) \
@@ -56,15 +56,15 @@ deps_drivers/base/module.o := \
     $(wildcard include/config/cpu/sa110.h) \
     $(wildcard include/config/cpu/32v6k.h) \
   include/linux/linkage.h \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/linkage.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/linkage.h \
   include/linux/irqflags.h \
     $(wildcard include/config/trace/irqflags.h) \
     $(wildcard include/config/irqsoff/tracer.h) \
     $(wildcard include/config/preempt/tracer.h) \
     $(wildcard include/config/trace/irqflags/support.h) \
   include/linux/typecheck.h \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/irqflags.h \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/outercache.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/irqflags.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/outercache.h \
     $(wildcard include/config/outer/cache/sync.h) \
     $(wildcard include/config/outer/cache.h) \
   include/asm-generic/cmpxchg-local.h \
@@ -72,7 +72,7 @@ deps_drivers/base/module.o := \
     $(wildcard include/config/debug/lock/alloc.h) \
     $(wildcard include/config/sysfs.h) \
   include/linux/errno.h \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/errno.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/errno.h \
   include/asm-generic/errno.h \
   include/asm-generic/errno-base.h \
   include/linux/lockdep.h \
@@ -81,7 +81,7 @@ deps_drivers/base/module.o := \
     $(wildcard include/config/generic/hardirqs.h) \
     $(wildcard include/config/prove/locking.h) \
     $(wildcard include/config/prove/rcu.h) \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/atomic.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/atomic.h \
     $(wildcard include/config/generic/atomic64.h) \
   include/asm-generic/atomic-long.h \
   include/linux/spinlock.h \
@@ -97,7 +97,7 @@ deps_drivers/base/module.o := \
     $(wildcard include/config/generic/find/first/bit.h) \
     $(wildcard include/config/generic/find/last/bit.h) \
     $(wildcard include/config/generic/find/next/bit.h) \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/bitops.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/bitops.h \
   include/asm-generic/bitops/non-atomic.h \
   include/asm-generic/bitops/fls64.h \
   include/asm-generic/bitops/sched.h \
@@ -105,12 +105,12 @@ deps_drivers/base/module.o := \
   include/asm-generic/bitops/arch_hweight.h \
   include/asm-generic/bitops/const_hweight.h \
   include/asm-generic/bitops/lock.h \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/thread_info.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/thread_info.h \
     $(wildcard include/config/arm/thumbee.h) \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/fpstate.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/fpstate.h \
     $(wildcard include/config/vfpv3.h) \
     $(wildcard include/config/iwmmxt.h) \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/domain.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/domain.h \
     $(wildcard include/config/io/36.h) \
   include/linux/kernel.h \
     $(wildcard include/config/preempt/voluntary.h) \
@@ -124,18 +124,18 @@ deps_drivers/base/module.o := \
     $(wildcard include/config/arch/has/ilog2/u32.h) \
     $(wildcard include/config/arch/has/ilog2/u64.h) \
   include/linux/dynamic_debug.h \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/byteorder.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/byteorder.h \
   include/linux/byteorder/little_endian.h \
   include/linux/swab.h \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/swab.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/swab.h \
   include/linux/byteorder/generic.h \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/bug.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/bug.h \
     $(wildcard include/config/bug.h) \
     $(wildcard include/config/debug/bugverbose.h) \
   include/asm-generic/bug.h \
     $(wildcard include/config/generic/bug.h) \
     $(wildcard include/config/generic/bug/relative/pointers.h) \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/div64.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/div64.h \
   include/linux/stringify.h \
   include/linux/bottom_half.h \
   include/linux/spinlock_types.h \
@@ -175,7 +175,7 @@ deps_drivers/base/module.o := \
     $(wildcard include/config/inline/write/unlock/irqrestore.h) \
   include/linux/kref.h \
   include/linux/wait.h \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/current.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/current.h \
   include/linux/klist.h \
   include/linux/module.h \
     $(wildcard include/config/symbol/prefix.h) \
@@ -188,7 +188,7 @@ deps_drivers/base/module.o := \
     $(wildcard include/config/module/unload.h) \
     $(wildcard include/config/constructors.h) \
   include/linux/stat.h \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/stat.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/stat.h \
   include/linux/time.h \
     $(wildcard include/config/arch/uses/gettimeoffset.h) \
   include/linux/cache.h \
@@ -232,12 +232,12 @@ deps_drivers/base/module.o := \
   include/linux/bitmap.h \
   include/linux/string.h \
     $(wildcard include/config/binary/printf.h) \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/string.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/string.h \
   include/linux/pageblock-flags.h \
     $(wildcard include/config/hugetlb/page.h) \
     $(wildcard include/config/hugetlb/page/size/variable.h) \
   include/generated/bounds.h \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/page.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/page.h \
     $(wildcard include/config/cpu/copy/v3.h) \
     $(wildcard include/config/cpu/copy/v4wt.h) \
     $(wildcard include/config/cpu/copy/v4wb.h) \
@@ -245,7 +245,7 @@ deps_drivers/base/module.o := \
     $(wildcard include/config/cpu/copy/fa.h) \
     $(wildcard include/config/cpu/xscale.h) \
     $(wildcard include/config/cpu/copy/v6.h) \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/glue.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/glue.h \
     $(wildcard include/config/cpu/arm610.h) \
     $(wildcard include/config/cpu/arm710.h) \
     $(wildcard include/config/cpu/abrt/lv4t.h) \
@@ -258,7 +258,7 @@ deps_drivers/base/module.o := \
     $(wildcard include/config/cpu/pabrt/legacy.h) \
     $(wildcard include/config/cpu/pabrt/v6.h) \
     $(wildcard include/config/cpu/pabrt/v7.h) \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/memory.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/memory.h \
     $(wildcard include/config/page/offset.h) \
     $(wildcard include/config/thumb2/kernel.h) \
     $(wildcard include/config/dram/size.h) \
@@ -266,7 +266,7 @@ deps_drivers/base/module.o := \
   include/linux/const.h \
   arch/arm/mach-s5pv210/include/mach/memory.h \
     $(wildcard include/config/mach/smdkv210.h) \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/sizes.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/sizes.h \
   include/asm-generic/memory_model.h \
     $(wildcard include/config/sparsemem/vmemmap.h) \
   include/asm-generic/getorder.h \
@@ -297,11 +297,11 @@ deps_drivers/base/module.o := \
     $(wildcard include/config/need/per/cpu/page/first/chunk.h) \
     $(wildcard include/config/have/setup/per/cpu/area.h) \
   include/linux/pfn.h \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/percpu.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/percpu.h \
   include/asm-generic/percpu.h \
   include/linux/percpu-defs.h \
     $(wildcard include/config/debug/force/weak/per/cpu.h) \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/topology.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/topology.h \
   include/asm-generic/topology.h \
   include/linux/mmdebug.h \
     $(wildcard include/config/debug/virtual.h) \
@@ -315,17 +315,17 @@ deps_drivers/base/module.o := \
   include/linux/jiffies.h \
   include/linux/timex.h \
   include/linux/param.h \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/param.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/param.h \
     $(wildcard include/config/hz.h) \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/timex.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/timex.h \
   arch/arm/mach-s5pv210/include/mach/timex.h \
   include/linux/debugobjects.h \
     $(wildcard include/config/debug/objects.h) \
     $(wildcard include/config/debug/objects/free.h) \
   include/linux/elf.h \
   include/linux/elf-em.h \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/elf.h \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/user.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/elf.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/user.h \
   include/linux/moduleparam.h \
     $(wildcard include/config/alpha.h) \
     $(wildcard include/config/ia64.h) \
@@ -339,7 +339,7 @@ deps_drivers/base/module.o := \
   include/linux/completion.h \
   include/linux/rcutree.h \
     $(wildcard include/config/no/hz.h) \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/module.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/module.h \
     $(wildcard include/config/arm/unwind.h) \
   include/trace/events/module.h \
   include/trace/define_trace.h \
@@ -347,7 +347,7 @@ deps_drivers/base/module.o := \
     $(wildcard include/config/pm/sleep.h) \
     $(wildcard include/config/pm/runtime.h) \
     $(wildcard include/config/pm/ops.h) \
-  /home/j2/AndroidDev/SidekickGB/KernelM/arch/arm/include/asm/device.h \
+  /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM/arch/arm/include/asm/device.h \
     $(wildcard include/config/dmabounce.h) \
   include/linux/pm_wakeup.h \
     $(wildcard include/config/pm.h) \

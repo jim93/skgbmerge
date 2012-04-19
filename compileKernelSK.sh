@@ -1,4 +1,4 @@
-INITRAMFSDIR=~/AndroidDev/SidekickGB/initramfs/
+INITRAMFSDIR=~/AndroidDev/SidekickGB/skgb/initramfs/
 
 cd KernelM
 make clean

@@ -1,0 +1,1 @@
+cmd_arch/arm/mach-s5pv210/built-in.o :=  /opt/toolchain/bin/arm-none-eabi-ld -EL    -r -o arch/arm/mach-s5pv210/built-in.o arch/arm/mach-s5pv210/pm.o arch/arm/mach-s5pv210/sleep.o arch/arm/mach-s5pv210/power-domain.o arch/arm/mach-s5pv210/dev-audio.o arch/arm/mach-s5pv210/adc.o arch/arm/mach-s5pv210/setup-fb.o arch/arm/mach-s5pv210/cpuidle.o arch/arm/mach-s5pv210/didle.o 
