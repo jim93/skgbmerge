@@ -265,8 +265,8 @@ static unsigned int apm_poll(struct file *fp, poll_table * wait)
  *   Only when everyone who has opened /dev/apm_bios with write permission
  *   has acknowledge does the actual suspend happen.
  */
-static long
-apm_ioctl(struct file *filp, u_int cmd, u_long arg)
+static int
+apm_ioctl(struct inode * inode, struct file *filp, u_int cmd, u_long arg)
 {
 	struct apm_user *as = filp->private_data;
 	int err = -EINVAL;
@@ -274,7 +274,6 @@ apm_ioctl(struct file *filp, u_int cmd, u_long arg)
 	if (!as->suser || !as->writer)
 		return -EPERM;
 
-	lock_kernel();
 	switch (cmd) {
 	case APM_IOC_SUSPEND:
 		mutex_lock(&state_lock);
@@ -335,7 +334,6 @@ apm_ioctl(struct file *filp, u_int cmd, u_long arg)
 		mutex_unlock(&state_lock);
 		break;
 	}
-	unlock_kernel();
 
 	return err;
 }
@@ -399,7 +397,7 @@ static const struct file_operations apm_bios_fops = {
 	.owner		= THIS_MODULE,
 	.read		= apm_read,
 	.poll		= apm_poll,
-	.unlocked_ioctl	= apm_ioctl,
+	.ioctl		= apm_ioctl,
 	.open		= apm_open,
 	.release	= apm_release,
 };

@@ -52,6 +52,26 @@
 #define EP3_IN		3
 #define EP_MASK		0xF
 
+// Missing definition 
+#ifdef CONFIG_DVFS_LIMIT
+enum {
+	DVFS_LOCK_TOKEN_1 = 0,	// MFC
+	DVFS_LOCK_TOKEN_2,	//	(FIMC)
+	DVFS_LOCK_TOKEN_3,	// SND_RP
+	DVFS_LOCK_TOKEN_4,	//	(TV)
+	DVFS_LOCK_TOKEN_5,	//	(early suspend)
+	DVFS_LOCK_TOKEN_6,	// APPS by sysfs
+	DVFS_LOCK_TOKEN_7,	// 	(TOUCH)
+	DVFS_LOCK_TOKEN_8,	// USB
+	DVFS_LOCK_TOKEN_9,	// BT
+	DVFS_LOCK_TOKEN_NUM
+};
+
+extern void s5pv210_lock_dvfs_high_level(uint nToken, uint perf_level);
+extern void s5pv210_unlock_dvfs_high_level(unsigned int nToken);
+#endif
+
+
 #if defined(DEBUG_S3C_UDC_SETUP) || defined(DEBUG_S3C_UDC_ISR)\
 	|| defined(DEBUG_S3C_UDC_OUT_EP)
 

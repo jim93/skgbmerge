@@ -71,6 +71,13 @@
 #define OFM_DEBUG 0
 #define OFM_DEBUG_DATA 0	//For Minimal DEBUG Messages Enable this tag NAGSM_Android_SEL_Kernel_Aakash_20100904
 
+
+// Definitions that compiler isnt reading
+#define GPIO_OJ_NRST		S5PV210_GPG3(2)
+#define GPIO_OJ_MOTION_C			S5PV210_GPJ3(3)
+#define GPIO_OJ_SHDN			S5PV210_GPJ4(4)
+#define GPIO_OJ_MOTION			S5PV210_MP04(7)
+
 static void ofm_motion_func(struct work_struct *work);
 
 struct ofm_pin{

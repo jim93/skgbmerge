@@ -33,7 +33,6 @@
 #include <linux/time.h>
 #include <linux/math64.h>
 #include <linux/smp_lock.h>
-#include <linux/slab.h>
 
 #include <asm/uaccess.h>
 #include <asm/sn/addrs.h>
@@ -547,7 +546,7 @@ static void mmtimer_tasklet(unsigned long data)
 {
 	int nodeid = data;
 	struct mmtimer_node *mn = &timers[nodeid];
-	struct mmtimer *x;
+	struct mmtimer *x = rb_entry(mn->next, struct mmtimer, list);
 	struct k_itimer *t;
 	unsigned long flags;
 

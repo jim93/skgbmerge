@@ -562,21 +562,15 @@ static void serio_add_port(struct serio *serio)
 	}
 
 	list_add_tail(&serio->node, &serio_list);
+
 	if (serio->start)
 		serio->start(serio);
+
 	error = device_add(&serio->dev);
 	if (error)
-		printk(KERN_ERR
-			"serio: device_add() failed for %s (%s), error: %d\n",
+		dev_err(&serio->dev,
+			"device_add() failed for %s (%s), error: %d\n",
 			serio->phys, serio->name, error);
-	else {
-		serio->registered = true;
-		error = sysfs_create_group(&serio->dev.kobj, &serio_id_attr_group);
-		if (error)
-			printk(KERN_ERR
-				"serio: sysfs_create_group() failed for %s (%s), error: %d\n",
-				serio->phys, serio->name, error);
-	}
 }
 
 /*
@@ -603,11 +597,8 @@ static void serio_destroy_port(struct serio *serio)
 		serio->parent = NULL;
 	}
 
-	if (serio->registered) {
-		sysfs_remove_group(&serio->dev.kobj, &serio_id_attr_group);
+	if (device_is_registered(&serio->dev))
 		device_del(&serio->dev);
-		serio->registered = false;
-	}
 
 	list_del_init(&serio->node);
 	serio_remove_pending_events(serio);
@@ -994,7 +985,7 @@ irqreturn_t serio_interrupt(struct serio *serio,
 
         if (likely(serio->drv)) {
                 ret = serio->drv->interrupt(serio, data, dfl);
-	} else if (!dfl && serio->registered) {
+	} else if (!dfl && device_is_registered(&serio->dev)) {
 		serio_rescan(serio);
 		ret = IRQ_HANDLED;
 	}

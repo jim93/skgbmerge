@@ -226,6 +226,10 @@ struct atkbd {
 	unsigned long event_jiffies;
 	struct mutex event_mutex;
 	unsigned long event_mask;
+
+	/* Serializes reconnect(), attr->set() and event work */
+	struct mutex mutex;
+
 };
 
 /*
@@ -1234,48 +1238,30 @@ static ssize_t atkbd_attr_show_helper(struct device *dev, char *buf,
 				ssize_t (*handler)(struct atkbd *, char *))
 {
 	struct serio *serio = to_serio_port(dev);
-	int retval;
+	struct atkbd *atkbd = serio_get_drvdata(serio);
 
-	retval = serio_pin_driver(serio);
-	if (retval)
-		return retval;
-
-	if (serio->drv != &atkbd_drv) {
-		retval = -ENODEV;
-		goto out;
-	}
-
-	retval = handler((struct atkbd *)serio_get_drvdata(serio), buf);
-
-out:
-	serio_unpin_driver(serio);
-	return retval;
+	return handler(atkbd, buf);
 }
 
 static ssize_t atkbd_attr_set_helper(struct device *dev, const char *buf, size_t count,
 				ssize_t (*handler)(struct atkbd *, const char *, size_t))
 {
 	struct serio *serio = to_serio_port(dev);
-	struct atkbd *atkbd;
+	struct atkbd *atkbd = serio_get_drvdata(serio);
 	int retval;
 
-	retval = serio_pin_driver(serio);
+	retval = mutex_lock_interruptible(&atkbd->mutex);
 	if (retval)
 		return retval;
 
-	if (serio->drv != &atkbd_drv) {
-		retval = -ENODEV;
-		goto out;
-	}
-
-	atkbd = serio_get_drvdata(serio);
 	atkbd_disable(atkbd);
 	retval = handler(atkbd, buf, count);
 	atkbd_enable(atkbd);
 
-out:
-	serio_unpin_driver(serio);
+	mutex_unlock(&atkbd->mutex);
+
 	return retval;
+
 }
 
 static ssize_t atkbd_show_extra(struct atkbd *atkbd, char *buf)
