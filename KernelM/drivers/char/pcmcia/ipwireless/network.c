@@ -21,7 +21,6 @@
 #include <linux/netdevice.h>
 #include <linux/ppp_channel.h>
 #include <linux/ppp_defs.h>
-#include <linux/slab.h>
 #include <linux/if_ppp.h>
 #include <linux/skbuff.h>
 

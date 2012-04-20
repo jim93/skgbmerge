@@ -18,6 +18,7 @@
 #include <linux/kernel.h>
 #include <linux/fb.h>
 #include <linux/console.h>
+#include <linux/slab.h>
 #include <linux/module.h>
 
 #define FB_SYSFS_FLAG_ATTR 1

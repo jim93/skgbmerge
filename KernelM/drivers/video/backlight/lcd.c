@@ -9,6 +9,7 @@
 #include <linux/init.h>
 #include <linux/device.h>
 #include <linux/lcd.h>
+#include <linux/slab.h>
 #include <linux/notifier.h>
 #include <linux/ctype.h>
 #include <linux/err.h>

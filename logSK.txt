@@ -1,8 +1,5 @@
-  CLEAN   /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelM
+  CLEAN   /home/j2/AndroidDev/SidekickGB/skgbmerge/KernelC
   CLEAN   arch/arm/kernel
-  CLEAN   drivers/char
-  CLEAN   kernel
-  CLEAN   lib
   CLEAN   usr
   CLEAN   .tmp_versions
   HOSTCC  scripts/basic/fixdep
@@ -16,6 +13,7 @@ scripts/kconfig/conf.c:307: warning: ignoring return value of ‘fgets’, decla
   HOSTCC  scripts/kconfig/kxgettext.o
   HOSTCC  scripts/kconfig/zconf.tab.o
   HOSTLD  scripts/kconfig/conf
+arch/arm/configs/sidekick_rev02gb_defconfig:1606:warning: override: reassigning to symbol USB_ANDROID_RNDIS_WCEIS
 #
 # configuration written to .config
 #

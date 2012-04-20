@@ -26,7 +26,6 @@
 #include <linux/uio.h>
 #include <linux/mutex.h>
 #include <linux/smp_lock.h>
-#include <linux/slab.h>
 #include <asm/io.h>
 #include <asm/uaccess.h>
 #include <asm/system.h>

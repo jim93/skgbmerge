@@ -1,7 +1,8 @@
 /* This file is auto generated, version 2 */
+/*  PREEMPT */
 #define UTS_MACHINE "arm"
-#define UTS_VERSION "#2 Thu Apr 19 23:13:59 EDT 2012"
-#define LINUX_COMPILE_TIME "23:13:59"
+#define UTS_VERSION "#2 PREEMPT Fri Apr 20 00:54:34 EDT 2012"
+#define LINUX_COMPILE_TIME "00:54:34"
 #define LINUX_COMPILE_BY "j2"
 #define LINUX_COMPILE_HOST "suzy-linuxlap"
 #define LINUX_COMPILE_DOMAIN "(none)"

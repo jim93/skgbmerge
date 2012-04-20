@@ -28,7 +28,6 @@
 #include <linux/page-flags.h>
 #include <linux/mm.h>
 #include "agp.h"
-#include "intel-agp.h"
 
 /*
  * The real differences to the generic AGP code is

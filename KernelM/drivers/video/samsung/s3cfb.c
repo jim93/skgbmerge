@@ -13,6 +13,7 @@
 #include <linux/module.h>
 #include <linux/kernel.h>
 #include <linux/errno.h>
+#include <linux/slab.h>
 #include <linux/clk.h>
 #include <linux/mutex.h>
 #include <linux/poll.h>
@@ -275,25 +276,44 @@ static int s3cfb_map_video_memory(struct fb_info *fb)
 {
 	struct fb_fix_screeninfo *fix = &fb->fix;
 	struct s3cfb_window *win = fb->par;
-	int reserved_size = 0;
+	struct s3cfb_global *fbdev =
+		platform_get_drvdata(to_platform_device(fb->device));
+	struct s3c_platform_fb *pdata = to_fb_plat(fbdev->dev);
 
-	if (win->owner == DMA_MEM_OTHER)
+	if (win->owner == DMA_MEM_OTHER) {
+		fix->smem_start = win->other_mem_addr;
+		fix->smem_len = win->other_mem_size;
+		return 0;
+	}
+
+	if (fb->screen_base)
 		return 0;
 
-	fix->smem_start = s3c_get_media_memory_bank(S3C_MDEV_FIMD, 1);
-	reserved_size = s3c_get_media_memsize_bank(S3C_MDEV_FIMD, 1);
-	fb->screen_base = ioremap_wc(fix->smem_start, reserved_size);
+	if (pdata && pdata->pmem_start && (pdata->pmem_size >= fix->smem_len)) {
+		fix->smem_start = pdata->pmem_start;
+		fb->screen_base = ioremap_wc(fix->smem_start, pdata->pmem_size);
+	} else
+		fb->screen_base = dma_alloc_writecombine(fbdev->dev,
+						 PAGE_ALIGN(fix->smem_len),
+						 (unsigned int *)
+						 &fix->smem_start, GFP_KERNEL);
 
 	if (!fb->screen_base)
 		return -ENOMEM;
-	else
-		dev_info(fbdev->dev, "[fb%d] dma: 0x%08x, cpu: 0x%08x, "
+
+	dev_info(fbdev->dev, "[fb%d] dma: 0x%08x, cpu: 0x%08x, "
 			 "size: 0x%08x\n", win->id,
 			 (unsigned int)fix->smem_start,
 			 (unsigned int)fb->screen_base, fix->smem_len);
 
 	memset(fb->screen_base, 0, fix->smem_len);
 	win->owner = DMA_MEM_FIMD;
+
+	/*
+	 *  Mark for GetLog (tkhwang)
+	 */
+
+   	frame_buf_mark.p_fb = pdata->pmem_start;
 
 	return 0;
 }

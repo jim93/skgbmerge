@@ -13,6 +13,7 @@
 #include <linux/module.h>
 #include <linux/string.h>
 #include <linux/fb.h>
+#include <linux/slab.h>
 #include <linux/vt_kern.h>
 #include <linux/console.h>
 #include <asm/types.h>

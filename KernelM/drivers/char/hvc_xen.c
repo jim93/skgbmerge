@@ -25,8 +25,6 @@
 #include <linux/types.h>
 
 #include <asm/xen/hypervisor.h>
-
-#include <xen/xen.h>
 #include <xen/page.h>
 #include <xen/events.h>
 #include <xen/interface/io/console.h>
@@ -122,7 +120,7 @@ static int read_console(uint32_t vtermno, char *buf, int len)
 	return recv;
 }
 
-static const struct hv_ops hvc_ops = {
+static struct hv_ops hvc_ops = {
 	.get_chars = read_console,
 	.put_chars = write_console,
 	.notifier_add = notifier_add_irq,
