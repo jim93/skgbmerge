@@ -42,7 +42,7 @@
 
 #include <asm/byteorder.h>
 #include <asm/dma.h>
-#include <linux/io.h>
+#include <asm/io.h>
 #include <asm/irq.h>
 #include <asm/system.h>
 #include <asm/unaligned.h>
@@ -83,6 +83,9 @@
 #define TEST_PACKET_SEL		0x4
 #define TEST_FORCE_ENABLE_SEL	0x5
 
+/* ************************************************************************** */
+/* IO
+ */
 
 typedef enum ep_type {
 	ep_control, ep_bulk_in, ep_bulk_out, ep_interrupt
@@ -127,16 +130,13 @@ struct s3c_udc {
 	unsigned char usb_address;
 
 	unsigned req_pending:1, req_std:1, req_config:1;
-
+	
+	// Used in GB version	
 	struct regulator *udc_vcc_d, *udc_vcc_a;
 	int udc_enabled;
 };
 
 extern struct s3c_udc *the_controller;
-extern void otg_phy_init(void);
-extern void otg_phy_off(void);
-extern struct usb_ctrlrequest usb_ctrl;
-extern struct i2c_driver fsa9480_i2c_driver;
 
 #define ep_is_in(EP)		(((EP)->bEndpointAddress&USB_DIR_IN) == USB_DIR_IN)
 #define ep_index(EP)		((EP)->bEndpointAddress&0xF)

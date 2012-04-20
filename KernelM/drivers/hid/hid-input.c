@@ -1,6 +1,6 @@
 /*
  *  Copyright (c) 2000-2001 Vojtech Pavlik
- *  Copyright (c) 2006-2010 Jiri Kosina
+ *  Copyright (c) 2006-2007 Jiri Kosina
  *
  *  HID to Linux Input mapping
  */
@@ -68,25 +68,22 @@ static const struct {
 #define map_key_clear(c)	hid_map_usage_clear(hidinput, usage, &bit, \
 		&max, EV_KEY, (c))
 
-static inline int match_scancode(unsigned int code, unsigned int scancode)
+static inline int match_scancode(int code, int scancode)
 {
 	if (scancode == 0)
 		return 1;
-
-	return (code & (HID_USAGE_PAGE | HID_USAGE)) == scancode;
+	return ((code & (HID_USAGE_PAGE | HID_USAGE)) == scancode);
 }
 
-static inline int match_keycode(unsigned int code, unsigned int keycode)
+static inline int match_keycode(int code, int keycode)
 {
 	if (keycode == 0)
 		return 1;
-
-	return code == keycode;
+	return (code == keycode);
 }
 
 static struct hid_usage *hidinput_find_key(struct hid_device *hid,
-					   unsigned int scancode,
-					   unsigned int keycode)
+		int scancode, int keycode)
 {
 	int i, j, k;
 	struct hid_report *report;
@@ -108,8 +105,8 @@ static struct hid_usage *hidinput_find_key(struct hid_device *hid,
 	return NULL;
 }
 
-static int hidinput_getkeycode(struct input_dev *dev,
-			       unsigned int scancode, unsigned int *keycode)
+static int hidinput_getkeycode(struct input_dev *dev, int scancode,
+				int *keycode)
 {
 	struct hid_device *hid = input_get_drvdata(dev);
 	struct hid_usage *usage;
@@ -122,12 +119,15 @@ static int hidinput_getkeycode(struct input_dev *dev,
 	return -EINVAL;
 }
 
-static int hidinput_setkeycode(struct input_dev *dev,
-			       unsigned int scancode, unsigned int keycode)
+static int hidinput_setkeycode(struct input_dev *dev, int scancode,
+				int keycode)
 {
 	struct hid_device *hid = input_get_drvdata(dev);
 	struct hid_usage *usage;
 	int old_keycode;
+
+	if (keycode < 0 || keycode > KEY_MAX)
+		return -EINVAL;
 
 	usage = hidinput_find_key(hid, scancode, 0);
 	if (usage) {
@@ -193,17 +193,12 @@ static void hidinput_configure_usage(struct hid_input *hidinput, struct hid_fiel
 		break;
 
 	case HID_UP_BUTTON:
-		code = ((usage->hid - 1) & HID_USAGE);
+		code = ((usage->hid - 1) & 0xf);
 
 		switch (field->application) {
 		case HID_GD_MOUSE:
 		case HID_GD_POINTER:  code += 0x110; break;
-		case HID_GD_JOYSTICK:
-				      if (code <= 0xf)
-					      code += BTN_JOYSTICK;
-				      else
-					      code += BTN_TRIGGER_HAPPY;
-				      break;
+		case HID_GD_JOYSTICK: code += 0x120; break;
 		case HID_GD_GAMEPAD:  code += 0x130; break;
 		default:
 			switch (field->physical) {
@@ -405,7 +400,6 @@ static void hidinput_configure_usage(struct hid_input *hidinput, struct hid_fiel
 		case 0x192: map_key_clear(KEY_CALC);		break;
 		case 0x194: map_key_clear(KEY_FILE);		break;
 		case 0x196: map_key_clear(KEY_WWW);		break;
-		case 0x199: map_key_clear(KEY_CHAT);		break;
 		case 0x19c: map_key_clear(KEY_LOGOFF);		break;
 		case 0x19e: map_key_clear(KEY_COFFEE);		break;
 		case 0x1a6: map_key_clear(KEY_HELP);		break;

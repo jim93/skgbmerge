@@ -84,7 +84,7 @@ static inline void s3c_udc_pre_setup(void)
 
 static int setdma_rx(struct s3c_ep *ep, struct s3c_request *req, int setNAK)
 {
-	u32 *buf, ctrl;
+		u32 *buf, ctrl;
 	u32 length, pktcnt;
 	u32 ep_num = ep_index(ep);
 
@@ -223,7 +223,7 @@ static void complete_rx(struct s3c_udc *dev, u8 ep_num)
 			if (!list_empty(&ep->queue)) {
 				req = list_entry(ep->queue.next, struct s3c_request, queue);
 				DEBUG_OUT_EP("%s: Next Rx request start...\n", __func__);
-				setdma_rx(ep, req, 0);
+				setdma_rx(ep, req);
 			}
 		}
 	}
