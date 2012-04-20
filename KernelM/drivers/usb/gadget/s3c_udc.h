@@ -114,6 +114,7 @@ struct s3c_ep {
 struct s3c_request {
 	struct usb_request req;
 	struct list_head queue;
+	unsigned char mapped;
 };
 
 struct s3c_udc {
@@ -129,6 +130,10 @@ struct s3c_udc {
 	unsigned char usb_address;
 
 	unsigned req_pending:1, req_std:1, req_config:1;
+	
+	// Used in GB version	
+	struct regulator *udc_vcc_d, *udc_vcc_a;
+	int udc_enabled;
 };
 
 extern struct s3c_udc *the_controller;

@@ -537,7 +537,8 @@ static void reconfig_usbd(void)
 #ifdef DED_TX_FIFO
 	int i;
 #endif
-	unsigned int uTemp = writel(CORE_SOFT_RESET, S3C_UDC_OTG_GRSTCTL);
+	unsigned int uTemp;
+	writel(CORE_SOFT_RESET, S3C_UDC_OTG_GRSTCTL);
 
 	writel(0<<15		/* PHY Low Power Clock sel*/
 		|1<<14		/* Non-Periodic TxFIFO Rewind Enable*/
@@ -1261,29 +1262,15 @@ static int s3c_udc_remove(struct platform_device *pdev)
 static int s3c_udc_suspend(struct platform_device *pdev, pm_message_t state)
 {
 	struct s3c_udc *dev = the_controller;
-	int i;
 
-	if (dev->driver) {
-		if (dev->driver->suspend)
-			dev->driver->suspend(&dev->gadget);
+	disable_irq(IRQ_OTG);
 
-#if 0
-		/* Terminate any outstanding requests  */
-		for (i = 0; i < S3C_MAX_ENDPOINTS; i++) {
-			struct s3c_ep *ep = &dev->ep[i];
-			if (ep->dev != NULL)
-				spin_lock(&ep->dev->lock);
-			ep->stopped = 1;
-			nuke(ep, -ESHUTDOWN);
-			if (ep->dev != NULL)
-			spin_unlock(&ep->dev->lock);
-		}
-		
-		disable_irq(IRQ_OTG);
-		udc_disable(dev);
-		otg_clock_enable(0);
-#endif
-	}
+	if (dev->driver && dev->driver->suspend)
+		dev->driver->suspend(&dev->gadget);
+
+	if (dev->udc_enabled)
+		usb_gadget_vbus_disconnect(&dev->gadget);
+
 	return 0;
 }
 

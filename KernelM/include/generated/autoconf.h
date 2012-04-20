@@ -1,7 +1,7 @@
 /*
  * Automatically generated C config: don't edit
  * Linux kernel version: 2.6.35.7
- * Thu Apr 19 21:26:47 2012
+ * Thu Apr 19 23:12:27 2012
  */
 #define AUTOCONF_INCLUDED
 #define CONFIG_RING_BUFFER 1
@@ -107,6 +107,7 @@
 #define CONFIG_ANDROID_TIMED_GPIO 1
 #define CONFIG_ARM 1
 #define CONFIG_LATENCYTOP 1
+#define CONFIG_INPUT_HALL 1
 #define CONFIG_ARM_L1_CACHE_SHIFT 6
 #define CONFIG_BT_RFCOMM_TTY 1
 #define CONFIG_CRYPTO_MANAGER_TESTS 1
@@ -632,6 +633,7 @@
 #define CONFIG_BLK_DEV_RAM 1
 #define CONFIG_NETFILTER_XT_MATCH_STATE 1
 #define CONFIG_BSD_DISKLABEL 1
+#define CONFIG_OFM_MOUSE 1
 #define CONFIG_IR_RC5_DECODER 1
 #define CONFIG_INET6_XFRM_MODE_BEET 1
 #define CONFIG_FB_CFB_COPYAREA 1
