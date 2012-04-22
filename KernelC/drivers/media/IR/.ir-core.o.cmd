@@ -1,0 +1,1 @@
+cmd_drivers/media/IR/ir-core.o := /opt/toolchains/arm-2009q3/bin/arm-none-eabi-ld -EL    -r -o drivers/media/IR/ir-core.o drivers/media/IR/ir-keytable.o drivers/media/IR/ir-sysfs.o drivers/media/IR/ir-raw-event.o drivers/media/IR/rc-map.o 
