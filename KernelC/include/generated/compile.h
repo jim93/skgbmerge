@@ -1,7 +1,7 @@
-/* This file is auto generated, version 3 */
+/* This file is auto generated, version 5 */
 #define UTS_MACHINE "arm"
-#define UTS_VERSION "#3 Sun Apr 22 15:15:08 EDT 2012"
-#define LINUX_COMPILE_TIME "15:15:08"
+#define UTS_VERSION "#5 Mon Apr 23 03:50:56 EDT 2012"
+#define LINUX_COMPILE_TIME "03:50:56"
 #define LINUX_COMPILE_BY "j2"
 #define LINUX_COMPILE_HOST "suzylap-linux"
 #define LINUX_COMPILE_DOMAIN "(none)"
