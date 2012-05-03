@@ -36,9 +36,13 @@
 /* for external use */
 
 unsigned long s3c_pm_flags;
+// new adds
+extern void s3c_config_sleep_gpio(void);
+extern void s5pv210_restore_eint_group(void);
 
 /* ---------------------------------------------- */
 extern unsigned int pm_debug_scratchpad;
+
 #include <linux/slab.h>
 #include <linux/debugfs.h>
 #include <linux/uaccess.h>
@@ -105,6 +109,7 @@ void __init pmstats_init(void)
 	if (pmstats_last)
 		debugfs_create_file("pmstats_last", 0444, NULL, pmstats_last, &pmstats_ops);
 }
+
 /* ---------------------------------------------- */
 
 /* Debug code:

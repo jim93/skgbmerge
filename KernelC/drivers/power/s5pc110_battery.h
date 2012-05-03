@@ -74,3 +74,6 @@ enum {
 
 #define RECHARGE_COND_VOLTAGE		4130000
 #define RECHARGE_COND_TIME		(30*1000)	/* 30 seconds */
+
+// Add another
+#include <linux/mfd/max8998-private.h>

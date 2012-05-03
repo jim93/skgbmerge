@@ -13,6 +13,9 @@
 #if defined(CONFIG_VT) && defined(CONFIG_VT_CONSOLE)
 #define SUSPEND_CONSOLE	(MAX_NR_CONSOLES-1)
 
+// attempt to define although should be in vt.h
+extern int vt_kmsg_redirect(int new);
+
 static int orig_fgconsole, orig_kmsg;
 
 int pm_prepare_console(void)

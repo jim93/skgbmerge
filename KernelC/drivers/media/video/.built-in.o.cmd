@@ -1,1 +1,0 @@
-cmd_drivers/media/video/built-in.o :=  /opt/toolchains/arm-2009q3/bin/arm-none-eabi-ld -EL    -r -o drivers/media/video/built-in.o drivers/media/video/videodev.o drivers/media/video/v4l2-int-device.o drivers/media/video/v4l2-common.o drivers/media/video/v4l1-compat.o drivers/media/video/samsung/built-in.o drivers/media/video/ir-kbd-i2c.o 

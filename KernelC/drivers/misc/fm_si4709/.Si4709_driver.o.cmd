@@ -1,1 +1,0 @@
-cmd_drivers/misc/fm_si4709/Si4709_driver.o := /opt/toolchains/arm-2009q3/bin/arm-none-eabi-ld -EL    -r -o drivers/misc/fm_si4709/Si4709_driver.o drivers/misc/fm_si4709/Si4709_dev.o drivers/misc/fm_si4709/Si4709_i2c_drv.o drivers/misc/fm_si4709/Si4709_main.o 

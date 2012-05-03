@@ -15,6 +15,7 @@ scripts/kconfig/conf -s arch/arm/Kconfig
   HOSTCC  scripts/kallsyms
   HOSTCC  scripts/conmakehash
   CC      scripts/mod/empty.o
+  HOSTCC  scripts/mod/mk_elfconfig
 make[1]: `include/generated/mach-types.h' is up to date.
   CC      kernel/bounds.s
   MKELF   scripts/mod/elfconfig.h
@@ -33,147 +34,145 @@ make[1]: `include/generated/mach-types.h' is up to date.
   CC      init/do_mounts_initrd.o
   CC      init/initramfs.o
   CC      init/calibrate.o
-  CC      init/version.o
   HOSTCC  usr/gen_init_cpio
+  CC      init/version.o
   CC      arch/arm/kernel/compat.o
   CC      arch/arm/kernel/elf.o
 In file included from init/main.c:86:
 include/linux/kernel_sec_common.h:46: warning: "S3C_PA_WDT" redefined
 arch/arm/mach-s5pv210/include/mach/map.h:212: note: this is the location of the previous definition
   GEN     usr/initramfs_data.cpio
-  AS      usr/initramfs_data.o
-  LD      usr/built-in.o
-  CC      arch/arm/mm/dma-mapping.o
   AS      arch/arm/kernel/entry-armv.o
-  CC      arch/arm/mm/extable.o
+  AS      usr/initramfs_data.o
   AS      arch/arm/kernel/entry-common.o
-  CC      arch/arm/common/vic.o
+  LD      usr/built-in.o
   CC      arch/arm/kernel/irq.o
   CC      arch/arm/kernel/process.o
+  CC      arch/arm/mm/dma-mapping.o
   CC      arch/arm/kernel/ptrace.o
+  CC      arch/arm/mm/extable.o
+  CC      arch/arm/common/vic.o
   CC      arch/arm/mm/fault.o
-  CC      arch/arm/kernel/return_address.o
-  LD      init/mounts.o
-  LD      init/built-in.o
-arch/arm/kernel/return_address.c:61: warning: #warning "TODO: return_address should use unwind tables"
   CC      arch/arm/mach-s5pv210/pm.o
-  CC      arch/arm/plat-s5p/dev-uart.o
 In file included from arch/arm/kernel/process.c:40:
 include/linux/kernel_sec_common.h:46: warning: "S3C_PA_WDT" redefined
 arch/arm/mach-s5pv210/include/mach/map.h:212: note: this is the location of the previous definition
-  CC      arch/arm/kernel/setup.o
-  LD      arch/arm/common/built-in.o
   AS      arch/arm/mach-s5pv210/sleep.o
   CC      arch/arm/mm/init.o
-  CC      arch/arm/plat-s5p/cpu.o
+  LD      init/mounts.o
+  LD      init/built-in.o
   CC      arch/arm/mach-s5pv210/power-domain.o
-  CC      arch/arm/plat-s5p/clock.o
-  CC      arch/arm/plat-samsung/init.o
-  CC      arch/arm/plat-samsung/clock.o
-  CC      arch/arm/plat-samsung/pwm-clock.o
-arch/arm/mm/init.c: In function 'mem_init':
-arch/arm/mm/init.c:644: warning: format '%08lx' expects type 'long unsigned int', but argument 12 has type 'unsigned int'
-  CC      arch/arm/plat-samsung/gpio.o
-  CC      arch/arm/plat-s5p/irq.o
+  LD      arch/arm/common/built-in.o
   CC      arch/arm/mach-s5pv210/dev-audio.o
   CC      arch/arm/mm/iomap.o
-  CC      arch/arm/plat-samsung/gpio-config.o
-  CC      arch/arm/mm/fault-armv.o
-  CC      arch/arm/plat-s5p/devs.o
-  CC      arch/arm/mm/flush.o
   CC      arch/arm/mach-s5pv210/adc.o
-  CC      arch/arm/kernel/signal.o
-  CC      arch/arm/kernel/sys_arm.o
-  CC      arch/arm/plat-samsung/gpiolib.o
-  CC      arch/arm/plat-samsung/clock-clksrc.o
-arch/arm/plat-s5p/devs.c:58: warning: 'usb_functions_rndis' defined but not used
-  CC      arch/arm/mm/ioremap.o
-  CC      arch/arm/plat-s5p/bootmem.o
-  CC      arch/arm/plat-samsung/irq-uart.o
+arch/arm/mm/init.c: In function 'mem_init':
+arch/arm/mm/init.c:644: warning: format '%08lx' expects type 'long unsigned int', but argument 12 has type 'unsigned int'
   CC      arch/arm/mach-s5pv210/setup-fb.o
-  CC      arch/arm/plat-samsung/irq-vic-timer.o
-  CC      arch/arm/mm/mmap.o
-  CC      arch/arm/mm/pgd.o
-  CC      arch/arm/plat-samsung/dev-i2c0.o
+  CC      arch/arm/kernel/return_address.o
+  CC      arch/arm/kernel/setup.o
   CC      arch/arm/mach-s5pv210/cpuidle.o
-  CC      arch/arm/plat-s5p/pm.o
-  CC      arch/arm/plat-s5p/irq-pm.o
-  CC      arch/arm/plat-s5p/hr-time-rtc.o
-  CC      arch/arm/plat-samsung/dev-uart.o
-  CC      arch/arm/kernel/stacktrace.o
-  CC      arch/arm/mm/mmu.o
+  CC      arch/arm/plat-s5p/dev-uart.o
+arch/arm/kernel/return_address.c:61: warning: #warning "TODO: return_address should use unwind tables"
+  CC      arch/arm/plat-s5p/cpu.o
+  CC      arch/arm/plat-s5p/clock.o
+  CC      arch/arm/plat-samsung/init.o
+  CC      arch/arm/kernel/signal.o
+  CC      arch/arm/mm/fault-armv.o
+  CC      arch/arm/mm/flush.o
+  CC      arch/arm/plat-s5p/irq.o
   AS      arch/arm/mach-s5pv210/didle.o
-  CC      arch/arm/kernel/time.o
-  CC      arch/arm/kernel/traps.o
-arch/arm/plat-s5p/pm.c:259: warning: 's3c_pm_check_resume_pin' defined but not used
-  CC      arch/arm/plat-samsung/pm.o
-  CC      arch/arm/plat-samsung/pm-gpio.o
   LD      arch/arm/mach-s5pv210/built-in.o
-  CC      arch/arm/kernel/armksyms.o
+  CC      arch/arm/kernel/sys_arm.o
+  CC      arch/arm/kernel/stacktrace.o
+  CC      arch/arm/plat-s5p/devs.o
+  CC      arch/arm/plat-samsung/clock.o
+  CC      arch/arm/plat-samsung/pwm-clock.o
+  CC      arch/arm/mm/ioremap.o
+  CC      arch/arm/mm/mmap.o
+arch/arm/plat-s5p/devs.c:58: warning: 'usb_functions_rndis' defined but not used
+  CC      arch/arm/kernel/time.o
   CC      arch/arm/nwfpe/fpa11.o
+  CC      arch/arm/plat-s5p/bootmem.o
+  CC      arch/arm/kernel/traps.o
+  CC      arch/arm/kernel/armksyms.o
   CC      arch/arm/nwfpe/fpa11_cpdo.o
-  CC      arch/arm/mm/vmregion.o
-arch/arm/plat-samsung/pm.c:285: warning: 's3c_pm_show_resume_irqs' defined but not used
+  CC      arch/arm/plat-samsung/gpio.o
   CC      arch/arm/nwfpe/fpa11_cpdt.o
-  CC      arch/arm/mm/proc-syms.o
-  CC      arch/arm/kernel/module.o
-  CC      arch/arm/mm/alignment.o
-  LD      arch/arm/plat-samsung/built-in.o
-  LD      arch/arm/plat-s5p/built-in.o
-  CC      arch/arm/kernel/sys_oabi-compat.o
-  CC      arch/arm/vfp/vfpmodule.o
-  AS      arch/arm/vfp/entry.o
-  CC      kernel/sched.o
-  CC      arch/arm/kernel/unwind.o
+  CC      arch/arm/plat-samsung/gpio-config.o
+  CC      arch/arm/plat-s5p/pm.o
+  CC      arch/arm/mm/pgd.o
+  CC      arch/arm/plat-s5p/irq-pm.o
   CC      arch/arm/nwfpe/fpa11_cprt.o
-  CC      mm/bootmem.o
-  CC      mm/filemap.o
+  CC      arch/arm/plat-s5p/hr-time-rtc.o
+  CC      arch/arm/mm/mmu.o
+  CC      arch/arm/mm/vmregion.o
+  CC      arch/arm/plat-samsung/gpiolib.o
+arch/arm/plat-s5p/pm.c:259: warning: 's3c_pm_check_resume_pin' defined but not used
   CC      arch/arm/nwfpe/fpmodule.o
-  AS      arch/arm/vfp/vfphw.o
+  CC      arch/arm/nwfpe/fpopcode.o
+  CC      arch/arm/nwfpe/softfloat.o
+  CC      arch/arm/plat-samsung/clock-clksrc.o
+  CC      arch/arm/mm/proc-syms.o
+  CC      arch/arm/plat-samsung/irq-uart.o
+  CC      arch/arm/kernel/module.o
+  CC      arch/arm/kernel/sys_oabi-compat.o
+  CC      arch/arm/kernel/unwind.o
+  CC      arch/arm/vfp/vfpmodule.o
+  CC      arch/arm/plat-samsung/irq-vic-timer.o
+  CC      arch/arm/plat-samsung/dev-i2c0.o
+  LD      arch/arm/plat-s5p/built-in.o
+WARNING: arch/arm/plat-s5p/built-in.o(.data+0x1ee4): Section mismatch in reference from the variable s5p_systimer to the function .init.text:s5p_timer_init()
+The variable s5p_systimer references
+the function __init s5p_timer_init()
+If the reference is valid then annotate the
+variable with __init* or __refdata (see linux/init.h) or name the variable:
+*_template, *_timer, *_sht, *_ops, *_probe, *_probe_one, *_console, 
+
+  CC      arch/arm/mm/alignment.o
   AS      arch/arm/mm/abort-ev7.o
-  CC      arch/arm/vfp/vfpsingle.o
+  AS      arch/arm/vfp/entry.o
   AS      arch/arm/mm/pabort-v7.o
+  CC      arch/arm/plat-samsung/dev-uart.o
+  AS      arch/arm/vfp/vfphw.o
   AS      arch/arm/mm/cache-v7.o
+  CC      arch/arm/vfp/vfpsingle.o
+  CC      arch/arm/vfp/vfpdouble.o
+  CC      arch/arm/nwfpe/single_cpdo.o
+  CC      arch/arm/plat-samsung/pm.o
+  CC      arch/arm/nwfpe/double_cpdo.o
+  CC      arch/arm/kernel/pmu.o
+  AS      arch/arm/nwfpe/entry.o
+  CC      arch/arm/plat-samsung/pm-gpio.o
+  CC      arch/arm/kernel/io.o
+arch/arm/plat-samsung/pm.c:290: warning: 's3c_pm_show_resume_irqs' defined but not used
+  CC      arch/arm/mm/copypage-v6.o
+  AS      arch/arm/kernel/head.o
+  CC      kernel/sched.o
+  CC      arch/arm/kernel/init_task.o
+  LDS     arch/arm/kernel/vmlinux.lds
+  CC      mm/bootmem.o
+  LD      arch/arm/plat-samsung/built-in.o
+  CC      arch/arm/mm/context.o
+  AS      arch/arm/mm/tlb-v7.o
+  AS      arch/arm/mm/proc-v7.o
 In file included from kernel/sched.c:86:
 include/linux/kernel_sec_common.h:46: warning: "S3C_PA_WDT" redefined
 arch/arm/mach-s5pv210/include/mach/map.h:212: note: this is the location of the previous definition
-  CC      arch/arm/mm/copypage-v6.o
-  CC      arch/arm/mm/context.o
+  CC      kernel/fork.o
+  CC      arch/arm/nwfpe/extended_cpdo.o
+  LD      arch/arm/mm/built-in.o
+  LD      arch/arm/kernel/built-in.o
+  CC      kernel/exec_domain.o
 kernel/sched.c: In function 'sched_init':
 kernel/sched.c:7520: warning: ISO C90 forbids mixed declarations and code
 kernel/sched.c:7521: warning: initialization from incompatible pointer type
-  CC      arch/arm/kernel/pmu.o
-  CC      arch/arm/nwfpe/fpopcode.o
-  CC      arch/arm/nwfpe/softfloat.o
-  CC      arch/arm/kernel/io.o
-  CC      arch/arm/nwfpe/single_cpdo.o
-  AS      arch/arm/mm/tlb-v7.o
-  CC      kernel/fork.o
-  AS      arch/arm/mm/proc-v7.o
-  CC      kernel/exec_domain.o
-  LD      arch/arm/mm/built-in.o
-  AS      arch/arm/kernel/head.o
-  CC      arch/arm/kernel/init_task.o
-  CC      fs/open.o
-  CC      arch/arm/vfp/vfpdouble.o
-  LDS     arch/arm/kernel/vmlinux.lds
-  CC      fs/read_write.o
-  LD      arch/arm/kernel/built-in.o
-  CC      mm/mempool.o
-  CC      arch/arm/nwfpe/double_cpdo.o
-  CC      mm/oom_kill.o
-  AS      arch/arm/nwfpe/entry.o
-  CC      arch/arm/nwfpe/extended_cpdo.o
-  LD      arch/arm/vfp/vfp.o
-  CC      mm/fadvise.o
-  LD      arch/arm/vfp/built-in.o
-  CC      fs/file_table.o
-  CC      fs/super.o
-  CC      ipc/util.o
-  CC      ipc/msgutil.o
   CC      kernel/panic.o
-  CC      mm/maccess.o
   CC      kernel/printk.o
+  LD      arch/arm/vfp/vfp.o
+  LD      arch/arm/vfp/built-in.o
+  CC      mm/filemap.o
+  CC      kernel/cpu.o
 In file included from kernel/panic.c:27:
 include/linux/kernel_sec_common.h:46: warning: "S3C_PA_WDT" redefined
 arch/arm/mach-s5pv210/include/mach/map.h:212: note: this is the location of the previous definition
@@ -182,612 +181,624 @@ kernel/panic.c:87: warning: unused variable 'i'
 kernel/panic.c:195: warning: 'noreturn' function does return
 kernel/panic.c: At top level:
 kernel/panic.c:49: warning: 'panic_blink_one_second' defined but not used
-  CC      mm/page_alloc.o
-  CC      mm/page-writeback.o
-  CC      ipc/msg.o
-  CC      fs/char_dev.o
-  CC      security/keys/gc.o
-  CC      security/keys/key.o
+  CC      mm/mempool.o
+  CC      mm/oom_kill.o
+  CC      kernel/exit.o
+  CC      mm/fadvise.o
+  CC      mm/maccess.o
+  CC      kernel/itimer.o
   LD      arch/arm/nwfpe/nwfpe.o
-  CC      fs/stat.o
+  CC      mm/page_alloc.o
+  TIMEC   kernel/timeconst.h
   LD      arch/arm/nwfpe/built-in.o
-  CC      fs/exec.o
-  CC      ipc/sem.o
-  CC      kernel/cpu.o
-  CC      crypto/api.o
+  CC      fs/open.o
+  CC      kernel/softirq.o
+  CC      ipc/util.o
+  CC      mm/page-writeback.o
+  CC      fs/read_write.o
+  CC      fs/file_table.o
+  CC      ipc/msgutil.o
+  CC      fs/super.o
   CC      mm/readahead.o
   CC      mm/swap.o
+  CC      ipc/msg.o
+  CC      mm/truncate.o
+  CC      ipc/sem.o
+  CC      security/keys/gc.o
+  CC      ipc/shm.o
+  CC      fs/char_dev.o
+  CC      security/keys/key.o
+  CC      ipc/ipcns_notifier.o
+  CC      crypto/api.o
+  CC      ipc/syscall.o
+  CC      mm/vmscan.o
+  CC      fs/stat.o
+  CC      ipc/ipc_sysctl.o
+  CC      kernel/resource.o
   CC      security/keys/keyring.o
   CC      crypto/cipher.o
-  CC      kernel/exit.o
-  CC      kernel/itimer.o
-  CC      ipc/shm.o
-  CC      fs/pipe.o
-  CC      mm/truncate.o
-  CC      crypto/compress.o
   CC      security/keys/keyctl.o
-  CC      crypto/algapi.o
-  CC      crypto/scatterwalk.o
-  TIMEC   kernel/timeconst.h
   CC      security/keys/permission.o
-  CC      mm/vmscan.o
-  CC      ipc/ipcns_notifier.o
+  LD      ipc/built-in.o
+  CC      crypto/compress.o
+  CC      security/commoncap.o
+  CC      fs/exec.o
+  CC      crypto/algapi.o
   CC      mm/shmem.o
-  CC      mm/prio_tree.o
-  CC      fs/namei.o
+  CC      kernel/sysctl.o
+  CC      crypto/scatterwalk.o
   CC      security/keys/process_keys.o
-  CC      ipc/syscall.o
-  CC      security/keys/request_key.o
-  CC      kernel/softirq.o
   CC      crypto/proc.o
-  CC      ipc/ipc_sysctl.o
+  CC      kernel/sysctl_binary.o
+  CC      kernel/capability.o
   CC      crypto/ablkcipher.o
   CC      crypto/blkcipher.o
+  CC      security/keys/request_key.o
   CC      security/keys/request_key_auth.o
-  LD      ipc/built-in.o
-  CC      security/keys/user_defined.o
-  CC      kernel/resource.o
-  CC      kernel/sysctl.o
-  CC      security/keys/proc.o
-  CC      kernel/sysctl_binary.o
+  CC      fs/pipe.o
+  CC      fs/namei.o
   CC      crypto/ahash.o
-  CC      security/keys/sysctl.o
-  CC      kernel/capability.o
+  CC      mm/prio_tree.o
   CC      mm/util.o
-  CC      mm/mmzone.o
-  LD      security/keys/built-in.o
-  CC      security/commoncap.o
-  CC      fs/fcntl.o
-  CC      security/min_addr.o
-  CC      crypto/shash.o
-  CC      mm/vmstat.o
+  CC      security/keys/user_defined.o
   CC      kernel/ptrace.o
   CC      kernel/timer.o
-  CC      mm/backing-dev.o
-  CC      fs/ioctl.o
   CC      kernel/user.o
-  LD      security/built-in.o
-  CC      mm/page_isolation.o
-  CC      block/elevator.o
+  CC      security/keys/proc.o
+  CC      crypto/shash.o
   CC      crypto/algboss.o
+  CC      security/keys/sysctl.o
+  CC      fs/fcntl.o
+  CC      block/elevator.o
+  CC      mm/mmzone.o
+  LD      security/keys/built-in.o
+  CC      security/min_addr.o
+  CC      mm/vmstat.o
+  CC      mm/backing-dev.o
+  CC      crypto/testmgr.o
+  CC      crypto/crypto_wq.o
+  CC      mm/page_isolation.o
+  CC      mm/mm_init.o
+  CC      kernel/signal.o
+  LD      security/built-in.o
+  CC      fs/ioctl.o
+  LD      drivers/auxdisplay/built-in.o
+  CC      drivers/base/core.o
+  CC      drivers/block/brd.o
   CC      block/blk-core.o
   CC      block/blk-tag.o
-  CC      block/blk-sysfs.o
+  CC      mm/mmu_context.o
   CC      fs/readdir.o
-  CC      mm/mm_init.o
-  CC      crypto/testmgr.o
-  CC      crypto/crmake[1]: *** [kernel/signal.o] Terminated
-make[1]: *** [mm/vmstat.o] Terminated
-make[1]: *** [fs/readdir.o] Terminated
-make: *** [kernel] Terminated
-make: *** [mm] Terminated
-make[1]: *** [crypto/shash.o] Terminated
-make[1]: make[2]: k/blk-core.o] Terminated
-*** [drivers/base/core.o] Terminated
-make[1]: *** [drivers/base] Terminated
-make: *** [fs] Terminated
-make: *** [crypto] Terminated
-make: *** [block] Terminated
-make: *** [drivers] Terminated
-/blk-barrier.o
-  LD      crypto/crypto_hash.o
-  CC      sound/sound_core.o
-  CC      crypto/pcompress.o
-  LD      sound/arm/built-in.o
-  LD      sound/atmel/built-in.o
-  CC      drivers/block/brd.o
-  CC      sound/core/memalloc.o
-  LD      crypto/cryptomgr.o
-  CC      crypto/hmac.o
-  CC      block/blk-settings.o
-  CC      kernel/workqueue.o
-  CC      drivers/base/sys.o
-  CC      sound/core/pcm.o
-  CC      crypto/crypto_null.o
+  CC      block/blk-sysfs.o
   CC      drivers/block/loop.o
-  CC      block/blk-ioc.o
+  CC      drivers/base/sys.o
+  CC      mm/highmem.o
+  CC      fs/select.o
+  CC      crypto/aead.o
+  CC      fs/fifo.o
   CC      drivers/base/bus.o
-  CC      crypto/md5.o
-  CC      mm/mincore.o
-  CC      fs/inode.o
-  CC      kernel/pid.o
-  CC      block/blk-map.o
-  CC      sound/core/pcm_native.o
-  CC      crypto/sha1_generic.o
+  CC      mm/madvise.o
   CC      drivers/base/dd.o
-  CC      mm/mlock.o
-  CC      block/blk-exec.o
-  CC      crypto/gf128mul.o
-  CC      kernel/rcupdate.o
+  CC      kernel/sys.o
+  LD      crypto/crypto_blkcipher.o
+  CC      crypto/chainiv.o
   LD      drivers/block/built-in.o
-  CC      kernel/extable.o
+  CC      crypto/eseqiv.o
+  CC      mm/memory.o
+  CC      fs/dcache.o
   CC      drivers/base/driver.o
   CC      drivers/bluetooth/hci_ldisc.o
-  CC      block/blk-merge.o
-  CC      kernel/params.o
-  CC      mm/mmap.o
-  CC      fs/attr.o
-  CC      drivers/base/class.o
-  CC      fs/bad_inode.o
-  CC      crypto/ecb.o
-  CC      block/blk-softirq.o
-  CC      kernel/posix-timers.o
-  CC      drivers/base/platform.o
   CC      drivers/bluetooth/hci_h4.o
-  CC      crypto/cbc.o
-  CC      fs/file.o
-  CC      block/blk-timeout.o
-  CC      crypto/cts.o
+  CC      block/blk-barrier.o
+  CC      drivers/base/class.o
+  CC      crypto/seqiv.o
+  CC      drivers/base/platform.o
+  LD      crypto/crypto_hash.o
+  CC      crypto/pcompress.o
+  CC      block/blk-settings.o
+  CC      kernel/kmod.o
+  CC      kernel/workqueue.o
   LD      drivers/bluetooth/bthid/built-in.o
   CC [M]  drivers/bluetooth/bthid/bthid.o
-  CC      drivers/base/cpu.o
-  CC      kernel/kthread.o
-  CC      block/blk-iopoll.o
-  CC      sound/core/pcm_lib.o
-  CC      fs/filesystems.o
-  CC      mm/mprotect.o
-  CC      drivers/base/firmware.o
-  CC      crypto/ctr.o
+  LD      crypto/cryptomgr.o
+  CC      crypto/hmac.o
+  CC      crypto/crypto_null.o
   LD      drivers/bluetooth/hci_uart.o
   LD      drivers/bluetooth/built-in.o
-  CC      crypto/cryptd.o
-  CC      kernel/wait.o
-  CC      drivers/base/init.o
-  CC      block/blk-lib.o
-  CC      drivers/base/map.o
-  CC      fs/namespace.o
-  CC      mm/mremap.o
-  CC      mm/msync.o
-  CC      kernel/kfifo.o
-  CC      drivers/base/devres.o
-  CC      block/ioctl.o
-  CC      crypto/des_generic.o
-  CC      fs/seq_file.o
-  CC      drivers/base/attribute_container.o
-  CC      mm/rmap.o
-  CC      kernel/sys_ni.o
-  CC      kernel/posix-cpu-timers.o
-  CC      block/genhd.o
-  CC      sound/core/pcm_timer.o
-  CC      drivers/base/transport_class.o
-  CC      drivers/base/power/sysfs.o
-  CC      drivers/base/power/main.o
-  CC      sound/core/pcm_misc.o
-  CC      drivers/base/dma-mapping.o
-  CC      fs/xattr.o
-  CC      fs/libfs.o
-  CC      mm/vmalloc.o
-  CC      kernel/mutex.o
-  CC      sound/core/pcm_memory.o
-  CC      block/scsi_ioctl.o
-  CC      drivers/base/power/generic_ops.o
-  CC      kernel/hrtimer.o
-  CC      block/noop-iosched.o
-  LD      drivers/base/power/built-in.o
-  CC      drivers/base/dma-coherent.o
-  CC      sound/core/timer.o
-  CC      fs/fs-writeback.o
-  CC      fs/pnode.o
-  CC      drivers/base/firmware_class.o
-  CC      block/deadline-iosched.o
-  CC      block/cfq-iosched.o
-  CC      kernel/rwsem.o
-  CC      mm/pagewalk.o
-  CC      drivers/base/module.o
-  CC      fs/drop_caches.o
-  CC      fs/splice.o
-  CC      kernel/nsproxy.o
-  LD      drivers/base/built-in.o
+  CC      crypto/md5.o
+  CC      block/blk-ioc.o
+  CC      drivers/base/cpu.o
+  CC      fs/inode.o
   LD      drivers/cdrom/built-in.o
-  CC      drivers/char/mem.o
-  CC      mm/init-mm.o
-  CC      drivers/char/random.o
-  CC      mm/page_io.o
-  CC      crypto/twofish_common.o
-  CC      sound/core/sound.o
-drivers/char/random.c:1251: warning: 'uuid_strategy' defined but not used
-  CC      kernel/srcu.o
-  CC      mm/swap_state.o
-  CC      mm/swapfile.o
-  CC      kernel/semaphore.o
-  CC      sound/core/init.o
-  CC      drivers/char/tty_io.o
-  CC      drivers/char/n_tty.o
-  CC      kernel/notifier.o
-  CC      fs/sync.o
-  LD      block/built-in.o
-  CC      kernel/ksysfs.o
-  CC      mm/thrash.o
-  CC      sound/core/memory.o
-  CC      kernel/pm_qos_params.o
-  CC      fs/utimes.o
-  CC      kernel/sched_clock.o
-  CC      sound/core/info.o
-  CC      crypto/aes_generic.o
-  CC      crypto/arc4.o
-  CC      fs/stack.o
-  CC      kernel/cred.o
-  CC      fs/fs_struct.o
-  CC      kernel/async.o
-  CC      kernel/range.o
-  CC      drivers/char/tty_ioctl.o
-  CC      mm/dmapool.o
-  CC      sound/core/control.o
-  CC      sound/core/misc.o
-  CC      fs/statfs.o
-  CC      sound/core/device.o
-  CC      kernel/groups.o
+  CC      mm/mincore.o
+  CC      mm/mlock.o
+  CC      sound/sound_core.o
+  CC      kernel/pid.o
+  CC      drivers/base/firmware.o
+  CC      crypto/sha1_generic.o
+  CC      block/blk-map.o
+  LD      sound/arm/built-in.o
+  LD      sound/atmel/built-in.o
+  CC      sound/core/memalloc.o
+  CC      drivers/base/init.o
+  CC      crypto/gf128mul.o
+  CC      crypto/ecb.o
+  CC      drivers/base/map.o
+  CC      mm/mmap.o
+  CC      block/blk-exec.o
+  CC      sound/core/pcm.o
+  CC      mm/mprotect.o
+  CC      drivers/base/devres.o
+  CC      kernel/rcupdate.o
+  CC      block/blk-merge.o
+  CC      fs/attr.o
+  CC      kernel/extable.o
+  CC      drivers/base/attribute_container.o
+  CC      crypto/cbc.o
+  CC      crypto/cts.o
+  CC      kernel/params.o
+  CC      fs/bad_inode.o
+  CC      drivers/base/transport_class.o
+  CC      sound/core/pcm_native.o
+  CC      sound/core/pcm_lib.o
+  CC      block/blk-softirq.o
+  CC      drivers/base/power/sysfs.o
+  CC      fs/file.o
+  CC      crypto/ctr.o
+  CC      mm/mremap.o
+  CC      drivers/base/power/main.o
+  CC      block/blk-timeout.o
+  CC      kernel/posix-timers.o
+  CC      crypto/cryptd.o
+  CC      fs/filesystems.o
+  CC      block/blk-iopoll.o
+  CC      mm/msync.o
+  CC      drivers/base/power/generic_ops.o
+  CC      kernel/kthread.o
+  CC      fs/namespace.o
+  CC      mm/rmap.o
+  CC      block/blk-lib.o
+  CC      crypto/des_generic.o
+  LD      drivers/base/power/built-in.o
+  CC      drivers/base/dma-mapping.o
+  CC      kernel/wait.o
+  CC      kernel/kfifo.o
+  CC      drivers/base/dma-coherent.o
+  CC      block/ioctl.o
+  CC      drivers/base/firmware_class.o
+  CC      sound/core/pcm_timer.o
   LD      sound/drivers/mpu401/built-in.o
   LD      sound/drivers/opl3/built-in.o
+  CC      mm/vmalloc.o
+  CC      kernel/sys_ni.o
+  CC      kernel/posix-cpu-timers.o
   LD      sound/drivers/opl4/built-in.o
   LD      sound/drivers/pcsp/built-in.o
   LD      sound/drivers/vx/built-in.o
   LD      sound/drivers/built-in.o
+  CC      kernel/mutex.o
+  CC      block/genhd.o
+  CC      sound/core/pcm_misc.o
+  CC      drivers/base/module.o
+  CC      fs/seq_file.o
+  CC      sound/core/pcm_memory.o
+  CC      block/scsi_ioctl.o
+  LD      drivers/base/built-in.o
+  CC      drivers/char/mem.o
+  CC      kernel/hrtimer.o
+  CC      kernel/rwsem.o
+  CC      sound/core/timer.o
+  CC      mm/pagewalk.o
+  CC      fs/xattr.o
+  CC      mm/init-mm.o
+  CC      block/noop-iosched.o
+  CC      block/deadline-iosched.o
+  CC      drivers/char/random.o
+  CC      mm/page_io.o
+  CC      crypto/twofish.o
+drivers/char/random.c:1251: warning: 'uuid_strategy' defined but not used
+  CC      kernel/nsproxy.o
+  CC      mm/swap_state.o
+  CC      fs/libfs.o
+  CC      block/cfq-iosched.o
+  CC      drivers/char/tty_io.o
+  CC      crypto/twofish_common.o
+  CC      mm/swapfile.o
+  CC      kernel/srcu.o
+  CC      mm/thrash.o
+  CC      sound/core/sound.o
+  CC      kernel/semaphore.o
+  CC      kernel/notifier.o
+  CC      fs/fs-writeback.o
+  CC      sound/core/init.o
+  CC      mm/dmapool.o
+  CC      kernel/ksysfs.o
+  CC      kernel/pm_qos_params.o
+  CC      kernel/sched_clock.o
+  CC      drivers/char/n_tty.o
+  CC      fs/pnode.o
+  CC      sound/core/memory.o
   CC      mm/ashmem.o
-  CC      crypto/crc32c.o
-  CC      fs/buffer.o
-  CC      drivers/char/tty_ldisc.o
-  CC      drivers/char/tty_buffer.o
+  CC      kernel/cred.o
+  LD      block/built-in.o
   CC      mm/slub.o
+  CC      crypto/aes_generic.o
+  CC      fs/drop_caches.o
+  CC      sound/core/info.o
+  CC      crypto/arc4.o
+  LD      drivers/clocksource/built-in.o
+  CC      mm/percpu_up.o
+  CC      fs/splice.o
+  CC      fs/sync.o
+  CC      kernel/async.o
+  CC      fs/utimes.o
+  CC      sound/core/control.o
+  CC      drivers/char/tty_ioctl.o
+  CC      sound/core/misc.o
+  CC      drivers/cpuidle/cpuidle.o
+  CC      kernel/range.o
+  CC      kernel/groups.o
+  CC      crypto/crc32c.o
+  CC      drivers/cpuidle/driver.o
+  CC      drivers/char/tty_ldisc.o
   CC      crypto/authenc.o
-  CC      kernel/freezer.o
-  CC      kernel/sysctl_check.o
-  CC      sound/core/jack.o
-  LD      firmware/built-in.o
   CC      crypto/rng.o
+  CC      drivers/cpuidle/governor.o
+  CC      fs/stack.o
+  CC      kernel/freezer.o
+  CC      drivers/cpuidle/sysfs.o
+  CC      fs/fs_struct.o
+  CC      drivers/cpuidle/governors/ladder.o
+  CC      sound/core/device.o
+  CC      drivers/cpuidle/governors/menu.o
+  CC      drivers/char/tty_buffer.o
+  CC      kernel/sysctl_check.o
+  CC      kernel/stacktrace.o
+  CC      fs/statfs.o
+  LD      mm/built-in.o
+  CC      fs/buffer.o
+  CC      crypto/krng.o
+  CC      sound/core/jack.o
+  LD      sound/i2c/other/built-in.o
+  LD      sound/i2c/built-in.o
+  LD      drivers/crypto/built-in.o
+  CC      kernel/irq/handle.o
+  LD      drivers/cpuidle/governors/built-in.o
+  LD      drivers/cpuidle/built-in.o
+  CC      kernel/power/main.o
   CC      drivers/char/tty_port.o
   CC      drivers/char/pty.o
-  CC      fs/bio.o
-  CC      crypto/krng.o
+  CC      crypto/ansi_cprng.o
+In file included from kernel/irq/handle.c:28:
+include/linux/kernel_sec_common.h:46: warning: "S3C_PA_WDT" redefined
+arch/arm/mach-s5pv210/include/mach/map.h:212: note: this is the location of the previous definition
+  CC      crypto/ghash-generic.o
+  CC      kernel/power/console.o
+  CC      kernel/irq/manage.o
   LD      sound/core/snd.o
   LD      sound/core/snd-timer.o
-  CC      kernel/stacktrace.o
   LD      sound/core/snd-pcm.o
   LD      sound/core/snd-page-alloc.o
   LD      sound/core/built-in.o
-  LD      sound/i2c/other/built-in.o
-  LD      sound/i2c/built-in.o
   LD      sound/isa/ad1816a/built-in.o
   LD      sound/isa/ad1848/built-in.o
-  CC      mm/percpu_up.o
+  CC      kernel/time/timekeeping.o
   LD      sound/isa/cs423x/built-in.o
-  CC      crypto/ansi_cprng.o
+  CC      kernel/irq/spurious.o
   LD      sound/isa/es1688/built-in.o
   LD      sound/isa/gus/built-in.o
+  LD      crypto/crypto.o
   LD      sound/isa/msnd/built-in.o
+  LD      crypto/crypto_algapi.o
+  LD      crypto/built-in.o
   LD      sound/isa/opti9xx/built-in.o
   LD      sound/isa/sb/built-in.o
   LD      sound/isa/wavefront/built-in.o
   LD      sound/isa/wss/built-in.o
   LD      sound/isa/built-in.o
   LD      sound/mips/built-in.o
-  CC      kernel/irq/handle.o
   LD      sound/parisc/built-in.o
-  LD      sound/pcmcia/pdaudiocf/built-in.o
+  LD      firmware/built-in.o
+  CC      kernel/power/process.o
+  CC      kernel/irq/resend.o
   LD      sound/pci/ac97/built-in.o
-  LD      sound/pcmcia/vx/built-in.o
-  LD      sound/pci/ali5451/built-in.o
   CC      drivers/char/misc.o
-  LD      sound/pcmcia/built-in.o
+  LD      sound/pci/ali5451/built-in.o
   LD      sound/pci/asihpi/built-in.o
-  CC      drivers/char/vt_ioctl.o
   LD      sound/pci/au88x0/built-in.o
   LD      sound/pci/aw2/built-in.o
   LD      sound/pci/ca0106/built-in.o
   LD      sound/pci/cs46xx/built-in.o
   LD      sound/pci/cs5535audio/built-in.o
   LD      sound/pci/ctxfi/built-in.o
+  CC      kernel/time/ntp.o
   LD      sound/pci/echoaudio/built-in.o
   LD      sound/pci/emu10k1/built-in.o
   LD      sound/pci/hda/built-in.o
-In file included from kernel/irq/handle.c:28:
-include/linux/kernel_sec_common.h:46: warning: "S3C_PA_WDT" redefined
-arch/arm/mach-s5pv210/include/mach/map.h:212: note: this is the location of the previous definition
   LD      sound/pci/ice1712/built-in.o
   LD      sound/pci/korg1212/built-in.o
   LD      sound/pci/lx6464es/built-in.o
+  CC      fs/bio.o
   LD      sound/pci/mixart/built-in.o
   LD      sound/pci/nm256/built-in.o
   LD      sound/pci/oxygen/built-in.o
   LD      sound/pci/pcxhr/built-in.o
   LD      sound/pci/riptide/built-in.o
   LD      sound/pci/rme9652/built-in.o
-  CC      crypto/ghash-generic.o
   LD      sound/pci/trident/built-in.o
   LD      sound/pci/vx222/built-in.o
   LD      sound/pci/ymfpci/built-in.o
+  CC      kernel/irq/chip.o
   LD      sound/pci/built-in.o
-  CC      drivers/char/vc_screen.o
+  CC      drivers/char/vt_ioctl.o
+  LD      sound/pcmcia/pdaudiocf/built-in.o
+  LD      sound/pcmcia/vx/built-in.o
+  LD      sound/pcmcia/built-in.o
+  CC      kernel/power/suspend.o
   LD      sound/ppc/built-in.o
   LD      sound/sh/built-in.o
-  CC      kernel/irq/manage.o
   CC      sound/soc/soc-core.o
-  LD      crypto/crypto.o
-  LD      crypto/crypto_algapi.o
-  LD      crypto/crypto_blkcipher.o
-  LD      crypto/built-in.o
-  CC      kernel/irq/spurious.o
-  CC      kernel/irq/resend.o
-  CC      fs/block_dev.o
-  CC      fs/direct-io.o
-  CC      net/socket.o
-  LD      sound/sparc/built-in.o
-  CC      fs/mpage.o
-  CC      kernel/irq/chip.o
-  CC      drivers/char/selection.o
-  LD      mm/built-in.o
-  CC      fs/ioprio.o
+  CC      sound/soc/soc-dapm.o
+  CC      kernel/time/clocksource.o
   CC      kernel/irq/devres.o
-  CC      drivers/char/keyboard.o
+  CC      kernel/power/nvs.o
   CC      kernel/irq/autoprobe.o
   CC      kernel/irq/proc.o
+  CC      kernel/time/jiffies.o
+  CC      kernel/power/wakelock.o
+  CC      kernel/time/timer_list.o
+  CC      kernel/time/timecompare.o
+  CC      fs/block_dev.o
+  CC      drivers/char/vc_screen.o
   CC      kernel/irq/pm.o
-  CC      drivers/char/consolemap.o
-  CONMK   drivers/char/consolemap_deftbl.c
-  CC      sound/soc/soc-dapm.o
-  LD      drivers/clocksource/built-in.o
-  CC      sound/soc/soc-jack.o
-  LD      sound/spi/built-in.o
+  CC      kernel/power/userwakelock.o
   LD      kernel/irq/built-in.o
+  CC      fs/direct-io.o
+  CC      kernel/time/timeconv.o
+  CC      fs/mpage.o
+  CC      drivers/char/selection.o
+  CC      sound/soc/soc-jack.o
+  CC      drivers/char/keyboard.o
+  CC      kernel/power/earlysuspend.o
+  CC      kernel/time/clockevents.o
+  CC      kernel/time/tick-common.o
+  CC      kernel/trace/trace_selftest_dynamic.o
+  CC      kernel/power/consoleearlysuspend.o
   CC      sound/soc/soc-cache.o
-  CC      kernel/power/main.o
+  CC      sound/soc/soc-utils.o
+  CC      kernel/mutex-debug.o
+  CC      fs/ioprio.o
+  CC      kernel/trace/trace_clock.o
+  LD      kernel/power/built-in.o
+  CC      kernel/time/tick-oneshot.o
   CC      fs/cramfs/inode.o
-  CC      kernel/power/console.o
-  CC      kernel/power/process.o
-  LD      net/802/built-in.o
-  CC      net/bluetooth/af_bluetooth.o
-  CC      net/bluetooth/hci_core.o
-  CC      net/bluetooth/hci_conn.o
-  CC      net/bluetooth/hci_event.o
   CC      fs/cramfs/uncompress.o
-  CC      drivers/char/vt.o
-  CC      kernel/power/suspend.o
+  CC      kernel/futex.o
+  CC      kernel/rtmutex.o
+  CC      drivers/char/consolemap.o
+  LD      sound/soc/atmel/built-in.o
+  CC      kernel/trace/ftrace.o
+  LD      sound/soc/au1x/built-in.o
+  CC      kernel/time/tick-sched.o
+  LD      sound/soc/blackfin/built-in.o
+  LD      sound/soc/codecs/built-in.o
+  LD      sound/soc/davinci/built-in.o
+  LD      sound/soc/fsl/built-in.o
+  LD      sound/soc/imx/built-in.o
+  LD      sound/soc/omap/built-in.o
+  CONMK   drivers/char/consolemap_deftbl.c
+  LD      sound/soc/pxa/built-in.o
+  LD      sound/sparc/built-in.o
+  CC      sound/soc/s3c24xx/s3c-pcmdev.o
+  CC      sound/soc/s3c24xx/s3c-dma.o
   LD      fs/cramfs/cramfs.o
   LD      fs/cramfs/built-in.o
   CC      fs/debugfs/inode.o
   CC      fs/debugfs/file.o
-  CC      kernel/power/nvs.o
-  CC      sound/soc/soc-utils.o
-  LD      sound/soc/atmel/built-in.o
+  CC      kernel/trace/ring_buffer.o
+  LD      kernel/time/built-in.o
+  CC      kernel/trace/trace.o
+  CC      fs/devpts/inode.o
+  CC      drivers/char/vt.o
+  CC      sound/soc/s3c24xx/s5pc1xx-pcm-wm8994.o
+  CC      kernel/trace/trace_output.o
+  LD      fs/debugfs/debugfs.o
+  LD      fs/debugfs/built-in.o
+  LD      fs/devpts/devpts.o
+  LD      sound/soc/s3c24xx/snd-soc-s3c24xx.o
+  LD      fs/devpts/built-in.o
+  LD      sound/soc/s3c24xx/snd-soc-s3c-pcmdev.o
+  CC      net/socket.o
+  LD      sound/soc/s3c24xx/snd-soc-s5pc1xx-pcm-wm8994.o
+  CC      fs/ext2/balloc.o
+  LD      sound/soc/s3c24xx/built-in.o
+  CC      fs/ext2/dir.o
+  LD      sound/soc/s6000/built-in.o
+  LD      sound/soc/sh/built-in.o
+  LD      sound/soc/txx9/built-in.o
+  LD      sound/soc/snd-soc-core.o
+  LD      sound/soc/built-in.o
+  LD      sound/spi/built-in.o
+  LD      sound/synth/built-in.o
+  LD      sound/usb/caiaq/built-in.o
+  LD      sound/usb/misc/built-in.o
+  LD      sound/usb/usx2y/built-in.o
+  LD      sound/usb/built-in.o
+  CC      sound/last.o
+  LD      sound/soundcore.o
+  LD      sound/built-in.o
+  CC      fs/ext2/file.o
+  LD      net/802/built-in.o
+  CC      fs/ext2/ialloc.o
+  SHIPPED drivers/char/defkeymap.c
+  CC      fs/ext2/inode.o
+  CC      fs/ext2/ioctl.o
+  CC      drivers/char/apm-emulation.o
+  CC      fs/ext2/namei.o
+  CC      net/bluetooth/af_bluetooth.o
+  CC      net/core/sock.o
+  CC      net/core/request_sock.o
+  CC      net/core/skbuff.o
+  CC      net/core/iovec.o
+  CC      kernel/trace/trace_stat.o
+  CC      fs/ext2/super.o
+  CC      net/bluetooth/hci_core.o
+  CC      net/bluetooth/hci_conn.o
+  LD      drivers/firmware/built-in.o
+  CC      kernel/trace/trace_printk.o
   LD      arch/arm/lib/built-in.o
   AS      arch/arm/lib/ashldi3.o
   AS      arch/arm/lib/ashrdi3.o
+  CC      drivers/char/hw_random/core.o
   AS      arch/arm/lib/backtrace.o
   AS      arch/arm/lib/changebit.o
   AS      arch/arm/lib/clear_user.o
   AS      arch/arm/lib/clearbit.o
   AS      arch/arm/lib/copy_from_user.o
-  CC      net/core/sock.o
   AS      arch/arm/lib/copy_page.o
-  LD      fs/debugfs/debugfs.o
-  LD      fs/debugfs/built-in.o
-  CC      fs/devpts/inode.o
-  LD      sound/soc/au1x/built-in.o
-  LD      sound/soc/blackfin/built-in.o
-  CC      kernel/power/wakelock.o
-  LD      sound/soc/codecs/built-in.o
-  LD      sound/soc/davinci/built-in.o
   AS      arch/arm/lib/copy_to_user.o
-  LD      sound/soc/fsl/built-in.o
-  LD      sound/soc/imx/built-in.o
   AS      arch/arm/lib/csumipv6.o
-  LD      sound/soc/omap/built-in.o
   AS      arch/arm/lib/csumpartial.o
-  LD      sound/soc/pxa/built-in.o
-  CC      sound/soc/s3c24xx/s3c-pcmdev.o
   AS      arch/arm/lib/csumpartialcopy.o
   AS      arch/arm/lib/csumpartialcopyuser.o
   AS      arch/arm/lib/delay.o
+  CC      kernel/trace/trace_sched_switch.o
   AS      arch/arm/lib/div64.o
   AS      arch/arm/lib/findbit.o
-  LD      sound/soc/s6000/built-in.o
+  LD      drivers/char/hw_random/rng-core.o
   AS      arch/arm/lib/getuser.o
-  CC      net/core/request_sock.o
+  LD      drivers/char/hw_random/built-in.o
+  CC      drivers/char/s3c_mem.o
   AS      arch/arm/lib/io-readsb.o
   AS      arch/arm/lib/io-readsl.o
   AS      arch/arm/lib/io-readsw-armv4.o
   AS      arch/arm/lib/io-writesb.o
   AS      arch/arm/lib/io-writesl.o
   AS      arch/arm/lib/io-writesw-armv4.o
-  LD      fs/devpts/devpts.o
-  LD      fs/devpts/built-in.o
   AS      arch/arm/lib/lib1funcs.o
-  CC      fs/ext2/balloc.o
   AS      arch/arm/lib/lshrdi3.o
+  CC      fs/ext2/symlink.o
   AS      arch/arm/lib/memchr.o
   AS      arch/arm/lib/memcpy.o
   AS      arch/arm/lib/memmove.o
+  CC      fs/fat/cache.o
+  CC      kernel/trace/trace_functions.o
   AS      arch/arm/lib/memset.o
-  AS      arch/arm/lib/memzero.o
-  AS      arch/arm/lib/muldi3.o
-  CC      sound/soc/s3c24xx/s3c-dma.o
-  AS      arch/arm/lib/putuser.o
-  AS      arch/arm/lib/setbit.o
-  CC      kernel/power/userwakelock.o
-  AS      arch/arm/lib/sha1.o
-  AS      arch/arm/lib/strchr.o
-  AS      arch/arm/lib/strncpy_from_user.o
-  CC      net/bluetooth/hci_sock.o
-  AS      arch/arm/lib/strnlen_user.o
-  AS      arch/arm/lib/strrchr.o
-  AS      arch/arm/lib/testchangebit.o
-  AS      arch/arm/lib/testclearbit.o
-  AS      arch/arm/lib/testsetbit.o
-  AS      arch/arm/lib/ucmpdi2.o
-  AR      arch/arm/lib/lib.a
-  CC      fs/ext2/dir.o
-  CC      fs/ext2/file.o
-  CC      kernel/power/earlysuspend.o
-  CC      sound/soc/s3c24xx/s5pc1xx-pcm-wm8994.o
-  CC      kernel/power/consoleearlysuspend.o
-  SHIPPED drivers/char/defkeymap.c
-  CC      net/core/skbuff.o
-  CC      lib/bcd.o
-  CC      net/core/iovec.o
-  LD      kernel/power/built-in.o
-  CC      kernel/time/timekeeping.o
-  LD      sound/soc/s3c24xx/snd-soc-s3c24xx.o
-  LD      sound/soc/s3c24xx/snd-soc-s3c-pcmdev.o
-  CC      net/bluetooth/hci_sysfs.o
-  LD      sound/soc/s3c24xx/snd-soc-s5pc1xx-pcm-wm8994.o
-  CC      lib/div64.o
-  LD      sound/soc/s3c24xx/built-in.o
-  LD      sound/soc/sh/built-in.o
-  LD      sound/soc/txx9/built-in.o
-  LD      sound/soc/snd-soc-core.o
-  LD      sound/soc/built-in.o
-  LD      sound/synth/built-in.o
-  CC      fs/ext2/ialloc.o
-  LD      sound/usb/caiaq/built-in.o
-  LD      sound/usb/misc/built-in.o
-  LD      sound/usb/usx2y/built-in.o
-  LD      sound/usb/built-in.o
-  CC      sound/last.o
-  CC      lib/sort.o
-  CC      drivers/char/apm-emulation.o
-  CC      lib/parser.o
-  LD      sound/soundcore.o
-  LD      sound/built-in.o
-  CC      drivers/char/hw_random/core.o
-  CC      kernel/trace/trace_selftest_dynamic.o
-  CC      lib/halfmd4.o
-  CC      fs/ext2/inode.o
-  CC      net/bluetooth/lib.o
-  CC      kernel/time/ntp.o
-  CC      kernel/trace/trace_clock.o
-  CC      lib/debug_locks.o
-  LD      drivers/char/hw_random/rng-core.o
-  LD      drivers/char/hw_random/built-in.o
-  CC      net/core/datagram.o
-  CC      lib/random32.o
-  CC      drivers/char/s3c_mem.o
-  CC      kernel/time/clocksource.o
-  CC      kernel/trace/ftrace.o
-  CC      net/bluetooth/l2cap.o
-  CC      lib/bust_spinlocks.o
 drivers/char/s3c_mem.c: In function 's3c_mem_ioctl':
 drivers/char/s3c_mem.c:291: warning: passing argument 1 of 'cpu_cache.dma_map_area' makes pointer from integer without a cast
 drivers/char/s3c_mem.c:291: note: expected 'const void *' but argument is of type 'long unsigned int'
-  CC      lib/hexdump.o
-  CC      drivers/char/consolemap_deftbl.o
-  CC      kernel/time/jiffies.o
-  CC      drivers/char/defkeymap.o
-  CC      lib/kasprintf.o
-  CC      kernel/time/timer_list.o
-  CC      kernel/trace/ring_buffer.o
-  LD      drivers/char/built-in.o
-  CC      fs/ext2/ioctl.o
-  CC      drivers/cpuidle/cpuidle.o
-  CC      drivers/cpuidle/driver.o
-  CC      lib/bitmap.o
-  CC      net/core/stream.o
-  CC      lib/scatterlist.o
-  CC      fs/ext2/namei.o
-  CC      drivers/cpuidle/governor.o
-  CC      kernel/time/timecompare.o
-  CC      drivers/cpuidle/sysfs.o
-  CC      drivers/cpuidle/governors/ladder.o
-  CC      kernel/time/timeconv.o
-  CC      fs/ext2/super.o
-  CC      drivers/cpuidle/governors/menu.o
-  CC      lib/string_helpers.o
-  CC      net/core/scm.o
-  CC      lib/gcd.o
-  CC      kernel/time/clockevents.o
-  CC      kernel/time/tick-common.o
-  CC      lib/lcm.o
-  LD      drivers/cpuidle/governors/built-in.o
-  LD      drivers/cpuidle/built-in.o
-  CC      lib/list_sort.o
-  CC      lib/uuid.o
-  LD      drivers/crypto/built-in.o
-  LD      drivers/firmware/built-in.o
-  CC      drivers/gpio/gpiolib.o
-  CC      kernel/time/tick-oneshot.o
-  CC      fs/fat/cache.o
-  CC      lib/iomap_copy.o
-  CC      kernel/trace/trace.o
-  CC      net/core/gen_stats.o
-  CC      lib/devres.o
-  CC      kernel/time/tick-sched.o
-  CC      fs/ext2/symlink.o
-  CC      net/core/gen_estimator.o
-  CC      fs/fat/dir.o
-  CC      lib/spinlock_debug.o
+  AS      arch/arm/lib/memzero.o
+  CC      kernel/trace/trace_sched_wakeup.o
   LD      fs/ext2/ext2.o
+  AS      arch/arm/lib/muldi3.o
   LD      fs/ext2/built-in.o
-  CC      net/core/net_namespace.o
+  AS      arch/arm/lib/putuser.o
+  AS      arch/arm/lib/setbit.o
+  CC      net/core/datagram.o
+  AS      arch/arm/lib/sha1.o
+  AS      arch/arm/lib/strchr.o
+  AS      arch/arm/lib/strncpy_from_user.o
+  CC      drivers/char/consolemap_deftbl.o
+  CC      net/bluetooth/hci_event.o
+  AS      arch/arm/lib/strnlen_user.o
+  CC      drivers/char/defkeymap.o
+  AS      arch/arm/lib/strrchr.o
+  AS      arch/arm/lib/testchangebit.o
+  AS      arch/arm/lib/testclearbit.o
+  LD      drivers/char/built-in.o
+  AS      arch/arm/lib/testsetbit.o
+  CC      net/core/stream.o
+  CC      drivers/gpio/gpiolib.o
+  CC      fs/fat/dir.o
+  CC      kernel/trace/trace_nop.o
+  CC      fs/fat/fatent.o
+  AS      arch/arm/lib/ucmpdi2.o
+  AR      arch/arm/lib/lib.a
+  CC      fs/nls/nls_base.o
+  CC      kernel/trace/trace_stack.o
+  CC      fs/nls/nls_cp437.o
+  CC      fs/notify/fsnotify.o
+  CC      net/core/scm.o
+  CC      fs/nls/nls_ascii.o
+  CC      fs/nls/nls_iso8859-1.o
+  CC      fs/notify/notification.o
+  CC      kernel/trace/blktrace.o
   LD      drivers/gpio/built-in.o
   LD      drivers/gpu/drm/i2c/built-in.o
   LD      drivers/gpu/drm/built-in.o
   LD      drivers/gpu/vga/built-in.o
-  LD      drivers/gpu/built-in.o
-  CC      lib/find_last_bit.o
+  CC      fs/nls/nls_utf8.o
   CC      drivers/hid/hid-core.o
-  LD      kernel/time/built-in.o
-  CC      drivers/i2c/i2c-boardinfo.o
-  CC      lib/hweight.o
-  CC      lib/bitrev.o
-  CC      net/core/sysctl_net_core.o
-  CC      net/bluetooth/sco.o
-  CC      lib/crc-ccitt.o
-  CC      drivers/i2c/i2c-core.o
-  CC      lib/crc16.o
-  CC      net/ethernet/eth.o
-  HOSTCC  lib/gen_crc32table
-  CC      lib/lzo/lzo1x_decompress.o
-  CC      net/core/dev.o
-  CC      fs/fat/fatent.o
-  LD      net/ethernet/built-in.o
-  CC      lib/reed_solomon/reed_solomon.o
-  LD      lib/lzo/lzo_decompress.o
-  LD      lib/lzo/built-in.o
-  CC      kernel/mutex-debug.o
-  CC      net/bluetooth/rfcomm/core.o
-  CC      drivers/hid/hid-input.o
-  CC      kernel/trace/trace_output.o
-  CC      drivers/i2c/i2c-dev.o
-  CC      net/bluetooth/rfcomm/sock.o
+  LD      drivers/gpu/built-in.o
+  CC      net/core/gen_stats.o
+  LD      fs/nls/built-in.o
+  CC      net/core/gen_estimator.o
+  CC      fs/notify/group.o
   CC      fs/fat/file.o
-  LD      lib/reed_solomon/built-in.o
-  CC      lib/zlib_deflate/deflate.o
-  CC      drivers/i2c/algos/i2c-algo-bit.o
+  CC      kernel/trace/trace_events.o
+  CC      net/bluetooth/hci_sock.o
+  CC      net/bluetooth/hci_sysfs.o
+  CC      fs/notify/inode_mark.o
+  CC      net/ethernet/eth.o
+  CC      net/core/net_namespace.o
   CC      fs/fat/inode.o
-  CC      lib/zlib_deflate/deftree.o
-  CC      kernel/trace/trace_stat.o
-  CC      kernel/trace/trace_printk.o
+  LD      fs/notify/dnotify/built-in.o
+  CC      fs/notify/inotify/inotify.o
+  CC      fs/notify/inotify/inotify_fsnotify.o
+  CC      net/bluetooth/lib.o
+  LD      net/ethernet/built-in.o
+  CC      net/bluetooth/l2cap.o
+  CC      drivers/hid/hid-input.o
+  CC      kernel/trace/trace_export.o
+  CC      net/core/sysctl_net_core.o
+  CC      kernel/trace/trace_events_filter.o
+  CC      fs/notify/inotify/inotify_user.o
+  CC      kernel/trace/power-traces.o
+  CC      net/core/dev.o
+  CC      net/core/ethtool.o
+  CC      fs/fat/misc.o
+  CC      net/core/dev_addr_lists.o
+  LD      fs/notify/inotify/built-in.o
+  LD      fs/notify/built-in.o
+  LD      net/ieee802154/built-in.o
+  CC      drivers/i2c/i2c-boardinfo.o
+  CC      fs/fat/namei_msdos.o
+  LD      kernel/trace/libftrace.o
+  LD      kernel/trace/built-in.o
+  CC      kernel/rtmutex-debug.o
+  CC      drivers/i2c/i2c-core.o
   CC      drivers/hid/hid-debug.o
-  CC      net/bluetooth/rfcomm/tty.o
-  CC      kernel/trace/trace_sched_switch.o
+  CC      drivers/i2c/i2c-dev.o
+  CC      kernel/up.o
+  CC      fs/fat/namei_vfat.o
+  CC      kernel/spinlock.o
+  CC      drivers/i2c/algos/i2c-algo-bit.o
+  LD      drivers/hid/hid.o
+  LD      drivers/hid/built-in.o
+  CC      net/core/dst.o
+  CC      net/core/netevent.o
+  CC      kernel/uid16.o
+  CC      kernel/module.o
+  CC      kernel/kallsyms.o
   LD      drivers/i2c/algos/built-in.o
   CC      drivers/i2c/busses/i2c-gpio.o
   CC      drivers/i2c/busses/i2c-s3c2410.o
-  LD      drivers/idle/built-in.o
-  CC      net/core/ethtool.o
-  CC      kernel/trace/trace_functions.o
-  CC      lib/zlib_deflate/deflate_syms.o
-  LD      drivers/hid/hid.o
-  LD      drivers/hid/built-in.o
-  CC      lib/zlib_inflate/inffast.o
-  CC      fs/fat/misc.o
-  LD      lib/zlib_deflate/zlib_deflate.o
-  LD      lib/zlib_deflate/built-in.o
-  CC      lib/zlib_inflate/inflate.o
-  LD      net/ieee802154/built-in.o
+  CC      net/core/neighbour.o
+  LD      fs/fat/fat.o
+  LD      fs/fat/vfat.o
+  LD      fs/fat/msdos.o
+  LD      fs/fat/built-in.o
+  CC      fs/partitions/check.o
+  CC      fs/partitions/msdos.o
+  CC      kernel/cgroup.o
   LD      drivers/i2c/busses/built-in.o
   LD      drivers/i2c/built-in.o
-  CC      net/core/dev_addr_lists.o
+  LD      drivers/idle/built-in.o
   LD      drivers/ieee1394/built-in.o
   LD      drivers/ieee802154/built-in.o
-  CC      kernel/futex.o
   CC      drivers/input/input.o
-  LD      net/bluetooth/rfcomm/rfcomm.o
-  CC      kernel/trace/trace_sched_wakeup.o
-  LD      net/bluetooth/rfcomm/built-in.o
-  LD      net/bluetooth/bluetooth.o
-  LD      net/bluetooth/built-in.o
-  CC      kernel/trace/trace_nop.o
-  CC      fs/fat/namei_msdos.o
+  CC      net/bluetooth/sco.o
+  CC      drivers/input/input-compat.o
 In file included from drivers/input/input.c:29:
 include/linux/kernel_sec_common.h:46: warning: "S3C_PA_WDT" redefined
 arch/arm/mach-s5pv210/include/mach/map.h:212: note: this is the location of the previous definition
@@ -795,76 +806,40 @@ drivers/input/input.c: In function 'input_event':
 drivers/input/input.c:317: warning: unused variable 'third'
 drivers/input/input.c:317: warning: unused variable 'second'
 drivers/input/input.c:317: warning: unused variable 'first'
-  CC      net/core/dst.o
-  CC      kernel/trace/trace_stack.o
-  CC      lib/zlib_inflate/infutil.o
-  CC      lib/zlib_inflate/inftrees.o
-  CC      fs/fat/namei_vfat.o
-  CC      lib/zlib_inflate/inflate_syms.o
-  CC      drivers/input/input-compat.o
   CC      drivers/input/ff-core.o
-  LD      lib/zlib_inflate/zlib_inflate.o
-  LD      lib/zlib_inflate/built-in.o
-  CC      kernel/trace/blktrace.o
-  CC      lib/textsearch.o
-  CC      lib/ts_kmp.o
-  CC      net/core/netevent.o
-  CC      net/core/neighbour.o
-  CC      kernel/trace/trace_events.o
-  CC      lib/ts_bm.o
-  CC      lib/ts_fsm.o
+  LD      fs/partitions/built-in.o
+  CC      fs/proc/mmu.o
+  LD      fs/quota/built-in.o
+  CC      fs/proc/task_mmu.o
+  CC      net/bluetooth/rfcomm/core.o
+  CC      fs/proc/inode.o
+  CC      kernel/cgroup_freezer.o
+  CC      kernel/res_counter.o
+  CC      fs/proc/root.o
+  CC      fs/proc/base.o
   CC      drivers/input/mousedev.o
-  CC      drivers/input/evdev.o
-  CC      kernel/rtmutex.o
-  CC      kernel/rtmutex-debug.o
-  CC      lib/nlattr.o
-  LD      fs/fat/fat.o
-  LD      fs/fat/vfat.o
-  LD      fs/fat/msdos.o
-  LD      fs/fat/built-in.o
-  CC      fs/nls/nls_base.o
-  CC      kernel/up.o
-  CC      fs/nls/nls_cp437.o
-  CC      fs/notify/fsnotify.o
-  CC      fs/notify/notification.o
-  CC      drivers/input/keyboard/atkbd.o
-  CC      fs/notify/group.o
-  CC      fs/nls/nls_ascii.o
-  CC      lib/argv_split.o
-  CC      kernel/trace/trace_export.o
-  CC      fs/nls/nls_iso8859-1.o
-  CC      fs/nls/nls_utf8.o
-  CC      lib/cmdline.o
-  CC      drivers/input/misc/uinput.o
-  CC      drivers/input/misc/hall_slider_button.o
-  CC      fs/notify/inode_mark.o
-  LD      fs/nls/built-in.o
-  LD      fs/notify/dnotify/built-in.o
   CC      net/core/rtnetlink.o
-  CC      lib/ctype.o
-drivers/input/misc/hall_slider_button.c: In function 'hall_suspend':
-drivers/input/misc/hall_slider_button.c:378: warning: unused variable 'input_dev'
-drivers/input/misc/hall_slider_button.c: In function 'hall_resume':
-drivers/input/misc/hall_slider_button.c:389: warning: unused variable 'input_dev'
-drivers/input/misc/hall_slider_button.c: At top level:
-drivers/input/misc/hall_slider_button.c:400: warning: initialization from incompatible pointer type
-  CC      lib/dec_and_lock.o
-  CC      kernel/trace/trace_events_filter.o
-  CC      lib/decompress.o
-  CC      kernel/trace/power-traces.o
-  CC      lib/decompress_bunzip2.o
-  CC      fs/notify/inotify/inotify.o
-  LD      drivers/input/keyboard/built-in.o
-  CC      lib/decompress_inflate.o
-  CC      net/ipv4/route.o
-  LD      drivers/input/misc/built-in.o
-  CC      net/ipv6/af_inet6.o
+  CC      kernel/softlockup.o
+  CC      fs/proc/generic.o
+  CC      kernel/hung_task.o
+  CC      fs/proc/array.o
+  CC      fs/proc/proc_tty.o
+  CC      drivers/input/evdev.o
+  CC      drivers/input/keyboard/atkbd.o
+  CC      net/bluetooth/rfcomm/sock.o
+  CC      drivers/input/misc/uinput.o
+  CC      kernel/rcutree.o
+  CC      fs/proc/cmdline.o
+  CC      fs/proc/cpuinfo.o
   CC      drivers/input/mouse/ofm_driver.o
-  CC      lib/decompress_unlzma.o
-lib/decompress_bunzip2.c: In function 'get_next_block':
-lib/decompress_bunzip2.c:511: warning: the frame size of 1888 bytes is larger than 1024 bytes
-  CC      net/ipv6/anycast.o
-  CC      fs/notify/inotify/inotify_fsnotify.o
+  CC      net/core/utils.o
+  LD      drivers/input/touchscreen/built-in.o
+  CC      fs/proc/devices.o
+  CC      fs/proc/interrupts.o
+  LD      drivers/input/keyboard/built-in.o
+  CC      fs/proc/loadavg.o
+  CC      drivers/input/misc/hall_slider_button.o
+  CC      kernel/utsname_sysctl.o
 drivers/input/mouse/ofm_driver.c:159: warning: return type defaults to 'int'
 drivers/input/mouse/ofm_driver.c: In function 'ofm_motion_func':
 drivers/input/mouse/ofm_driver.c:355: warning: unused variable 'delta_y'
@@ -881,135 +856,64 @@ drivers/input/mouse/ofm_driver.c:930: warning: label 'err2' defined but not used
 drivers/input/mouse/ofm_driver.c:733: warning: unused variable 'temp'
 drivers/input/mouse/ofm_driver.c: In function 'ofm_i2c_resume':
 drivers/input/mouse/ofm_driver.c:988: warning: unused variable 'err_i2c'
+  CC      net/ipv4/route.o
 drivers/input/mouse/ofm_driver.c: In function 'Ofm_Power_Reset':
 drivers/input/mouse/ofm_driver.c:163: warning: control reaches end of non-void function
 drivers/input/mouse/ofm_driver.c: At top level:
 drivers/input/mouse/ofm_driver.c:468: warning: 'ofm_motion_event' defined but not used
 drivers/input/mouse/ofm_driver.c:484: warning: 'ofm_left_event' defined but not used
 drivers/input/mouse/ofm_driver.c:1037: warning: 'ofm_ldo_enable' defined but not used
-  CC      fs/notify/inotify/inotify_user.o
-  LD      kernel/trace/libftrace.o
-  LD      kernel/trace/built-in.o
-  CC      lib/decompress_unlzo.o
-  CC      kernel/spinlock.o
-  CC      net/core/utils.o
-  CC      kernel/uid16.o
-  CC      lib/dump_stack.o
-  CC      net/ipv6/ip6_output.o
-  CC      lib/extable.o
-  LD      drivers/input/mouse/built-in.o
-  LD      drivers/input/touchscreen/built-in.o
-  LD      drivers/input/input-core.o
-  CC      lib/flex_array.o
-  LD      drivers/input/built-in.o
-  CC      drivers/input/serio/serio.o
-  LD      fs/notify/inotify/built-in.o
-  LD      fs/notify/built-in.o
-  CC      fs/partitions/check.o
-  CC      fs/partitions/msdos.o
-  CC      net/core/link_watch.o
-  CC      kernel/module.o
-  CC      lib/idr.o
-drivers/input/serio/serio.c:450: warning: 'serio_id_attr_group' defined but not used
-  CC      kernel/kallsyms.o
-  LD      fs/partitions/built-in.o
-  CC      lib/int_sqrt.o
-  CC      fs/proc/mmu.o
-  CC      net/core/filter.o
-  CC      drivers/input/serio/serport.o
-  CC      lib/ioremap.o
-  CC      net/ipv4/inetpeer.o
-  CC      fs/proc/task_mmu.o
-  CC      lib/irq_regs.o
-  CC      drivers/input/serio/libps2.o
-  CC      fs/proc/inode.o
-  CC      lib/is_single_threaded.o
-  CC      net/core/flow.o
-  CC      net/ipv6/ip6_input.o
-  CC      lib/klist.o
-  CC      net/ipv4/protocol.o
-  LD      drivers/input/serio/built-in.o
-  CC      net/ipv4/ip_input.o
-  CC      drivers/leds/led-core.o
-  CC      fs/proc/root.o
-  CC      drivers/leds/led-class.o
-  CC      lib/kobject.o
-  CC      net/core/net-sysfs.o
-  CC      fs/proc/base.o
-  CC      drivers/leds/leds-gpio.o
-  CC      kernel/cgroup.o
-  CC      kernel/cgroup_freezer.o
-  CC      net/ipv6/addrconf.o
-  LD      drivers/leds/built-in.o
-  CC      drivers/level/level.o
-  CC      net/ipv4/ip_fragment.o
-  CC      lib/kobject_uevent.o
-In file included from drivers/level/level.c:10:
-include/linux/kernel_sec_common.h:46: warning: "S3C_PA_WDT" redefined
-arch/arm/mach-s5pv210/include/mach/map.h:212: note: this is the location of the previous definition
-  CC      lib/kref.o
-  LD      drivers/level/built-in.o
-  LD      drivers/lguest/built-in.o
-  LD      drivers/macintosh/built-in.o
-  CC      drivers/md/dm-raid1.o
-  CC      net/ipv4/ip_forward.o
-  CC      net/core/net-traces.o
-  CC      lib/plist.o
-  CC      lib/prio_heap.o
-  CC      drivers/md/dm.o
-  CC      lib/prio_tree.o
-  LD      net/core/built-in.o
-  CC      drivers/md/dm-table.o
-  CC      net/ipv4/ip_options.o
-  CC      fs/proc/generic.o
-  CC      lib/proportions.o
-  CC      lib/radix-tree.o
-  CC      net/key/af_key.o
-  CC      fs/proc/array.o
-  LD      fs/quota/built-in.o
-  CC      kernel/res_counter.o
-  CC      lib/ratelimit.o
-  CC      net/ipv4/ip_output.o
-  CC      lib/rbtree.o
-  CC      net/ipv6/addrlabel.o
-  CC      net/ipv6/route.o
-  CC      drivers/md/dm-target.o
-  CC      kernel/softlockup.o
-  CC      fs/proc/proc_tty.o
-  CC      lib/reciprocal_div.o
-  CC      lib/rwsem-spinlock.o
-  CC      kernel/hung_task.o
-  CC      drivers/md/dm-linear.o
-  CC      fs/proc/cmdline.o
-  CC      lib/sha1.o
-  CC      fs/proc/cpuinfo.o
-  CC      fs/proc/devices.o
-  CC      lib/show_mem.o
-  CC      kernel/rcutree.o
-  CC      fs/proc/interrupts.o
-  CC      drivers/md/dm-stripe.o
-  CC      lib/string.o
-  CC      fs/proc/loadavg.o
+  CC      net/ipv6/af_inet6.o
+  CC      net/bluetooth/rfcomm/tty.o
+drivers/input/misc/hall_slider_button.c: In function 'hall_suspend':
+drivers/input/misc/hall_slider_button.c:378: warning: unused variable 'input_dev'
+drivers/input/misc/hall_slider_button.c: In function 'hall_resume':
+drivers/input/misc/hall_slider_button.c:389: warning: unused variable 'input_dev'
+drivers/input/misc/hall_slider_button.c: At top level:
+drivers/input/misc/hall_slider_button.c:400: warning: initialization from incompatible pointer type
   CC      fs/proc/meminfo.o
-  CC      net/ipv4/ip_sockglue.o
-  CC      drivers/md/dm-ioctl.o
-  CC      lib/vsprintf.o
-  CC      kernel/utsname_sysctl.o
-  CC      fs/proc/stat.o
-  CC      fs/proc/uptime.o
-  CC      net/ipv6/ip6_fib.o
   CC      kernel/tracepoint.o
+  LD      drivers/input/misc/built-in.o
+WARNING: drivers/input/misc/built-in.o(.data+0x24): Section mismatch in reference from the variable hall_driver to the function .init.text:hall_probe()
+The variable hall_driver references
+the function __init hall_probe()
+If the reference is valid then annotate the
+variable with __init* or __refdata (see linux/init.h) or name the variable:
+*_template, *_timer, *_sht, *_ops, *_probe, *_probe_one, *_console, 
+
+  CC      net/ipv4/inetpeer.o
+  CC      net/core/link_watch.o
+  CC      fs/proc/stat.o
+  LD      drivers/input/mouse/built-in.o
+  LD      drivers/input/input-core.o
+  LD      drivers/input/built-in.o
+WARNING: drivers/input/built-in.o(.data+0x608): Section mismatch in reference from the variable hall_driver to the function .init.text:hall_probe()
+The variable hall_driver references
+the function __init hall_probe()
+If the reference is valid then annotate the
+variable with __init* or __refdata (see linux/init.h) or name the variable:
+*_template, *_timer, *_sht, *_ops, *_probe, *_probe_one, *_console, 
+
+  CC      drivers/input/serio/serio.o
   CC      kernel/latencytop.o
+  CC      fs/proc/uptime.o
   CC      fs/proc/version.o
-  LD      net/key/built-in.o
-  CC      kernel/elfcore.o
-  CC      net/ipv6/ipv6_sockglue.o
+  CC      net/core/filter.o
+drivers/input/serio/serio.c:450: warning: 'serio_id_attr_group' defined but not used
+  CC      net/ipv6/anycast.o
+  LD      net/bluetooth/rfcomm/rfcomm.o
+  LD      net/bluetooth/rfcomm/built-in.o
+  LD      net/bluetooth/bluetooth.o
+  CC      net/ipv4/protocol.o
+  LD      net/bluetooth/built-in.o
   CC      fs/proc/softirqs.o
-  CC      net/ipv6/ndisc.o
-  CC      net/ipv4/inet_hashtables.o
+  CC      net/ipv4/ip_input.o
+  CC      kernel/elfcore.o
   CC      fs/proc/proc_sysctl.o
+  CC      drivers/input/serio/serport.o
   CC      kernel/kernel_sec_debug.o
-  CC      drivers/md/dm-io.o
+  CC      net/core/flow.o
+  CC      drivers/input/serio/libps2.o
 In file included from kernel/kernel_sec_debug.c:13:
 include/linux/kernel_sec_common.h:46: warning: "S3C_PA_WDT" redefined
 arch/arm/mach-s5pv210/include/mach/map.h:212: note: this is the location of the previous definition
@@ -1020,297 +924,509 @@ kernel/kernel_sec_debug.c:614: warning: function declaration isn't a prototype
 kernel/kernel_sec_debug.c:664: warning: function declaration isn't a prototype
 kernel/kernel_sec_debug.c: In function 'dump_cpu_stat':
 kernel/kernel_sec_debug.c:774: warning: 'return' with a value, in function returning void
-  CC      drivers/md/dm-kcopyd.o
-  CC      fs/proc/proc_net.o
-  GEN     lib/crc32table.h
-  AR      lib/lib.a
-  CC      lib/crc32.o
-  CC      net/ipv6/udp.o
+  CC      net/ipv6/ip6_output.o
   CC      kernel/time.o
-  CC      net/ipv4/inet_timewait_sock.o
-  LD      lib/built-in.o
-  CC      drivers/md/dm-sysfs.o
-  CC      drivers/md/dm-path-selector.o
+  CC      fs/proc/proc_net.o
+  CC      lib/bcd.o
+  CC      net/ipv4/ip_fragment.o
+  CC      lib/div64.o
+  LD      drivers/input/serio/built-in.o
+  CC      drivers/leds/led-core.o
+  CC      net/ipv4/ip_forward.o
+  CC      net/core/net-sysfs.o
+  CC      drivers/leds/led-class.o
+  CC      lib/sort.o
   CC      fs/proc/kmsg.o
-  CC      fs/proc/page.o
-  CC      drivers/md/dm-mpath.o
-  CC      drivers/media/IR/keymaps/rc-adstech-dvb-t-pci.o
   LD      kernel/built-in.o
-  CC      drivers/md/dm-snap.o
-  CC      net/ipv4/inet_connection_sock.o
-  CC      drivers/media/IR/keymaps/rc-apac-viewcomp.o
-  CC      net/ipv4/tcp.o
-  LD      fs/proc/proc.o
-  LD      fs/proc/built-in.o
+  CC      drivers/leds/leds-gpio.o
+  CC      lib/parser.o
+  CC      net/core/net-traces.o
+  CC      fs/proc/page.o
+  LD      drivers/leds/built-in.o
+  CC      drivers/level/level.o
+  CC      lib/halfmd4.o
+  CC      net/ipv4/ip_options.o
+  CC      lib/debug_locks.o
+In file included from drivers/level/level.c:10:
+include/linux/kernel_sec_common.h:46: warning: "S3C_PA_WDT" redefined
+arch/arm/mach-s5pv210/include/mach/map.h:212: note: this is the location of the previous definition
   CC      fs/ramfs/inode.o
+  LD      fs/proc/proc.o
+  CC      lib/random32.o
   CC      fs/ramfs/file-mmu.o
-  CC      drivers/media/IR/keymaps/rc-asus-pc39.o
-  CC      drivers/media/IR/keymaps/rc-ati-tv-wonder-hd-600.o
+  LD      fs/proc/built-in.o
+  LD      net/core/built-in.o
   CC      fs/romfs/storage.o
-  CC      drivers/media/IR/keymaps/rc-avermedia-a16d.o
+  LD      drivers/level/built-in.o
+  CC      fs/romfs/super.o
+  LD      drivers/lguest/built-in.o
+  LD      drivers/macintosh/built-in.o
+  CC      drivers/md/dm-raid1.o
+  CC      lib/bust_spinlocks.o
+  CC      lib/hexdump.o
+  CC      drivers/md/dm.o
   LD      fs/ramfs/ramfs.o
   LD      fs/ramfs/built-in.o
-  CC      drivers/media/IR/keymaps/rc-avermedia.o
-  CC      net/netfilter/core.o
-  CC      fs/romfs/super.o
-  CC      drivers/media/IR/keymaps/rc-avermedia-cardbus.o
-  CC      net/ipv6/udplite.o
-  CC      net/ipv6/raw.o
-  CC      fs/sysfs/inode.o
-  CC      drivers/media/IR/keymaps/rc-avermedia-dvbt.o
-  CC      drivers/media/IR/keymaps/rc-avermedia-m135a.o
-  CC      drivers/media/IR/keymaps/rc-avermedia-m733a-rm-k6.o
-  CC      fs/sysfs/file.o
+  CC      drivers/md/dm-table.o
+  CC      net/ipv4/ip_output.o
+  CC      net/ipv6/ip6_input.o
+  CC      lib/kasprintf.o
+  CC      net/ipv6/addrconf.o
   LD      fs/romfs/romfs.o
-  CC      net/netfilter/nf_log.o
   LD      fs/romfs/built-in.o
-  CC      drivers/md/dm-exception-store.o
+  CC      lib/bitmap.o
+  CC      fs/sysfs/inode.o
+  CC      fs/sysfs/file.o
   CC      fs/sysfs/dir.o
-  CC      net/ipv4/tcp_input.o
-  CC      drivers/media/IR/keymaps/rc-avertv-303.o
-  CC      drivers/media/IR/keymaps/rc-behold.o
-  CC      drivers/md/dm-snap-transient.o
-  CC      drivers/media/IR/keymaps/rc-behold-columbus.o
-  CC      drivers/media/IR/keymaps/rc-budget-ci-old.o
-  CC      net/netfilter/nf_queue.o
   CC      fs/sysfs/symlink.o
-  CC      net/ipv6/protocol.o
-  CC      net/netfilter/nf_sockopt.o
-  CC      drivers/media/IR/keymaps/rc-cinergy-1400.o
-  CC      net/netfilter/nf_conntrack_core.o
-  CC      drivers/md/dm-snap-persistent.o
-  CC      drivers/media/IR/keymaps/rc-cinergy.o
+  CC      net/key/af_key.o
+  CC      lib/scatterlist.o
+  CC      lib/string_helpers.o
+  CC      lib/gcd.o
+  CC      lib/lcm.o
+  CC      net/netfilter/core.o
+  CC      net/netfilter/nf_log.o
   CC      fs/sysfs/mount.o
-  CC      drivers/media/IR/keymaps/rc-dm1105-nec.o
-  CC      net/ipv6/icmp.o
-  CC      net/ipv6/mcast.o
-  CC      net/ipv6/reassembly.o
-  CC      drivers/media/IR/keymaps/rc-dntv-live-dvb-t.o
+  CC      net/ipv4/ip_sockglue.o
+  CC      drivers/md/dm-target.o
+  CC      lib/list_sort.o
+  CC      lib/uuid.o
+  CC      lib/iomap_copy.o
   CC      fs/sysfs/bin.o
-  CC      drivers/media/IR/keymaps/rc-dntv-live-dvbt-pro.o
-  CC      drivers/md/dm-crypt.o
-  CC      drivers/media/IR/keymaps/rc-empty.o
-  CC      drivers/media/IR/keymaps/rc-em-terratec.o
+  CC      drivers/md/dm-linear.o
+  CC      drivers/md/dm-stripe.o
+  CC      lib/devres.o
+  CC      net/netfilter/nf_queue.o
+  CC      lib/spinlock_debug.o
   CC      fs/sysfs/group.o
-  CC      net/netfilter/nf_conntrack_standalone.o
-  CC      drivers/media/IR/keymaps/rc-encore-enltv2.o
-  CC      net/netfilter/nf_conntrack_expect.o
-  CC      net/netfilter/nf_conntrack_helper.o
+  CC      net/netfilter/nf_sockopt.o
   LD      fs/sysfs/built-in.o
   CC      fs/sysv/ialloc.o
-  CC      drivers/media/IR/keymaps/rc-encore-enltv.o
-  CC      drivers/media/IR/keymaps/rc-encore-enltv-fm53.o
-  LD      drivers/md/dm-multipath.o
-  CC      drivers/md/dm-round-robin.o
-  CC      drivers/md/dm-queue-length.o
-  CC      drivers/media/IR/keymaps/rc-evga-indtube.o
+  CC      drivers/md/dm-ioctl.o
+  CC      net/ipv4/inet_hashtables.o
+  CC      lib/find_last_bit.o
+  CC      lib/hweight.o
+  CC      lib/bitrev.o
+  CC      net/netfilter/nf_conntrack_core.o
+  CC      net/ipv6/addrlabel.o
+  CC      net/ipv6/route.o
+  CC      lib/crc-ccitt.o
   CC      fs/sysv/balloc.o
-  CC      drivers/media/IR/keymaps/rc-eztv.o
-  CC      net/netlink/af_netlink.o
-  CC      net/netfilter/nf_conntrack_proto.o
-  CC      drivers/media/IR/keymaps/rc-flydvb.o
-  CC      drivers/media/IR/keymaps/rc-flyvideo.o
-  CC      drivers/md/dm-service-time.o
+  CC      lib/crc16.o
+  HOSTCC  lib/gen_crc32table
+  CC      lib/lzo/lzo1x_decompress.o
   CC      fs/sysv/inode.o
-  LD      drivers/md/dm-snapshot.o
-  CC      net/netlink/genetlink.o
-  CC      drivers/media/IR/keymaps/rc-fusionhdtv-mce.o
-  CC      drivers/media/IR/keymaps/rc-gadmei-rm008z.o
-  CC      net/ipv6/tcp_ipv6.o
-  CC      net/netfilter/nf_conntrack_l3proto_generic.o
-  CC      net/ipv4/tcp_output.o
-  LD      drivers/md/dm-mirror.o
-  CC      drivers/md/dm-log.o
-  CC      drivers/media/IR/keymaps/rc-genius-tvgo-a11mce.o
+  CC      net/ipv4/inet_timewait_sock.o
+  LD      net/key/built-in.o
+  CC      net/netfilter/nf_conntrack_standalone.o
+  CC      net/netfilter/nf_conntrack_expect.o
+  CC      drivers/md/dm-io.o
+  LD      lib/lzo/lzo_decompress.o
+  LD      lib/lzo/built-in.o
+  CC      lib/reed_solomon/reed_solomon.o
   CC      fs/sysv/itree.o
-  CC      drivers/media/IR/keymaps/rc-gotview7135.o
-  CC      drivers/media/IR/keymaps/rc-hauppauge-new.o
-  CC      net/netfilter/nf_conntrack_proto_generic.o
-  CC      drivers/md/dm-region-hash.o
-  CC      drivers/media/IR/keymaps/rc-imon-mce.o
-  CC      drivers/media/IR/keymaps/rc-imon-pad.o
-  CC      drivers/media/IR/keymaps/rc-iodata-bctv7e.o
+  CC      drivers/media/IR/keymaps/rc-adstech-dvb-t-pci.o
+  CC      drivers/media/IR/keymaps/rc-apac-viewcomp.o
+  CC      drivers/md/dm-kcopyd.o
   CC      fs/sysv/file.o
-  LD      net/netlink/built-in.o
-  CC      net/netfilter/nf_conntrack_proto_tcp.o
-  CC      drivers/media/IR/keymaps/rc-kaiomy.o
-  CC      net/ipv6/exthdrs.o
-  CC      net/ipv6/datagram.o
+  CC      net/ipv4/inet_connection_sock.o
+  CC      drivers/media/IR/keymaps/rc-asus-pc39.o
+  LD      lib/reed_solomon/built-in.o
+  CC      lib/zlib_deflate/deflate.o
+  CC      net/netfilter/nf_conntrack_helper.o
+  CC      lib/zlib_deflate/deftree.o
+  CC      drivers/media/IR/keymaps/rc-ati-tv-wonder-hd-600.o
+  CC      net/ipv6/ip6_fib.o
   CC      fs/sysv/dir.o
-  CC      drivers/media/IR/keymaps/rc-kworld-315u.o
-  CC      drivers/media/IR/keymaps/rc-kworld-plus-tv-analog.o
-  CC      drivers/md/dm-zero.o
-  CC      drivers/media/IR/keymaps/rc-manli.o
-  CC      net/ipv6/ip6_flowlabel.o
-  CC      drivers/media/IR/keymaps/rc-msi-tvanywhere.o
+  CC      drivers/media/IR/keymaps/rc-avermedia-a16d.o
+  CC      drivers/md/dm-sysfs.o
+  CC      drivers/media/IR/keymaps/rc-avermedia.o
+  CC      drivers/md/dm-path-selector.o
+  CC      net/netfilter/nf_conntrack_proto.o
+  CC      drivers/media/IR/keymaps/rc-avermedia-cardbus.o
+  CC      net/ipv4/tcp.o
+  CC      net/ipv4/tcp_input.o
   CC      fs/sysv/namei.o
-  LD      drivers/md/dm-mod.o
-  LD      drivers/md/built-in.o
-  CC      net/ipv6/inet6_connection_sock.o
-  CC      net/ipv4/tcp_timer.o
-  CC      drivers/media/IR/ir-functions.o
-  CC      drivers/media/IR/keymaps/rc-msi-tvanywhere-plus.o
-  CC      drivers/media/IR/keymaps/rc-nebula.o
-  CC      net/netfilter/nf_conntrack_proto_udp.o
+  CC      drivers/media/IR/keymaps/rc-avermedia-dvbt.o
+  CC      drivers/md/dm-mpath.o
+  CC      lib/zlib_deflate/deflate_syms.o
+  CC      drivers/media/IR/keymaps/rc-avermedia-m135a.o
+  CC      net/netfilter/nf_conntrack_l3proto_generic.o
+  LD      lib/zlib_deflate/zlib_deflate.o
+  LD      lib/zlib_deflate/built-in.o
+  CC      lib/zlib_inflate/inffast.o
   CC      fs/sysv/super.o
-  CC      drivers/media/IR/keymaps/rc-nec-terratec-cinergy-xs.o
-  CC      drivers/media/IR/keymaps/rc-norwood.o
-  CC      drivers/media/IR/keymaps/rc-npgtech.o
-  CC      net/ipv6/sysctl_net_ipv6.o
-  CC      net/ipv6/xfrm6_policy.o
-  CC      drivers/media/IR/keymaps/rc-pctv-sedna.o
-  CC      fs/eventpoll.o
-  CC      fs/anon_inodes.o
-  CC      net/netfilter/nf_conntrack_extend.o
+  CC      net/ipv6/ipv6_sockglue.o
+  CC      drivers/media/IR/keymaps/rc-avermedia-m733a-rm-k6.o
+  CC      lib/zlib_inflate/inflate.o
+  CC      drivers/media/IR/keymaps/rc-avertv-303.o
+  CC      drivers/media/IR/keymaps/rc-behold.o
+  CC      net/netfilter/nf_conntrack_proto_generic.o
   CC      fs/sysv/symlink.o
-  CC      drivers/media/IR/keymaps/rc-pinnacle-color.o
-  CC      net/ipv4/tcp_ipv4.o
-  CC      drivers/media/IR/keymaps/rc-pinnacle-grey.o
+  CC      drivers/media/IR/keymaps/rc-behold-columbus.o
   LD      fs/sysv/sysv.o
   LD      fs/sysv/built-in.o
+  CC      drivers/media/IR/keymaps/rc-budget-ci-old.o
+  CC      fs/eventpoll.o
+  CC      net/netfilter/nf_conntrack_proto_tcp.o
+  CC      drivers/md/dm-snap.o
+  CC      drivers/media/IR/keymaps/rc-cinergy-1400.o
+  CC      lib/zlib_inflate/infutil.o
+  CC      net/ipv6/ndisc.o
+  CC      lib/zlib_inflate/inftrees.o
+  CC      drivers/media/IR/keymaps/rc-cinergy.o
+fs/eventpoll.c: In function 'ep_poll':
+fs/eventpoll.c:1118: warning: 'slack' may be used uninitialized in this function
+  CC      drivers/media/IR/keymaps/rc-dm1105-nec.o
+  CC      lib/zlib_inflate/inflate_syms.o
+  LD      lib/zlib_inflate/zlib_inflate.o
+  LD      lib/zlib_inflate/built-in.o
+  CC      lib/textsearch.o
+  CC      drivers/media/IR/keymaps/rc-dntv-live-dvb-t.o
+  CC      fs/anon_inodes.o
+  CC      fs/signalfd.o
+  CC      drivers/media/IR/keymaps/rc-dntv-live-dvbt-pro.o
+  CC      lib/ts_kmp.o
+  CC      net/netfilter/nf_conntrack_proto_udp.o
+  CC      net/ipv4/tcp_output.o
+  CC      drivers/media/IR/keymaps/rc-empty.o
+  CC      lib/ts_bm.o
+  CC      drivers/media/IR/keymaps/rc-em-terratec.o
+  CC      fs/timerfd.o
+  CC      drivers/media/IR/keymaps/rc-encore-enltv2.o
+  CC      drivers/md/dm-exception-store.o
+  CC      lib/ts_fsm.o
+  CC      net/netfilter/nf_conntrack_extend.o
+  CC      net/ipv6/udp.o
+  CC      drivers/media/IR/keymaps/rc-encore-enltv.o
+  CC      fs/eventfd.o
+  CC      drivers/media/IR/keymaps/rc-encore-enltv-fm53.o
+  CC      lib/nlattr.o
+  CC      drivers/md/dm-snap-transient.o
+  CC      drivers/media/IR/keymaps/rc-evga-indtube.o
+  CC      net/netfilter/nf_conntrack_acct.o
+  CC      drivers/media/IR/keymaps/rc-eztv.o
+  CC      drivers/media/IR/ir-functions.o
+  CC      fs/aio.o
+  CC      lib/argv_split.o
+  CC      drivers/media/IR/keymaps/rc-flydvb.o
+  CC      drivers/md/dm-snap-persistent.o
+  CC      net/netfilter/nfnetlink.o
+  CC      lib/cmdline.o
+  CC      drivers/media/IR/keymaps/rc-flyvideo.o
+  CC      lib/ctype.o
+  CC      net/ipv6/udplite.o
+  CC      drivers/media/IR/keymaps/rc-fusionhdtv-mce.o
+  CC      lib/dec_and_lock.o
+  CC      net/ipv4/tcp_timer.o
+  CC      lib/decompress.o
+  CC      lib/decompress_bunzip2.o
+  CC      drivers/media/IR/keymaps/rc-gadmei-rm008z.o
+  CC      net/netfilter/nfnetlink_queue.o
+  CC      drivers/md/dm-crypt.o
+  CC      drivers/media/IR/keymaps/rc-genius-tvgo-a11mce.o
+  CC      drivers/media/IR/keymaps/rc-gotview7135.o
+  CC      net/ipv6/raw.o
+lib/decompress_bunzip2.c: In function 'get_next_block':
+lib/decompress_bunzip2.c:511: warning: the frame size of 1888 bytes is larger than 1024 bytes
+  CC      net/netlink/af_netlink.o
+  CC      drivers/media/IR/keymaps/rc-hauppauge-new.o
+  CC      lib/decompress_inflate.o
+  CC      drivers/media/IR/keymaps/rc-imon-mce.o
+  CC      fs/locks.o
+  CC      drivers/media/IR/keymaps/rc-imon-pad.o
+  CC      net/ipv4/tcp_ipv4.o
+  CC      lib/decompress_unlzma.o
+  CC      net/netfilter/nfnetlink_log.o
+  CC      drivers/media/IR/keymaps/rc-iodata-bctv7e.o
+  CC      drivers/media/IR/keymaps/rc-kaiomy.o
+  LD      drivers/md/dm-multipath.o
+  CC      drivers/md/dm-round-robin.o
+  CC      drivers/media/IR/keymaps/rc-kworld-315u.o
+  CC      lib/decompress_unlzo.o
+  CC      net/ipv6/protocol.o
+  CC      drivers/media/IR/keymaps/rc-kworld-plus-tv-analog.o
+  CC      drivers/md/dm-queue-length.o
+  CC      drivers/media/IR/keymaps/rc-manli.o
+  CC      lib/dump_stack.o
+  LD      net/netfilter/nf_conntrack.o
+  CC      net/netfilter/nf_conntrack_ftp.o
+  CC      lib/extable.o
+  CC      fs/binfmt_aout.o
+  CC      drivers/media/IR/keymaps/rc-msi-tvanywhere.o
+  CC      net/ipv6/icmp.o
+  CC      net/netlink/genetlink.o
+  CC      lib/flex_array.o
+  CC      drivers/media/IR/keymaps/rc-msi-tvanywhere-plus.o
+  CC      drivers/md/dm-service-time.o
+  CC      drivers/media/IR/keymaps/rc-nebula.o
+  CC      lib/idr.o
+  CC      drivers/media/IR/keymaps/rc-nec-terratec-cinergy-xs.o
+  CC      fs/binfmt_misc.o
+  CC      net/ipv4/tcp_minisocks.o
+  LD      drivers/md/dm-snapshot.o
+  LD      drivers/md/dm-mirror.o
+  CC      drivers/md/dm-log.o
+  CC      drivers/media/IR/keymaps/rc-norwood.o
+  CC      net/netfilter/x_tables.o
+  CC      drivers/media/IR/keymaps/rc-npgtech.o
+  CC      lib/int_sqrt.o
+  CC      net/ipv6/mcast.o
+  LD      net/netlink/built-in.o
+  CC      lib/ioremap.o
+  CC      fs/binfmt_script.o
+  CC      drivers/media/IR/keymaps/rc-pctv-sedna.o
+  CC      drivers/media/IR/keymaps/rc-pinnacle-color.o
+  CC      drivers/md/dm-region-hash.o
+  CC      fs/binfmt_elf.o
+  CC      lib/irq_regs.o
+  CC      net/ipv4/tcp_cong.o
+  CC      drivers/media/IR/keymaps/rc-pinnacle-grey.o
   CC      drivers/media/IR/keymaps/rc-pinnacle-pctv-hd.o
+  CC      lib/is_single_threaded.o
+  CC      lib/klist.o
   CC      drivers/media/IR/keymaps/rc-pixelview.o
   CC      drivers/media/IR/keymaps/rc-pixelview-mk12.o
-  CC      net/netfilter/nf_conntrack_acct.o
-  CC      net/ipv6/xfrm6_state.o
-  CC      net/ipv6/xfrm6_input.o
-  CC      net/ipv6/xfrm6_output.o
+  CC      drivers/md/dm-zero.o
   CC      drivers/media/IR/keymaps/rc-pixelview-new.o
-  CC      net/ipv6/netfilter.o
-  CC      fs/signalfd.o
-  CC      drivers/media/IR/keymaps/rc-powercolor-real-angel.o
-  CC      net/netfilter/nfnetlink.o
-  CC      drivers/media/IR/keymaps/rc-proteus-2309.o
-  CC      net/netfilter/nfnetlink_queue.o
-  CC      drivers/media/IR/keymaps/rc-purpletv.o
-  CC      net/netfilter/nfnetlink_log.o
-  LD      net/netfilter/nf_conntrack.o
-  CC      drivers/media/IR/keymaps/rc-pv951.o
-  CC      net/ipv6/proc.o
-  CC      fs/timerfd.o
-  CC      net/ipv6/xfrm6_mode_transport.o
-  CC      drivers/media/IR/keymaps/rc-rc5-hauppauge-new.o
-  CC      drivers/media/IR/keymaps/rc-rc5-tv.o
-  CC      net/packet/af_packet.o
-  CC      drivers/media/IR/keymaps/rc-real-audio-220-32-keys.o
-  CC      fs/eventfd.o
-  CC      drivers/media/IR/keymaps/rc-tbs-nec.o
-  CC      drivers/media/IR/keymaps/rc-terratec-cinergy-xs.o
-  CC      net/ipv4/tcp_minisocks.o
-  CC      net/ipv6/xfrm6_mode_tunnel.o
-  CC      drivers/media/IR/keymaps/rc-tevii-nec.o
-  CC      net/netfilter/nf_conntrack_ftp.o
-  CC      fs/aio.o
-  CC      fs/locks.o
-  CC      drivers/media/IR/keymaps/rc-tt-1500.o
-  CC      drivers/media/IR/keymaps/rc-videomate-s350.o
-  CC      fs/binfmt_aout.o
-  CC      drivers/media/IR/keymaps/rc-videomate-tv-pvr.o
-  CC      net/ipv6/xfrm6_mode_beet.o
-  CC      drivers/media/IR/keymaps/rc-winfast.o
-  CC      net/ipv4/tcp_cong.o
-  CC      drivers/media/IR/keymaps/rc-winfast-usbii-deluxe.o
-  CC      net/netfilter/x_tables.o
   CC      net/netfilter/xt_tcpudp.o
+  CC      lib/kobject.o
+  CC      lib/kobject_uevent.o
+  CC      drivers/media/IR/keymaps/rc-powercolor-real-angel.o
+  CC      net/ipv4/datagram.o
+  LD      drivers/md/dm-mod.o
+  LD      drivers/md/built-in.o
+  CC      drivers/media/IR/keymaps/rc-proteus-2309.o
+  CC      net/netfilter/xt_mark.o
+  CC      drivers/media/IR/keymaps/rc-purpletv.o
+  CC      drivers/media/IR/keymaps/rc-pv951.o
+  CC      drivers/media/IR/keymaps/rc-rc5-hauppauge-new.o
+  CC      fs/posix_acl.o
+  CC      fs/xattr_acl.o
+  CC      lib/kref.o
+  CC      lib/plist.o
+  CC      net/netfilter/xt_connmark.o
+  CC      net/ipv4/raw.o
+  CC      drivers/media/IR/keymaps/rc-rc5-tv.o
+  CC      drivers/media/IR/keymaps/rc-real-audio-220-32-keys.o
+  CC      lib/prio_heap.o
+  CC      drivers/media/IR/keymaps/rc-tbs-nec.o
+  CC      net/ipv4/udp.o
+  CC      lib/prio_tree.o
+  CC      net/ipv4/udplite.o
+  CC      fs/generic_acl.o
+  CC      drivers/media/IR/keymaps/rc-terratec-cinergy-xs.o
+  CC      net/netfilter/xt_CLASSIFY.o
+  CC      net/ipv6/reassembly.o
+  CC      drivers/media/IR/keymaps/rc-tevii-nec.o
+  CC      lib/proportions.o
+  LD      fs/built-in.o
+  CC      drivers/media/IR/keymaps/rc-tt-1500.o
+  CC      net/netfilter/xt_DSCP.o
+  CC      drivers/media/IR/keymaps/rc-videomate-s350.o
+  CC      lib/radix-tree.o
+  CC      drivers/media/IR/keymaps/rc-videomate-tv-pvr.o
+  CC      net/ipv6/tcp_ipv6.o
+  CC      net/ipv6/exthdrs.o
+  CC      drivers/media/IR/keymaps/rc-winfast.o
+  CC      net/ipv6/datagram.o
+  CC      drivers/media/IR/keymaps/rc-winfast-usbii-deluxe.o
+  CC      net/netfilter/xt_NFLOG.o
+  CC      net/netfilter/xt_NFQUEUE.o
   LD      drivers/media/IR/keymaps/built-in.o
-  LD      net/ipv6/netfilter/built-in.o
-  CC      net/ipv6/sit.o
   CC      drivers/media/IR/ir-keytable.o
-  LD      net/packet/built-in.o
-  CC      drivers/media/IR/ir-sysfs.o
-  CC      fs/binfmt_misc.o
+  CC      lib/ratelimit.o
+  CC      lib/rbtree.o
 drivers/media/IR/ir-keytable.c: In function '__ir_input_register':
 drivers/media/IR/ir-keytable.c:450: warning: assignment from incompatible pointer type
 drivers/media/IR/ir-keytable.c:451: warning: assignment from incompatible pointer type
-  CC      fs/binfmt_script.o
-  CC      net/ipv4/datagram.o
-  CC      drivers/media/IR/ir-raw-event.o
-  CC      net/netfilter/xt_mark.o
-  CC      drivers/media/co  CC      fs/posix_acl.o
-  CC      drivers/media/IR/rc-map.o
-  CC      drivers/media/IR/ir-nec-decoder.o
-  CC      net/netfilter/xt_connmark.o
-  CC      net/ipv4/raw.o
-  CC      net/netfilter/xt_CLASSIFY.o
-  CC      net/netfilter/xt_DSCP.o
-  CC      net/ipv4/udp.o
-  CC      drivers/media/IR/ir-rc6-decoder.o
+  CC      net/ipv6/ip6_flowlabel.o
+  CC      drivers/media/common/tuners/tuner-xc2028.o
+  CC      net/netfilter/xt_NOTRACK.o
+  CC      lib/reciprocal_div.o
   CC      drivers/media/common/tuners/tuner-simple.o
-  CC      drivers/media/common/tuners/tuner-types.o
-  CC      fs/xattr_acl.o
-  CC      net/ipv6/inet6_hashtables.o
-  CC      net/netfilter/xt_NFLOG.o
-  CC      drivers/media/IR/ir-jvc-decoder.o
-  CC      fs/generic_acl.o
+  CC      drivers/media/IR/ir-sysfs.o
+  CC      lib/rwsem-spinlock.o
+  CC      net/ipv4/arp.o
+  CC      net/netfilter/xt_RATEEST.o
+  CC      drivers/media/IR/ir-raw-event.o
+  CC      lib/sha1.o
+  CC      lib/show_mem.o
+  CC      net/ipv6/inet6_connection_sock.o
+  CC      net/netfilter/xt_TRACE.o
+  CC      drivers/media/IR/rc-map.o
+  CC      lib/string.o
+  CC      lib/vsprintf.o
   LD      drivers/media/radio/built-in.o
-  CC      drivers/media/IR/ir-sony-decoder.o
+  CC      net/packet/af_packet.o
+  CC      drivers/media/IR/ir-nec-decoder.o
+  CC      net/netfilter/xt_comment.o
+  CC      drivers/media/common/tuners/tuner-types.o
   CC      drivers/media/common/tuners/mt20xx.o
-  CC      net/netfilter/xt_NFQUEUE.o
-  CC      drivers/media/common/tuners/tda8290.o
+  CC      net/ipv6/sysctl_net_ipv6.o
+  CC      net/ipv4/icmp.o
+  CC      drivers/media/IR/ir-rc5-decoder.o
+  CC      net/netfilter/xt_connbytes.o
+  CC      net/netfilter/xt_connlimit.o
+  CC      drivers/media/IR/ir-rc6-decoder.o
+  CC      net/ipv6/xfrm6_policy.o
+  CC      net/ipv6/xfrm6_state.o
+  CC      net/ipv4/devinet.o
+  GEN     lib/crc32table.h
+  AR      lib/lib.a
+  CC      lib/crc32.o
+  CC      net/netfilter/xt_esp.o
+  LD      net/packet/built-in.o
+  CC      net/netfilter/xt_hashlimit.o
+  CC      net/ipv6/xfrm6_input.o
+  LD      lib/built-in.o
+  CC      drivers/media/IR/ir-sony-decoder.o
+  CC      net/netfilter/xt_helper.o
+  LD      drivers/mfd/built-in.o
+  CC      net/netfilter/xt_hl.o
+  CC      drivers/media/common/tuners/tea5767.o
   LD      drivers/media/IR/ir-core.o
   LD      drivers/media/IR/ir-common.o
-  LD      fs/built-in.o
   LD      drivers/media/IR/built-in.o
-  CC      drivers/media/common/tuners/tea5767.o
-  LD      drivers/mfd/built-in.o
-  CC      net/netfilter/xt_NOTRACK.o
-  CC      drivers/misc/pmem.o
-  LD      net/ipv6/ipv6.o
-  CC      drivers/misc/uid_stat.o
-  LD      net/ipv6/built-in.o
-  LD      drivers/misc/cb710/built-in.o
-  CC      net/netfilter/xt_RATEEST.o
-  CC      net/netfilter/xt_TRACE.o
+  CC      net/netfilter/xt_length.o
+  CC      net/ipv6/xfrm6_output.o
+  CC      net/ipv6/netfilter.o
+  CC      net/netfilter/xt_limit.o
+  CC      net/ipv4/af_inet.o
+  CC      net/ipv4/igmp.o
   CC      drivers/media/common/tuners/tea5761.o
   CC      drivers/media/common/tuners/tda9887.o
-  CC      net/ipv4/udplite.o
-  CC      drivers/media/common/tuners/xc5000.o
   CC      drivers/media/video/v4l2-dev.o
   CC      drivers/media/video/v4l2-ioctl.o
-  CC      net/netfilter/xt_comment.o
+  CC      net/netfilter/xt_mac.o
+  CC      net/ipv6/proc.o
+  CC      net/netfilter/xt_multiport.o
+  CC      drivers/media/common/tuners/xc5000.o
+  CC      net/phonet/pn_dev.o
+  CC      net/phonet/pn_netlink.o
+  CC      net/ipv6/xfrm6_mode_transport.o
+  CC      net/netfilter/xt_owner.o
+  CC      net/phonet/socket.o
   CC      drivers/media/video/v4l2-device.o
-  CC      net/ipv4/arp.o
+  CC      drivers/media/common/tuners/mc44s803.o
+  CC      drivers/media/video/v4l2-fh.o
+  CC      net/netfilter/xt_pkttype.o
+  CC      net/ipv6/xfrm6_mode_tunnel.o
+  CC      net/rfkill/core.o
+  CC      net/rxrpc/af_rxrpc.o
+  LD      drivers/media/common/tuners/built-in.o
+  LD      drivers/media/common/built-in.o
+  CC      net/phonet/datagram.o
+  CC      net/sched/sch_generic.o
+  CC      net/ipv4/fib_frontend.o
+  CC      net/netfilter/xt_policy.o
+  CC      drivers/media/video/v4l2-event.o
+  CC      net/ipv6/xfrm6_mode_beet.o
+  CC      net/phonet/sysctl.o
+  CC      drivers/media/video/v4l2-int-device.o
+  CC      net/phonet/af_phonet.o
+  CC      net/rfkill/input.o
+  CC      net/rxrpc/ar-accept.o
+  CC      net/netfilter/xt_quota.o
+  CC      drivers/media/video/v4l2-common.o
+  CC      net/sched/sch_mq.o
+  LD      net/ipv6/netfilter/built-in.o
+  CC      net/ipv6/sit.o
+  CC      net/netfilter/xt_rateest.o
+  LD      net/rfkill/rfkill.o
+  CC      net/ipv4/fib_semantics.o
+  LD      net/rfkill/built-in.o
+  CC      net/ipv4/inet_fragment.o
+  CC      net/phonet/pep.o
+  CC      net/rxrpc/ar-ack.o
+  LD      net/sched/built-in.o
+  CC      net/phonet/pep-gprs.o
+  CC      net/netfilter/xt_realm.o
+  CC      net/unix/af_unix.o
+  CC      drivers/media/video/v4l1-compat.o
+  CC      net/netfilter/xt_sctp.o
+  CC      net/netfilter/xt_state.o
+  CC      net/ipv4/sysctl_net_ipv4.o
+  CC      net/ipv6/addrconf_core.o
+  CC      net/rxrpc/ar-call.o
+  CC      net/unix/garbage.o
+  LD      net/phonet/phonet.o
+  LD      net/phonet/pn_pep.o
+  LD      net/phonet/built-in.o
+  CC      net/netfilter/xt_statistic.o
+  CC      net/unix/sysctl_net_unix.o
+  CC      net/ipv6/exthdrs_core.o
+  LD      drivers/media/video/samsung/built-in.o
+  CC      drivers/media/video/ir-kbd-i2c.o
+  CC      net/ipv4/sysfs_net_ipv4.o
+  CC      net/netfilter/xt_string.o
+  CC      net/ipv4/fib_hash.o
+  CC      net/netfilter/xt_tcpmss.o
+  LD      net/unix/unix.o
+  LD      net/unix/built-in.o
+  CC      net/ipv6/inet6_hashtables.o
+  LD      drivers/media/video/videodev.o
+  CC      net/wireless/wext-core.o
+  LD      drivers/media/video/built-in.o
+  LD      drivers/media/built-in.o
+  CC      drivers/misc/pmem.o
+  CC      drivers/misc/uid_stat.o
+  CC      net/rxrpc/ar-connection.o
+  CC      net/ipv4/proc.o
+  CC      drivers/mmc/card/block.o
+  CC      net/netfilter/xt_time.o
+  CC      net/wireless/wext-proc.o
+  LD      net/ipv6/ipv6.o
+  LD      net/ipv6/built-in.o
+  CC      drivers/net/Space.o
+  CC      drivers/net/loopback.o
+  CC      net/netfilter/xt_u32.o
+  CC      net/wireless/wext-priv.o
+  LD      drivers/misc/cb710/built-in.o
   LD      drivers/misc/eeprom/built-in.o
   LD      drivers/misc/fm_si4709/built-in.o
   CC [M]  drivers/misc/fm_si4709/Si4709_dev.o
-  CC      net/phonet/pn_dev.o
-  CC      net/netfilter/xt_connbytes.o
-  CC      net/netfilter/xt_connlimit.o
-  CC      net/netfilter/xt_conntrack.o
-  CC      drivers/media/common/tuners/mc44s803.o
+  CC      net/ipv4/ipip.o
+  CC      drivers/mmc/card/queue.o
+  CC      net/rxrpc/ar-connevent.o
+  CC      net/rxrpc/ar-error.o
 drivers/misc/fm_si4709/Si4709_dev.c:1914: warning: 'wait_RDS' defined but not used
 drivers/misc/fm_si4709/Si4709_dev.c:2002: warning: 'insert_preset' defined but not used
-  CC      net/ipv4/icmp.o
-  LD      drivers/media/common/tuners/built-in.o
-  LD      drivers/media/common/built-in.o
-  CC      net/netfilter/xt_esp.o
-  CC      net/phonet/pn_netlink.o
-  CC      net/phonet/socket.o
-  CC      net/netfilter/xt_hashlimit.o
+  CC [M]  net/netfilter/xt_TCPMSS.o
+  CC      drivers/net/ppp_generic.o
+  LD      net/wireless/built-in.o
+  CC      drivers/net/ppp_async.o
+  LD      drivers/mmc/card/mmc_block.o
+  LD      drivers/mmc/card/built-in.o
+  CC      drivers/mmc/core/core.o
+  CC      drivers/net/ppp_synctty.o
+  CC      net/rxrpc/ar-input.o
+  CC      net/ipv4/ip_gre.o
   CC [M]  drivers/misc/fm_si4709/Si4709_i2c_drv.o
-  CC      net/ipv4/devinet.o
-  CC      net/netfilter/xt_helper.o
+  LD      net/netfilter/netfilter.o
+  LD      net/netfilter/built-in.o
+  CC      drivers/net/ppp_deflate.o
+  CC      drivers/mmc/host/sdhci.o
   CC [M]  drivers/misc/fm_si4709/Si4709_main.o
-  CC      net/ipv4/af_inet.o
-  CC      net/phonet/datagram.o
-  CC      drivers/misc/level/level.o
+  CC      drivers/mmc/host/sdhci-s3c.o
+  CC      net/rxrpc/ar-key.o
 drivers/misc/fm_si4709/Si4709_main.c: In function 'Si4709_ioctl':
 drivers/misc/fm_si4709/Si4709_main.c:538: warning: format '%d' expects type 'int', but argument 3 has type 'long unsigned int'
 drivers/misc/fm_si4709/Si4709_main.c:557: warning: format '%d' expects type 'int', but argument 3 has type 'long unsigned int'
-  CC      drivers/media/video/v4l2-fh.o
-  CC      net/phonet/sysctl.o
-  CC      net/netfilter/xt_hl.o
+drivers/mmc/host/sdhci.c: In function 'sdhci_adjust_cfg':
+drivers/mmc/host/sdhci.c:1302: warning: unused variable 'clock'
+drivers/mmc/host/sdhci.c:1301: warning: unused variable 'ios'
+  CC      drivers/mmc/core/bus.o
+  CC      drivers/mmc/core/host.o
+  LD [M]  drivers/misc/fm_si4709/Si4709_driver.o
+  CC      drivers/misc/level/level.o
+  LD      drivers/misc/vibetonz/built-in.o
+  CC [M]  drivers/misc/vibetonz/tspdrv.o
+  CC      drivers/mmc/core/mmc.o
 In file included from drivers/misc/level/level.c:10:
 include/linux/kernel_sec_common.h:46: warning: "S3C_PA_WDT" redefined
 arch/arm/mach-s5pv210/include/mach/map.h:212: note: this is the location of the previous definition
-  CC      net/netfilter/xt_length.o
-  CC      drivers/media/video/v4l2-event.o
-  LD      drivers/misc/level/built-in.o
-  CC      net/rfkill/core.o
-  LD [M]  drivers/misc/fm_si4709/Si4709_driver.o
-  LD      drivers/misc/vibetonz/built-in.o
-  CC [M]  drivers/misc/vibetonz/tspdrv.o
-  CC      net/phonet/af_phonet.o
+  CC      drivers/mmc/core/mmc_ops.o
 In file included from drivers/misc/vibetonz/tspdrv.c:83:
 drivers/misc/vibetonz/VibeOSKernelLinuxTime.c: In function 'VibeOSKernelLinuxStartTimer':
 drivers/misc/vibetonz/VibeOSKernelLinuxTime.c:216: warning: ignoring return value of 'down_interruptible', declared with attribute warn_unused_result
@@ -1320,161 +1436,74 @@ drivers/misc/vibetonz/tspdrv.c:248: warning: unused variable 'arg2'
 drivers/misc/vibetonz/tspdrv.c:248: warning: unused variable 'arg1'
 drivers/misc/vibetonz/tspdrv.c: At top level:
 drivers/misc/vibetonz/ImmVibeSPI.c:283: warning: 'ImmVibeSPI_ForceOut_SetFrequency' defined but not used
-  CC      drivers/media/video/v4l2-int-device.o
-  CC      net/netfilter/xt_limit.o
-  CC      net/phonet/pep.o
-  CC      net/phonet/pep-gprs.o
+  CC      drivers/net/bsd_comp.o
+  CC      net/ipv4/ah4.o
+  LD      drivers/misc/level/built-in.o
+  CC      drivers/net/ppp_mppe.o
   LD [M]  drivers/misc/vibetonz/vibrator.o
   LD      drivers/misc/built-in.o
-  CC      drivers/media/video/v4l2-common.o
-  CC      net/rfkill/input.o
-  CC      net/ipv4/igmp.o
-  CC      net/netfilter/xt_mac.o
-  CC      drivers/media/video/v4l1  LD      drivers/media/video/samsung/built-in.o
-  LD      net/rfkill/rfkill.o
-  CC      net/netfilter/xt_multiport.o
-  LD      net/rfkill/built-in.o
-  CC      drivers/media/video/ir-kbd-i2c.o
-  CC      net/netfilter/xt_owner.o
-  CC      net/netfilter/xt_pkttype.o
-  LD      net/phonet/phonet.o
-  LD      net/phonet/pn_pep.o
-  CC      net/netfilter/xt_policy.o
-  CC      net/netfilter/xt_quota.o
-  LD      drivers/media/video/videodev.o
-  CC      net/netfilter/xt_rateest.o
-  LD      net/phonet/built-in.o
-  CC      net/ipv4/fib_semantics.o
-  LD      drivers/media/video/built-in.o
-  CC      drivers/mmc/card/block.o
-  CC      net/ipv4/inet_fragment.o
-  LD      drivers/media/built-in.o
-  CC      net/ipv4/sysctl_net_ipv4.o
-  CC      net/ipv4/sysfs_net_ipv4.o
-  CC      net/ipv4/fib_hash.o
-  CC      net/netfilter/xt_realm.o
-  CC      net/netfilter/xt_sctp.o
-  CC      drivers/mmc/card/queue.o
-  CC      net/netfilter/xt_state.o
-  CC      drivers/mmc/core/core.o
-  CC      drivers/mmc/core/bus.o
-  CC      drivers/mmc/core/host.o
-  CC      drivers/mmc/core/mmc.o
-  CC      drivers/mmc/core/mmc_ops.o
-  CC      net/netfilter/xt_statistic.o
-  CC      net/netfilter/xt_string.o
-  CC      net/netfilter/xt_tcpmss.o
-  LD      drivers/mmc/card/mmc_block.o
-  LD      drivers/mmc/card/built-in.o
-  CC      drivers/mmc/core/sd.o
-  CC      net/ipv4/proc.o
-  CC      net/ipv4/ipip.o
-  CC      drivers/mmc/core/sd_ops.o
-  CC      drivers/mmc/core/sdio.o
-  CC      net/ipv4/ip_gre.o
-  CC      net/ipv4/ah4.o
-  CC      net/netfilter/xt_time.o
-  CC      net/netfilter/xt_u32.o
-  CC [M]  net/netfilter/xt_TCPMSS.o
-  CC      drivers/mmc/core/sdio_ops.o
-  CC      drivers/net/Space.o
-  LD      drivers/platform/built-in.o
-  CC      drivers/mmc/host/sdhci.o
-  CC      net/rxrpc/af_rxrpc.o
-  CC      net/rxrpc/ar-accept.o
-  CC      drivers/mmc/core/sdio_bus.o
-drivers/mmc/host/sdhci.c: In function 'sdhci_adjust_cfg':
-drivers/mmc/host/sdhci.c:1302: warning: unused variable 'clock'
-drivers/mmc/host/sdhci.c:1301: warning: unused variable 'ios'
-  CC      drivers/net/loopback.o
-  CC      drivers/net/ppp_generic.o
-  LD      net/netfilter/netfilter.o
-  LD      net/netfilter/built-in.o
-  CC      net/ipv4/esp4.o
-  CC      drivers/mmc/core/sdio_cis.o
-  CC      drivers/mmc/core/sdio_io.o
-  CC      drivers/mmc/core/sdio_irq.o
-  CC      net/ipv4/xfrm4_mode_beet.o
-  CC      net/rxrpc/ar-ack.o
-  CC      net/ipv4/inet_lro.o
-  CC      net/ipv4/tunnel4.o
-  CC      drivers/mmc/core/debugfs.o
-  CC      drivers/mmc/host/sdhci-s3c.o
-  CC      net/ipv4/xfrm4_mode_transport.o
-  CC      net/sched/sch_generic.o
-  LD      drivers/mmc/core/mmc_core.o
-  LD      drivers/mmc/core/built-in.o
-  CC      net/unix/af_unix.o
-  CC      net/unix/garbage.o
-  CC      net/unix/sysctl_net_unix.o
-  LD      drivers/mmc/host/built-in.o
-  LD      drivers/mmc/built-in.o
-  CC      net/ipv4/xfrm4_mode_tunnel.o
-  CC      drivers/net/ppp_async.o
-  CC      drivers/net/ppp_synctty.o
-  CC      net/rxrpc/ar-call.o
-  CC      net/rxrpc/ar-connection.o
-  CC      net/sched/sch_mq.o
-  CC      drivers/net/ppp_deflate.o
-  CC      net/ipv4/netfilter.o
-  CC      drivers/net/bsd_comp.o
-  CC      drivers/net/ppp_mppe.o
   CC      drivers/net/pppox.o
-  LD      net/sched/built-in.o
-  CC      net/wireless/wext-core.o
-  CC      net/wireless/wext-proc.o
-  CC      net/ipv4/netfilter/nf_nat_rule.o
-  CC      net/ipv4/netfilter/nf_nat_standalone.o
-  LD      net/unix/unix.o
-  LD      net/unix/built-in.o
-  CC      drivers/power/power_supply_core.o
-  CC      net/rxrpc/ar-connevent.o
-  CC      net/rxrpc/ar-error.o
-  CC      drivers/net/pppoe.o
-  CC      net/rxrpc/ar-input.o
-  CC      net/wireless/wext-priv.o
-  CC      drivers/power/power_supply_sysfs.o
-  CC      net/rxrpc/ar-key.o
-  CC      drivers/power/s5pc110_battery.o
-l3proto_ipv4.o
-  CC      net/ipv4/netfilter/nf_conntrack_proto_icmp.o
-  CC      net/ipv4/netfilter/nf_conntrack_l3proto_ipv4_compat.o
-  LD      net/wireless/built-in.o
-  CC      net/ipv4/inet_diag.o
-  CC      drivers/net/pppolac.o
-  LD      drivers/power/power_supply.o
-  CC      net/ipv4/netfilter/nf_nat_core.o
-  CC      net/ipv4/tcp_diag.o
-  CC      net/ipv4/tcp_cubic.o
-  CC      net/ipv4/xfrm4_policy.o
-  LD      drivers/power/built-in.o
-  CC      net/xfrm/xfrm_policy.o
-  CC      net/sysctl_net.o
-  CC      net/ipv4/netfilter/nf_nat_helper.o
-  CC      drivers/net/pppopns.o
-  CC      drivers/net/slip.o
+  LD      drivers/mmc/host/built-in.o
+  CC      net/ipv4/esp4.o
+  CC      net/ipv4/xfrm4_mode_beet.o
+  CC      net/ipv4/inet_lro.o
+  CC      drivers/mmc/core/sd.o
+  CC      net/ipv4/tunnel4.o
   CC      net/rxrpc/ar-local.o
   CC      net/rxrpc/ar-output.o
+  CC      net/rxrpc/ar-peer.o
+  CC      drivers/net/pppoe.o
+  CC      net/rxrpc/ar-recvmsg.o
+  CC      net/rxrpc/ar-security.o
+  CC      drivers/mmc/core/sd_ops.o
+  CC      net/ipv4/xfrm4_mode_transport.o
+  CC      net/ipv4/xfrm4_mode_tunnel.o
+  CC      net/ipv4/netfilter.o
+  CC      drivers/mmc/core/sdio.o
+  CC      net/xfrm/xfrm_policy.o
+  CC      drivers/mmc/core/sdio_ops.o
+  CC      drivers/mmc/core/sdio_bus.o
+  CC      net/rxrpc/ar-skbuff.o
+  CC      drivers/mmc/core/sdio_cis.o
+  CC      net/ipv4/netfilter/nf_nat_rule.o
+  CC      net/ipv4/inet_diag.o
+  CC      net/ipv4/tcp_diag.o
+  CC      net/ipv4/tcp_cubic.o
+  CC      drivers/net/pppolac.o
+  CC      drivers/mmc/core/sdio_io.o
+  CC      net/rxrpc/ar-transport.o
+  CC      net/ipv4/netfilter/nf_nat_standalone.o
+  CC      net/ipv4/netfilter/nf_conntrack_l3proto_ipv4.o
+  CC      net/ipv4/netfilter/nf_conntrack_proto_icmp.o
+  CC      drivers/net/pppopns.o
+  CC      drivers/mmc/core/sdio_irq.o
+  CC      drivers/net/slip.o
+  CC      net/rxrpc/ar-proc.o
+  CC      net/ipv4/xfrm4_policy.o
+  CC      net/ipv4/xfrm4_state.o
+  CC      drivers/mmc/core/debugfs.o
+  CC      net/ipv4/netfilter/nf_conntrack_l3proto_ipv4_compat.o
+  CC      net/ipv4/xfrm4_input.o
+  LD      net/rxrpc/af-rxrpc.o
+  LD      net/rxrpc/built-in.o
   CC      net/xfrm/xfrm_state.o
+  LD      drivers/mmc/core/mmc_core.o
+  LD      drivers/mmc/core/built-in.o
+  LD      drivers/mmc/built-in.o
+  CC      drivers/net/slhc.o
+  LD      drivers/net/arm/built-in.o
   CC      net/xfrm/xfrm_hash.o
   CC      net/xfrm/xfrm_input.o
-  CC      net/activity_stats.o
-  CC      drivers/net/slhc.o
-  CC      net/ipv4/netfilter/nf_nat_proto_unknown.o
-  CC      net/rxrpc/ar-peer.o
-  CC      net/rxrpc/ar-recvmsg.o
-  LD      drivers/net/arm/built-in.o
-  CC      net/xfrm/xfrm_output.o
-  CC      net/ipv4/netfilter/nf_nat_proto_common.o
-  CC      net/ipv4/netfilter/nf_nat_proto_tcp.o
-  CC      net/ipv4/netfilter/nf_nat_proto_udp.o
+  CC      net/ipv4/netfilter/nf_nat_core.o
   LD      drivers/net/wireless/built-in.o
+  CC      net/ipv4/netfilter/nf_nat_helper.o
   LD      drivers/net/wireless/bcm4329/built-in.o
+  CC      net/sysctl_net.o
   CC [M]  drivers/net/wireless/bcm4329/src/dhd/sys/dhd_linux.o
-  CC      net/ipv4/xfrm4_state.o
   CC [M]  drivers/net/wireless/bcm4329/src/dhd/sys/dhd_common.o
-  CC      drivers/regulator/core.o
-  CC      net/rxrpc/ar-security.o
+In file included from drivers/net/wireless/bcm4329/src/dhd/sys/dhd_common.c:34:
+drivers/net/wireless/bcm4329/src/dhd/sys/dhd.h:402: warning: 'struct sched_param' declared inside parameter list
+drivers/net/wireless/bcm4329/src/dhd/sys/dhd.h:402: warning: its scope is only this definition or declaration, which is probably not what you want
 In file included from drivers/net/wireless/bcm4329/src/dhd/sys/dhd_linux.c:56:
 drivers/net/wireless/bcm4329/src/dhd/sys/dhd.h:402: warning: 'struct sched_param' declared inside parameter list
 drivers/net/wireless/bcm4329/src/dhd/sys/dhd.h:402: warning: its scope is only this definition or declaration, which is probably not what you want
@@ -1484,118 +1513,134 @@ drivers/net/wireless/bcm4329/src/dhd/sys/dhd.h:402: note: expected 'struct sched
 drivers/net/wireless/bcm4329/src/dhd/sys/dhd_linux.c: In function 'dhd_dpc_thread':
 drivers/net/wireless/bcm4329/src/dhd/sys/dhd_linux.c:1458: warning: passing argument 3 of 'setScheduler' from incompatible pointer type
 drivers/net/wireless/bcm4329/src/dhd/sys/dhd.h:402: note: expected 'struct sched_param *' but argument is of type 'struct sched_param *'
-In file included from drivers/net/wireless/bcm4329/src/dhd/sys/dhd_common.c:34:
-drivers/net/wireless/bcm4329/src/dhd/sys/dhd.h:402: warning: 'struct sched_param' declared inside parameter list
-drivers/net/wireless/bcm4329/src/dhd/sys/dhd.h:402: warning: its scope is only this definition or declaration, which is probably not what you want
-  CC      net/ipv4/netfilter/nf_nat_proto_icmp.o
-  CC      net/ipv4/netfilter/nf_defrag_ipv4.o
-  CC      net/xfrm/xfrm_algo.o
-  CC      net/ipv4/netfilter/nf_nat_ftp.o
-  CC      net/rxrpc/ar-skbuff.o
-  CC      net/xfrm/xfrm_sysctl.o
-  CC      net/rxrpc/ar-transport.o
-  CC      net/ipv4/netfilter/ip_tables.o
-  CC      net/ipv4/netfilter/iptable_filter.o
-  CC      net/rxrpc/ar-proc.o
   CC [M]  drivers/net/wireless/bcm4329/src/dhd/sys/dhd_cdc.o
-  LD      net/xfrm/built-in.o
-  CC [M]  drivers/net/wireless/bcm4329/src/dhd/sys/dhd_linux_sched.o
-  CC      drivers/regulator/max8998.o
-  CC      drivers/rtc/rtc-lib.o
+  CC      net/ipv4/netfilter/nf_nat_proto_unknown.o
+  CC      net/ipv4/netfilter/nf_nat_proto_common.o
+  CC      net/ipv4/xfrm4_output.o
 In file included from drivers/net/wireless/bcm4329/src/dhd/sys/dhd_cdc.c:39:
 drivers/net/wireless/bcm4329/src/dhd/sys/dhd.h:402: warning: 'struct sched_param' declared inside parameter list
 drivers/net/wireless/bcm4329/src/dhd/sys/dhd.h:402: warning: its scope is only this definition or declaration, which is probably not what you want
-  CC      drivers/scsi/scsi.o
-  LD      net/rxrpc/af-rxrpc.o
-  LD      net/rxrpc/built-in.o
-  CC      net/ipv4/netfilter/iptable_mangle.o
-  LD      net/ipv4/netfilter/iptable_nat.o
-  CC      drivers/scsi/hosts.o
+  CC      net/xfrm/xfrm_output.o
+  CC      net/xfrm/xfrm_algo.o
+  CC      net/ipv4/netfilter/nf_nat_proto_tcp.o
+  CC      net/ipv4/netfilter/nf_nat_proto_udp.o
+  CC      net/ipv4/netfilter/nf_nat_proto_icmp.o
+  LD      drivers/platform/built-in.o
+  CC      net/ipv4/netfilter/nf_defrag_ipv4.o
+  CC      drivers/power/power_supply_core.o
+  CC      net/activity_stats.o
+  CC      drivers/regulator/core.o
+  CC      net/xfrm/xfrm_sysctl.o
+  CC [M]  drivers/net/wireless/bcm4329/src/dhd/sys/dhd_linux_sched.o
+  CC      drivers/rtc/rtc-lib.o
+  CC      drivers/power/power_supply_sysfs.o
   CC      drivers/rtc/hctosys.o
-  CC      drivers/serial/serial_core.o
+  CC      drivers/scsi/scsi.o
+  CC      drivers/power/s5pc110_battery.o
   CC [M]  drivers/net/wireless/bcm4329/src/dhd/sys/dhd_sdio.o
   CC      drivers/rtc/class.o
-  LD      drivers/regulator/built-in.o
-  CC      drivers/rtc/interface.o
-  CC      drivers/rtc/rtc-dev.o
 In file included from drivers/net/wireless/bcm4329/src/dhd/sys/dhd_sdio.c:60:
 drivers/net/wireless/bcm4329/src/dhd/sys/dhd.h:402: warning: 'struct sched_param' declared inside parameter list
 drivers/net/wireless/bcm4329/src/dhd/sys/dhd.h:402: warning: its scope is only this definition or declaration, which is probably not what you want
-  CC      net/ipv4/netfilter/iptable_raw.o
-  CC      drivers/rtc/rtc-proc.o
-  CC      net/ipv4/xfrm4_input.o
-  CC      net/ipv4/xfrm4_output.o
-  CC      net/ipv4/netfilter/ipt_addrtype.o
-  CC      drivers/rtc/rtc-sysfs.o
-  CC      drivers/scsi/scsi_ioctl.o
-  CC      drivers/scsi/constants.o
-  CC      drivers/scsi/scsicam.o
-  CC      drivers/rtc/alarm.o
-  CC      drivers/serial/samsung.o
-  CC      drivers/rtc/alarm-dev.o
-  CC      net/ipv4/netfilter/ipt_ah.o
-  CC      drivers/rtc/rtc-max8998.o
-  CC      drivers/rtc/rtc-s3c.o
-  CC      drivers/scsi/scsi_error.o
-drivers/rtc/rtc-max8998.c:75: warning: 'max8998_rtc_normal_i2c' defined but not used
-drivers/rtc/rtc-max8998.c:76: warning: 'max8998_rtc_probe' defined but not used
-  CC      net/ipv4/netfilter/ipt_ecn.o
-  CC      drivers/scsi/scsi_lib.o
-  CC      drivers/scsi/scsi_lib_dma.o
-  CC      drivers/scsi/scsi_scan.o
-  LD      drivers/serial/built-in.o
-  CC      drivers/scsi/scsi_sysfs.o
-  LD      drivers/rtc/rtc-core.o
-  LD      drivers/rtc/built-in.o
-  CC      drivers/scsi/scsi_devinfo.o
-  CC      drivers/spi/spi.o
-  CC      net/ipv4/netfilter/ipt_LOG.o
-  CC      drivers/spi/spi_bitbang.o
-  CC      drivers/staging/staging.o
-  CC      drivers/switch/switch_class.o
-  CC      drivers/staging/android/binder.o
-  LD      drivers/switch/built-in.o
-  CC      drivers/scsi/scsi_sysctl.o
-  CC      drivers/staging/android/logger.o
-  CC      drivers/spi/spi_gpio.o
-  CC      net/ipv4/netfilter/ipt_MASQUERADE.o
-  CC      drivers/staging/android/ram_console.o
-  CC      drivers/staging/android/timed_output.o
-  CC      drivers/scsi/scsi_proc.o
-drivers/staging/android/logger.c:91: warning: 'klog_buf' defined but not used
-  CC      drivers/scsi/scsi_trace.o
-  LD      drivers/spi/built-in.o
-  CC      drivers/scsi/sd.o
-  CC      net/ipv4/netfilter/ipt_NETMAP.o
-  CC      net/ipv4/netfilter/ipt_REDIRECT.o
   CC [M]  drivers/net/wireless/bcm4329/src/dhd/sys/dhd_custom_gpio.o
+  CC      net/ipv4/netfilter/nf_nat_ftp.o
+  LD      net/xfrm/built-in.o
   CC [M]  drivers/net/wireless/bcm4329/src/dhd/sys/dhd_custom_sec.o
-  CC      net/ipv4/netfilter/ipt_REJECT.o
-  CC [M]  drivers/net/wireless/bcm4329/src/shared/aiutils.o
+  CC      drivers/rtc/interface.o
 In file included from drivers/net/wireless/bcm4329/src/dhd/sys/dhd_custom_gpio.c:33:
 drivers/net/wireless/bcm4329/src/dhd/sys/dhd.h:402: warning: 'struct sched_param' declared inside parameter list
 drivers/net/wireless/bcm4329/src/dhd/sys/dhd.h:402: warning: its scope is only this definition or declaration, which is probably not what you want
-  CC      drivers/staging/android/timed_gpio.o
+  CC      drivers/rtc/rtc-dev.o
 In file included from drivers/net/wireless/bcm4329/src/dhd/sys/dhd_custom_sec.c:9:
 drivers/net/wireless/bcm4329/src/dhd/sys/dhd.h:402: warning: 'struct sched_param' declared inside parameter list
 drivers/net/wireless/bcm4329/src/dhd/sys/dhd.h:402: warning: its scope is only this definition or declaration, which is probably not what you want
-  CC      drivers/staging/android/lowmemorykiller.o
-  LD      drivers/scsi/arm/built-in.o
-  CC      drivers/usb/gadget/s3c_udc_otg.o
-  CC      drivers/usb/gadget/android.o
+  CC      net/ipv4/netfilter/ip_tables.o
+  CC      drivers/rtc/rtc-proc.o
+  CC      drivers/scsi/hosts.o
+  CC      drivers/scsi/scsi_ioctl.o
+  CC      drivers/regulator/max8998.o
+  LD      drivers/power/power_supply.o
+  LD      drivers/power/built-in.o
+  CC      drivers/rtc/rtc-sysfs.o
+  CC      net/ipv4/netfilter/iptable_filter.o
+  CC      net/ipv4/netfilter/iptable_mangle.o
+In file included from drivers/regulator/max8998.c:1211:
+drivers/regulator/max8998_function.c:378: warning: missing braces around initializer
+drivers/regulator/max8998_function.c:378: warning: (near initialization for 'max8998_irq_table[0]')
+drivers/regulator/max8998_function.c: In function 'MAX8998_PM_IRQ_isr':
+drivers/regulator/max8998_function.c:2404: warning: unused variable 'i'
+In file included from drivers/regulator/max8998.c:1211:
+drivers/regulator/max8998_function.c: In function 'max8998_poweron_reason':
+drivers/regulator/max8998_function.c:3060: warning: unused variable 'alarm_conf'
+drivers/regulator/max8998_function.c: At top level:
+drivers/regulator/max8998_function.c:3185: warning: function declaration isn't a prototype
+drivers/regulator/max8998_function.c: In function 'maxim_charging_control':
+drivers/regulator/max8998_function.c:3194: warning: unused variable 'value'
+drivers/regulator/max8998.c: At top level:
+drivers/regulator/max8998.c:272: warning: 'max8998_ldo_list_voltage' defined but not used
+drivers/regulator/max8998_function.c:3333: warning: 'pm_sys_init_done' defined but not used
+drivers/regulator/max8998_function.c:49: warning: 'pm_app_rtc_current_display_mode' defined but not used
+drivers/regulator/max8998_function.c:50: warning: 'pmic_int_mem' defined but not used
+drivers/regulator/max8998_function.c:54: warning: 'pm_sys_init_timer' defined but not used
+  CC      drivers/rtc/alarm.o
+  CC      drivers/rtc/alarm-dev.o
+  CC      drivers/scsi/constants.o
+  CC      drivers/scsi/scsicam.o
+  CC      drivers/scsi/scsi_error.o
+  LD      net/ipv4/netfilter/iptable_nat.o
+  CC      drivers/serial/serial_core.o
+  CC      drivers/rtc/rtc-max8998.o
+  CC      net/ipv4/netfilter/iptable_raw.o
+  CC      drivers/rtc/rtc-s3c.o
+  CC      net/ipv4/netfilter/ipt_addrtype.o
+drivers/rtc/rtc-max8998.c:75: warning: 'max8998_rtc_normal_i2c' defined but not used
+drivers/rtc/rtc-max8998.c:76: warning: 'max8998_rtc_probe' defined but not used
+  LD      drivers/regulator/built-in.o
+  CC      drivers/spi/spi.o
+  CC      drivers/spi/spi_bitbang.o
+  CC      drivers/spi/spi_gpio.o
+  LD      drivers/rtc/rtc-core.o
+  CC      net/ipv4/netfilter/ipt_ah.o
+  LD      drivers/rtc/built-in.o
+  CC      drivers/staging/staging.o
+  CC      drivers/scsi/scsi_lib.o
+  CC      drivers/scsi/scsi_lib_dma.o
+  CC      net/ipv4/netfilter/ipt_ecn.o
+  LD      drivers/spi/built-in.o
+  CC      drivers/staging/android/binder.o
+  CC      net/ipv4/netfilter/ipt_LOG.o
+  CC      drivers/serial/samsung.o
+  CC      net/ipv4/netfilter/ipt_MASQUERADE.o
+  CC      net/ipv4/netfilter/ipt_NETMAP.o
+  CC [M]  drivers/net/wireless/bcm4329/src/shared/aiutils.o
   CC [M]  drivers/net/wireless/bcm4329/src/shared/bcmutils.o
-  CC      net/ipv4/netfilter/ipt_ULOG.o
+  CC      drivers/scsi/scsi_scan.o
+  CC      drivers/scsi/scsi_sysfs.o
+  CC      net/ipv4/netfilter/ipt_REDIRECT.o
+  LD      drivers/serial/built-in.o
+  CC      drivers/scsi/scsi_devinfo.o
+  CC      drivers/scsi/scsi_sysctl.o
+  CC      drivers/switch/switch_class.o
   CC [M]  drivers/net/wireless/bcm4329/src/shared/bcmwifi.o
+  CC      net/ipv4/netfilter/ipt_REJECT.o
+  LD      drivers/switch/built-in.o
+  CC      net/ipv4/netfilter/ipt_ULOG.o
+  CC      drivers/staging/android/logger.o
+  CC      drivers/staging/android/ram_console.o
+  CC      drivers/staging/android/timed_output.o
   CC [M]  drivers/net/wireless/bcm4329/src/shared/hndpmu.o
+drivers/staging/android/logger.c:91: warning: 'klog_buf' defined but not used
+  CC      drivers/scsi/scsi_proc.o
   CC [M]  drivers/net/wireless/bcm4329/src/shared/linux_osl.o
+  CC [M]  drivers/net/wireless/bcm4329/src/shared/sbutils.o
+  CC [M]  drivers/net/wireless/bcm4329/src/shared/siutils.o
+  CC      drivers/usb/gadget/s3c_udc_otg.o
   LD      net/ipv4/netfilter/nf_conntrack_ipv4.o
   LD      net/ipv4/netfilter/nf_nat.o
   LD      net/ipv4/netfilter/built-in.o
-  CC      drivers/video/fb_notify.o
+  CC      drivers/usb/gadget/android.o
   LD      net/ipv4/built-in.o
   LD      net/built-in.o
-  LD      drivers/watchdog/built-in.o
-  CC      drivers/video/fbmem.o
 drivers/net/wireless/bcm4329/src/shared/linux_osl.c: In function 'osl_pktfree_static':
 drivers/net/wireless/bcm4329/src/shared/linux_osl.c:456: warning: array subscript is above array bounds
 drivers/net/wireless/bcm4329/src/shared/linux_osl.c:456: warning: array subscript is above array bounds
@@ -1606,75 +1651,99 @@ drivers/net/wireless/bcm4329/src/shared/linux_osl.c:456: warning: array subscrip
 drivers/net/wireless/bcm4329/src/shared/linux_osl.c:456: warning: array subscript is above array bounds
 drivers/net/wireless/bcm4329/src/shared/linux_osl.c:456: warning: array subscript is above array bounds
 drivers/net/wireless/bcm4329/src/shared/linux_osl.c:456: warning: array subscript is above array bounds
-  CC      drivers/video/fbmon.o
-  CC      drivers/scsi/sg.o
-  CC [M]  drivers/net/wireless/bcm4329/src/shared/sbutils.o
+  CC      drivers/scsi/scsi_trace.o
+  CC      drivers/staging/android/timed_gpio.o
+  CC      drivers/staging/android/lowmemorykiller.o
+  CC      drivers/video/fb_notify.o
+  LD      drivers/watchdog/built-in.o
+  CC [M]  drivers/net/wireless/bcm4329/src/bcmsdio/sys/bcmsdh_sdmmc.o
+  CC [M]  drivers/net/wireless/bcm4329/src/bcmsdio/sys/bcmsdh.o
+  CC      drivers/scsi/sd.o
+  CC      drivers/video/fbmem.o
   LD      drivers/staging/android/built-in.o
   LD      drivers/staging/built-in.o
-  CC [M]  drivers/net/wireless/bcm4329/src/shared/siutils.o
-  CC      drivers/video/fbcmap.o
-  CC      drivers/video/fbsysfs.o
-  CC      drivers/usb/gadget/f_adb.o
-  CC      drivers/usb/gadget/f_mass_storage.o
-drivers/usb/gadget/f_adb.c:152: warning: 'null_adb_descs' defined but not used
-  CC      drivers/video/modedb.o
-  CC [M]  drivers/net/wireless/bcm4329/src/bcmsdio/sys/bcmsdh_sdmmc.o
-  CC      drivers/video/fbcvt.o
-  CC      drivers/video/backlight/lcd.o
-  CC [M]  drivers/scsi/scsi_wait_scan.o
+  CC      drivers/video/fbmon.o
+  CC [M]  drivers/net/wireless/bcm4329/src/bcmsdio/sys/bcmsdh_linux.o
 In file included from drivers/net/wireless/bcm4329/src/bcmsdio/sys/bcmsdh_sdmmc.c:42:
 drivers/net/wireless/bcm4329/src/dhd/sys/dhd.h:402: warning: 'struct sched_param' declared inside parameter list
 drivers/net/wireless/bcm4329/src/dhd/sys/dhd.h:402: warning: its scope is only this definition or declaration, which is probably not what you want
-  LD      drivers/scsi/scsi_mod.o
-  LD      drivers/scsi/sd_mod.o
+  CC [M]  drivers/net/wireless/bcm4329/src/bcmsdio/sys/bcmsdh_sdmmc_linux.o
+In file included from drivers/net/wireless/bcm4329/src/bcmsdio/sys/bcmsdh_linux.c:49:
+drivers/net/wireless/bcm4329/src/dhd/sys/dhd.h:402: warning: 'struct sched_param' declared inside parameter list
+drivers/net/wireless/bcm4329/src/dhd/sys/dhd.h:402: warning: its scope is only this definition or declaration, which is probably not what you want
+  CC [M]  drivers/net/wireless/bcm4329/src/wl/sys/wl_iw.o
+  CC      drivers/usb/gadget/f_adb.o
+  LD      drivers/scsi/arm/built-in.o
+  CC      drivers/video/fbcmap.o
+  CC      drivers/scsi/sg.o
+  CC [M]  drivers/scsi/scsi_wait_scan.o
+drivers/usb/gadget/f_adb.c:152: warning: 'null_adb_descs' defined but not used
+In file included from drivers/net/wireless/bcm4329/src/wl/sys/wl_iw.c:41:
+drivers/net/wireless/bcm4329/src/dhd/sys/dhd.h:402: warning: 'struct sched_param' declared inside parameter list
+drivers/net/wireless/bcm4329/src/dhd/sys/dhd.h:402: warning: its scope is only this definition or declaration, which is probably not what you want
+  CC      drivers/usb/gadget/f_mass_storage.o
+  CC      drivers/video/fbsysfs.o
+  CC      drivers/video/modedb.o
+  CC      drivers/video/fbcvt.o
+  CC      drivers/video/backlight/lcd.o
   CC      drivers/video/console/dummycon.o
-  CC [M]  drivers/net/wireless/bcm4329/src/bcmsdio/sys/bcmsdh.o
   CC      drivers/video/backlight/backlight.o
-  CC [M]  drivers/net/wireless/bcm4329/src/bcmsdio/sys/bcmsdh_linux.o
-  LD      drivers/video/display/built-in.o
-  CC      drivers/video/samsung/s3cfb.o
   CC      drivers/video/console/fbcon.o
   CC      drivers/video/console/bitblit.o
+  CC      drivers/video/console/fonts.o
+  CC      drivers/video/console/font_8x8.o
+  CC      drivers/video/console/font_8x16.o
+  CC      drivers/video/console/softcursor.o
+  LD      drivers/video/backlight/built-in.o
+  LD      drivers/scsi/scsi_mod.o
+  LD      drivers/scsi/sd_mod.o
+  LD      drivers/video/display/built-in.o
+  CC      drivers/video/samsung/s3cfb.o
+  LD      drivers/video/console/font.o
+  CC      drivers/video/cfbfillrect.o
+  CC      drivers/video/cfbcopyarea.o
+  LD      drivers/scsi/built-in.o
 drivers/video/samsung/s3cfb.c: In function 's3cfb_map_video_memory':
 drivers/video/samsung/s3cfb.c:316: warning: assignment makes pointer from integer without a cast
 drivers/video/samsung/s3cfb.c: In function 's3cfb_map_default_video_memory':
 drivers/video/samsung/s3cfb.c:352: warning: assignment makes pointer from integer without a cast
+  CC      drivers/video/cfbimgblt.o
+  CC      drivers/video/samsung/s3cfb_fimd6x.o
 drivers/video/samsung/s3cfb.c: At top level:
 drivers/video/samsung/s3cfb.c:1779: warning: 'struct platform_Device' declared inside parameter list
 drivers/video/samsung/s3cfb.c:1779: warning: its scope is only this definition or declaration, which is probably not what you want
 drivers/video/samsung/s3cfb.c:1800: warning: initialization from incompatible pointer type
-In file included from drivers/net/wireless/bcm4329/src/bcmsdio/sys/bcmsdh_linux.c:49:
-drivers/net/wireless/bcm4329/src/dhd/sys/dhd.h:402: warning: 'struct sched_param' declared inside parameter list
-drivers/net/wireless/bcm4329/src/dhd/sys/dhd.h:402: warning: its scope is only this definition or declaration, which is probably not what you want
-  LD      drivers/scsi/built-in.o
-  CC      drivers/video/cfbfillrect.o
-  LD      drivers/video/backlight/built-in.o
-  CC      drivers/video/console/fonts.o
-  CC      drivers/video/console/font_8x8.o
-  CC      drivers/video/samsung/s3cfb_fimd6x.o
-  CC [M]  drivers/net/wireless/bcm4329/src/bcmsdio/sys/bcmsdh_sdmmc_linux.o
-  CC [M]  drivers/net/wireless/bcm4329/src/wl/sys/wl_iw.o
-  CC      drivers/video/console/font_8x16.o
-  CC      drivers/video/cfbcopyarea.o
-In file included from drivers/net/wireless/bcm4329/src/wl/sys/wl_iw.c:41:
-drivers/net/wireless/bcm4329/src/dhd/sys/dhd.h:402: warning: 'struct sched_param' declared inside parameter list
-drivers/net/wireless/bcm4329/src/dhd/sys/dhd.h:402: warning: its scope is only this definition or declaration, which is probably not what you want
-  CC      drivers/video/console/softcursor.o
-  LD      drivers/usb/gadget/built-in.o
-  CC      drivers/video/cfbimgblt.o
-  LD      drivers/video/samsung/built-in.o
   LD      drivers/video/fb.o
-  LD      drivers/video/console/font.o
+  LD      drivers/usb/gadget/built-in.o
+  LD      drivers/video/samsung/built-in.o
   LD      drivers/video/console/built-in.o
   LD      drivers/video/built-in.o
   LD [M]  drivers/net/wireless/bcm4329/dhd.o
   LD      drivers/net/built-in.o
   LD      drivers/built-in.o
+WARNING: drivers/built-in.o(.data+0x708c): Section mismatch in reference from the variable hall_driver to the function .init.text:hall_probe()
+The variable hall_driver references
+the function __init hall_probe()
+If the reference is valid then annotate the
+variable with __init* or __refdata (see linux/init.h) or name the variable:
+*_template, *_timer, *_sht, *_ops, *_probe, *_probe_one, *_console, 
+
   LD      vmlinux.o
   MODPOST vmlinux.o
-WARNING: modpost: Found 2 section mismatch(es).
-To see full details build your kernel with:
-'make CONFIG_DEBUG_SECTION_MISMATCH=y'
+WARNING: vmlinux.o(.data+0x587c): Section mismatch in reference from the variable s5p_systimer to the function .init.text:s5p_timer_init()
+The variable s5p_systimer references
+the function __init s5p_timer_init()
+If the reference is valid then annotate the
+variable with __init* or __refdata (see linux/init.h) or name the variable:
+*_template, *_timer, *_sht, *_ops, *_probe, *_probe_one, *_console, 
+
+WARNING: vmlinux.o(.data+0x2acac): Section mismatch in reference from the variable hall_driver to the function .init.text:hall_probe()
+The variable hall_driver references
+the function __init hall_probe()
+If the reference is valid then annotate the
+variable with __init* or __refdata (see linux/init.h) or name the variable:
+*_template, *_timer, *_sht, *_ops, *_probe, *_probe_one, *_console, 
+
   GEN     .version
   CHK     include/generated/compile.h
   UPD     include/generated/compile.h
@@ -1688,18 +1757,18 @@ cpuidle.c:(.data+0x2d4): undefined reference to `s3c_device_fimc2'
 cpuidle.c:(.data+0x2dc): undefined reference to `s3c_device_csis'
 cpuidle.c:(.data+0x354): undefined reference to `s3c_device_mfc'
 arch/arm/plat-samsung/built-in.o: In function `s3c_pm_enter':
-/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/arch/arm/plat-samsung/pm.c:350: undefined reference to `config_sleep_gpio'
-/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/arch/arm/plat-samsung/pm.c:398: undefined reference to `s5pv210_restore_eint_group'
+/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/arch/arm/plat-samsung/pm.c:355: undefined reference to `config_sleep_gpio'
+/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/arch/arm/plat-samsung/pm.c:403: undefined reference to `s5pv210_restore_eint_group'
 arch/arm/plat-samsung/built-in.o: In function `s3c_i2c0_set_platdata':
 /home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/arch/arm/plat-samsung/dev-i2c0.c:69: undefined reference to `s3c_i2c0_cfg_gpio'
 /home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/arch/arm/plat-samsung/dev-i2c0.c:69: undefined reference to `s3c_i2c0_cfg_gpio'
 arch/arm/plat-samsung/built-in.o: In function `pmstats_init':
-/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/arch/arm/plat-samsung/pm.c:89: undefined reference to `pm_debug_scratchpad'
-/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/arch/arm/plat-samsung/pm.c:89: undefined reference to `pm_debug_scratchpad'
+/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/arch/arm/plat-samsung/pm.c:93: undefined reference to `pm_debug_scratchpad'
+/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/arch/arm/plat-samsung/pm.c:93: undefined reference to `pm_debug_scratchpad'
 kernel/built-in.o: In function `pm_restore_console':
-/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/kernel/power/console.c:32: undefined reference to `vt_kmsg_redirect'
+/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/kernel/power/console.c:35: undefined reference to `vt_kmsg_redirect'
 kernel/built-in.o: In function `pm_prepare_console':
-/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/kernel/power/console.c:24: undefined reference to `vt_kmsg_redirect'
+/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/kernel/power/console.c:27: undefined reference to `vt_kmsg_redirect'
 kernel/built-in.o: In function `kernel_get_debug_level':
 /home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/kernel/kernel_sec_debug.c:478: undefined reference to `sec_get_param_value'
 /home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/kernel/kernel_sec_debug.c:478: undefined reference to `sec_get_param_value'
@@ -1709,28 +1778,40 @@ kernel/built-in.o: In function `kernel_set_debug_level':
 kernel/built-in.o: In function `kernel_sec_set_build_info':
 /home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/kernel/kernel_sec_debug.c:223: undefined reference to `HWREV'
 /home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/kernel/kernel_sec_debug.c:223: undefined reference to `HWREV'
-drivers/built-in.o: In function `max8998_set_voltage_ldo':
-/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/regulator/max8998.c:342: undefined reference to `max8998_update_reg'
-drivers/built-in.o: In function `max8998_get_voltage':
-/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/regulator/max8998.c:300: undefined reference to `max8998_read_reg'
-drivers/built-in.o: In function `max8998_ldo_is_enabled':
-/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/regulator/max8998.c:193: undefined reference to `max8998_read_reg'
-drivers/built-in.o: In function `max8998_ldo_disable':
-/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/regulator/max8998.c:223: undefined reference to `max8998_update_reg'
-drivers/built-in.o: In function `max8998_ldo_enable':
-/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/regulator/max8998.c:210: undefined reference to `max8998_update_reg'
-drivers/built-in.o: In function `max8998_set_voltage_buck':
-/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/regulator/max8998.c:444: undefined reference to `max8998_write_reg'
-/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/regulator/max8998.c:487: undefined reference to `max8998_update_reg'
-/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/regulator/max8998.c:474: undefined reference to `max8998_write_reg'
-/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/regulator/max8998.c:454: undefined reference to `max8998_write_reg'
-/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/regulator/max8998.c:481: undefined reference to `max8998_write_reg'
+drivers/built-in.o: In function `maxim_charging_topoff':
+/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/regulator/max8998_function.c:2964: undefined reference to `s3c_cable_charging'
+drivers/built-in.o: In function `lpm_mode_check':
+/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/regulator/max8998_function.c:2217: undefined reference to `charging_mode_set'
+/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/regulator/max8998_function.c:2209: undefined reference to `charging_mode_set'
+drivers/built-in.o: In function `maxim_chg_status':
+/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/regulator/max8998_function.c:2996: undefined reference to `get_usb_cable_state'
+/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/regulator/max8998_function.c:2997: undefined reference to `FSA9480_Get_I2C_USB_Status'
+/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/regulator/max8998_function.c:3004: undefined reference to `MicroTAstatus'
+/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/regulator/max8998_function.c:3004: undefined reference to `MicroTAstatus'
+drivers/built-in.o: In function `maxim_vac_disconnect':
+/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/regulator/max8998_function.c:2914: undefined reference to `set_tsp_for_ta_detect'
+/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/regulator/max8998_function.c:2916: undefined reference to `MicroTAstatus'
+/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/regulator/max8998_function.c:2916: undefined reference to `MicroTAstatus'
+/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/regulator/max8998_function.c:2918: undefined reference to `s3c_cable_changed'
+drivers/built-in.o: In function `maxim_vac_connect':
+/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/regulator/max8998_function.c:2873: undefined reference to `get_usb_cable_state'
+/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/regulator/max8998_function.c:2877: undefined reference to `FSA9480_Get_I2C_USB_Status'
+/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/regulator/max8998_function.c:2885: undefined reference to `MicroTAstatus'
+/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/regulator/max8998_function.c:2885: undefined reference to `MicroTAstatus'
+/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/regulator/max8998_function.c:2888: undefined reference to `set_tsp_for_ta_detect'
+/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/regulator/max8998_function.c:2889: undefined reference to `s3c_cable_changed'
 drivers/built-in.o: In function `s3c24xx_serial_init_port':
 /home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/serial/samsung.c:1156: undefined reference to `s3c_setup_uart_cfg_gpio'
 drivers/built-in.o: In function `s3c_udc_ep0_zlp':
 /home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg_xfer_dma.c:64: undefined reference to `currentusbstatus'
 /home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg_xfer_dma.c:64: undefined reference to `currentusbstatus'
 /home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg_xfer_dma.c:65: undefined reference to `usb_ctrl'
+drivers/built-in.o: In function `s3c_udc_clear_feature':
+/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg_xfer_dma.c:1077: undefined reference to `currentusbstatus'
+/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg_xfer_dma.c:1077: undefined reference to `currentusbstatus'
+/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg_xfer_dma.c:1091: undefined reference to `usb_ctrl'
+/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg_xfer_dma.c:1091: undefined reference to `usb_ctrl'
+/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg_xfer_dma.c:1116: undefined reference to `usb_ctrl'
 drivers/built-in.o: In function `write_fifo_ep0':
 /home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg_xfer_dma.c:629: undefined reference to `currentusbstatus'
 /home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg_xfer_dma.c:629: undefined reference to `currentusbstatus'
@@ -1738,55 +1819,41 @@ drivers/built-in.o: In function `write_fifo_ep0':
 /home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg_xfer_dma.c:655: undefined reference to `usb_ctrl'
 /home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg_xfer_dma.c:655: undefined reference to `usb_ctrl'
 /home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg_xfer_dma.c:655: undefined reference to `usb_ctrl'
+drivers/built-in.o: In function `s3c_ep0_read':
+/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg_xfer_dma.c:745: undefined reference to `currentusbstatus'
+/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg_xfer_dma.c:745: undefined reference to `currentusbstatus'
+/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg_xfer_dma.c:742: undefined reference to `usb_ctrl'
 drivers/built-in.o: In function `s3c_ep0_kick':
 /home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg_xfer_dma.c:1484: undefined reference to `currentusbstatus'
 /home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg_xfer_dma.c:1484: undefined reference to `currentusbstatus'
-drivers/built-in.o: In function `s3c_ep0_write':
-/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg_xfer_dma.c:839: undefined reference to `usb_ctrl'
+drivers/built-in.o: In function `s3c_udc_check_tx_queue':
+/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg_xfer_dma.c:303: undefined reference to `usb_ctrl'
+drivers/built-in.o: In function `s3c_udc_set_feature':
+/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg_xfer_dma.c:1234: undefined reference to `usb_ctrl'
+/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg_xfer_dma.c:1234: undefined reference to `usb_ctrl'
+/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg_xfer_dma.c:1241: undefined reference to `currentusbstatus'
+/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg_xfer_dma.c:1241: undefined reference to `currentusbstatus'
 drivers/built-in.o: In function `s3c_udc_ep0_zlp':
 /home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg_xfer_dma.c:64: undefined reference to `currentusbstatus'
 /home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg_xfer_dma.c:64: undefined reference to `currentusbstatus'
-/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg_xfer_dma.c:65: undefined reference to `usb_ctrl'
+drivers/built-in.o: In function `s3c_udc_set_feature':
+/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg_xfer_dma.c:1243: undefined reference to `currentusbstatus'
+drivers/built-in.o:/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg_xfer_dma.c:1243: more undefined references to `currentusbstatus' follow
+drivers/built-in.o: In function `s3c_udc_set_feature':
+/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg_xfer_dma.c:1248: undefined reference to `usb_ctrl'
 drivers/built-in.o: In function `__dma_single_cpu_to_dev':
 /home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/arch/arm/include/asm/dma-mapping.h:80: undefined reference to `usb_ctrl'
 /home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/arch/arm/include/asm/dma-mapping.h:80: undefined reference to `usb_ctrl'
 drivers/built-in.o: In function `s3c_ep0_setup':
-/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg_xfer_dma.c:1326: undefined reference to `usb_ctrl'
-/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg_xfer_dma.c:1326: undefined reference to `usb_ctrl'
-drivers/built-in.o:/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg_xfer_dma.c:1346: more undefined references to `usb_ctrl' follow
-drivers/built-in.o: In function `s3c_udc_clear_feature':
-/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg_xfer_dma.c:1077: undefined reference to `currentusbstatus'
-/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg_xfer_dma.c:1077: undefined reference to `currentusbstatus'
-/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg_xfer_dma.c:1091: undefined reference to `usb_ctrl'
-/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg_xfer_dma.c:1091: undefined reference to `usb_ctrl'
-drivers/built-in.o: In function `s3c_ep0_setup':
 /home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg_xfer_dma.c:1438: undefined reference to `usb_ctrl'
 /home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg_xfer_dma.c:1438: undefined reference to `usb_ctrl'
-/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg_xfer_dma.c:1377: undefined reference to `usb_ctrl'
-drivers/built-in.o:/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg_xfer_dma.c:1377: more undefined references to `usb_ctrl' follow
-drivers/built-in.o: In function `s3c_udc_set_feature':
-/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg_xfer_dma.c:1241: undefined reference to `currentusbstatus'
-/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg_xfer_dma.c:1241: undefined reference to `currentusbstatus'
-drivers/built-in.o: In function `s3c_udc_get_status':
-/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg_xfer_dma.c:857: undefined reference to `usb_ctrl'
-/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg_xfer_dma.c:857: undefined reference to `usb_ctrl'
-drivers/built-in.o: In function `s3c_ep0_setup':
-/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg_xfer_dma.c:1334: undefined reference to `usb_ctrl'
-/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg_xfer_dma.c:1334: undefined reference to `usb_ctrl'
-drivers/built-in.o: In function `s3c_udc_clear_feature':
-/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg_xfer_dma.c:1107: undefined reference to `usb_ctrl'
-drivers/built-in.o:/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg_xfer_dma.c:1107: more undefined references to `usb_ctrl' follow
+drivers/built-in.o:/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg_xfer_dma.c:1365: more undefined references to `usb_ctrl' follow
 drivers/built-in.o: In function `s3c_udc_ep0_zlp':
 /home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg_xfer_dma.c:64: undefined reference to `currentusbstatus'
 /home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg_xfer_dma.c:64: undefined reference to `currentusbstatus'
-drivers/built-in.o: In function `s3c_udc_set_feature':
-/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg_xfer_dma.c:1243: undefined reference to `currentusbstatus'
-/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg_xfer_dma.c:1243: undefined reference to `currentusbstatus'
-drivers/built-in.o: In function `set_test_mode':
-/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg_xfer_dma.c:1210: undefined reference to `currentusbstatus'
-drivers/built-in.o:/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg_xfer_dma.c:1210: more undefined references to `currentusbstatus' follow
-drivers/built-in.o: In function `s3c_udc_set_feature':
-/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg_xfer_dma.c:1248: undefined reference to `usb_ctrl'
+/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg_xfer_dma.c:65: undefined reference to `usb_ctrl'
+drivers/built-in.o: In function `s3c_udc_pre_setup':
+/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg_xfer_dma.c:82: undefined reference to `usb_ctrl'
 drivers/built-in.o: In function `i2c_add_driver':
 /home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/include/linux/i2c.h:433: undefined reference to `fsa9480_i2c_driver'
 /home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/include/linux/i2c.h:433: undefined reference to `fsa9480_i2c_driver'
@@ -1798,14 +1865,6 @@ drivers/built-in.o: In function `udc_enable':
 drivers/built-in.o: In function `s3c_usb_cable':
 /home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg.c:446: undefined reference to `ldo38_control_by_usb'
 /home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/usb/gadget/s3c_udc_otg.c:443: undefined reference to `ldo38_control_by_usb'
-drivers/built-in.o: In function `Ofm_IOCTL_Power_On':
-/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/input/mouse/ofm_driver.c:143: undefined reference to `max8998_ldo_enable_direct'
-drivers/built-in.o: In function `Ofm_IOCTL_Power_Off':
-/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/input/mouse/ofm_driver.c:138: undefined reference to `max8998_ldo_disable_direct'
-/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/input/mouse/ofm_driver.c:138: undefined reference to `max8998_ldo_disable_direct'
-/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/input/mouse/ofm_driver.c:138: undefined reference to `max8998_ldo_disable_direct'
-drivers/built-in.o: In function `ojkey_power_read':
-/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/input/mouse/ofm_driver.c:617: undefined reference to `max8998_ldo_is_enabled_direct'
 drivers/built-in.o: In function `ofm_timer_func':
 /home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/input/mouse/ofm_driver.c:597: undefined reference to `backlight_level'
 /home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/input/mouse/ofm_driver.c:597: undefined reference to `backlight_level'
@@ -1831,15 +1890,12 @@ drivers/built-in.o: In function `max8998_int_work_func':
 /home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/power/s5pc110_battery.c:886: undefined reference to `max8998_bulk_read'
 /home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/power/s5pc110_battery.c:905: undefined reference to `max8998_write_reg'
 /home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/power/s5pc110_battery.c:900: undefined reference to `max8998_write_reg'
-drivers/built-in.o: In function `max8998_pmic_probe':
-/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/regulator/max8998.c:758: undefined reference to `max8998_write_reg'
-/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/regulator/max8998.c:788: undefined reference to `max8998_write_reg'
-/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/regulator/max8998.c:817: undefined reference to `max8998_read_reg'
 drivers/built-in.o: In function `max8998_charger_probe':
 /home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/power/s5pc110_battery.c:984: undefined reference to `max8998_write_reg'
 /home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/power/s5pc110_battery.c:989: undefined reference to `max8998_write_reg'
 /home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/power/s5pc110_battery.c:993: undefined reference to `max8998_write_reg'
-/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/power/s5pc110_battery.c:997: undefined reference to `max8998_write_reg'
+drivers/built-in.o:/home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/power/s5pc110_battery.c:997: more undefined references to `max8998_write_reg' follow
+drivers/built-in.o: In function `max8998_charger_probe':
 /home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/power/s5pc110_battery.c:1002: undefined reference to `max8998_update_reg'
 /home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/power/s5pc110_battery.c:1007: undefined reference to `max8998_update_reg'
 /home/j2/AndroidDev/GBSidekick/skgbmerge/KernelC/drivers/power/s5pc110_battery.c:1011: undefined reference to `max8998_update_reg'
